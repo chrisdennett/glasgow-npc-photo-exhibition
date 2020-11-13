@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Glasgow National Park City - Photo Exhibition
+
+Part of the [https://www.glasgownationalparkcity.org/](https://www.glasgownationalparkcity.org/)
+___
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
