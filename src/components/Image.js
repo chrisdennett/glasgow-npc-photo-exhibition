@@ -1,3 +1,6 @@
+//https://hackernoon.com/react-progressive-with-lazy-loading-images-a-how-to-guide-0ki732kb
+//https://medium.com/@sanishkr/react-progressive-graceful-image-c7a45b577f5f
+
 import React from "react";
 import ProgressiveImage from "react-progressive-graceful-image";
 import styled from "styled-components";
@@ -11,12 +14,16 @@ export const Image = ({
   alt = "Image",
 }) => {
   return (
-    <div style={{ maxWidth: width, maxHeight: height, margin: "auto" }}>
+    <div style={{ maxWidth: width, maxHeight: height }}>
+      {/*  <Container>
+        <CanvasShadow />
+        <Content> */}
       <ImageParent
         style={{
           paddingBottom: (height / width) * 100 + "%",
         }}
       >
+        <CanvasShadow />
         <ProgressiveImage
           srcSetData={{
             srcSet: srcSetData.srcSet,
@@ -53,6 +60,8 @@ export const Image = ({
           }}
         </ProgressiveImage>
       </ImageParent>
+      {/* </Content>
+      </Container> */}
     </div>
   );
 };
@@ -101,4 +110,18 @@ const StyledImage = styled.img`
   max-width: 100%;
   max-height: 100%;
   position: absolute;
+`;
+
+const CanvasShadow = styled.img`
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 `;
