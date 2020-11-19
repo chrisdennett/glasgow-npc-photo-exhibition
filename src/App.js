@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import Select from "react-select";
-import { Image } from "./components/Image";
+
 import { useState } from "react";
+import { FramedPicture } from "./components/FramedPicture";
+import { GalleryHeader } from "./components/GalleryHeader";
+import { GalleryFooter } from "./components/GalleryFooter";
 
 const bgOptions = [
   {
@@ -83,7 +86,7 @@ const bgOptions = [
 ];
 
 function App() {
-  const [currBg, setCurrBg] = useState(bgOptions[1]);
+  const [currBg, setCurrBg] = useState(bgOptions[0]);
 
   return (
     <Container bg={currBg ? `url(/img/bgs/${currBg.img})` : ""}>
@@ -93,33 +96,15 @@ function App() {
         onChange={(s) => setCurrBg(s)}
       />
 
-      <header>
-        <h1>Glasgow National Park City Photo Exhibition</h1>
-        <h2>
-          <a href="https://www.glasgownationalparkcity.org/">
-            Glasgow National Park City
-          </a>
-        </h2>
-      </header>
+      <GalleryHeader />
 
       <main>
         <PictureHolder>
-          <Frame>
-            <Image
-              width={700}
-              height={467}
-              placeholder="/img/photographer-1/tiny/pic-01.jpg"
-              src="/img/photographer-1/medium/pic-01.jpg"
-              sizes="(max-width: 700px) 100vw, 700px"
-              srcSetData={{
-                srcSet: `/img/photographer-1/small/pic-01.jpg 250w,
-                  /img/photographer-1/medium/pic-01.jpg 800w`,
-                sizes: "(max-width: 700px) 100vw, 700px",
-              }}
-            />
-          </Frame>
+          <FramedPicture />
         </PictureHolder>
       </main>
+
+      <GalleryFooter />
     </Container>
   );
 }
@@ -156,36 +141,5 @@ const Container = styled.div`
 `;
 
 const PictureHolder = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Frame = styled.div`
-  width: 700px;
-  /* height: 495px; */
-  background-color: whitesmoke; // mount colour
-  border: solid 1.2vmin #eee;
-  border-top-color: rgb(80, 80, 80); // lightest
-  border-left-color: rgb(60, 60, 60);
-  border-right-color: rgb(40, 40, 40);
-  border-bottom-color: rgb(20, 20, 20); // darkest
-  border-radius: 2px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) inset,
-    0 5px 10px 5px rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 2.1vmin;
-  position: relative;
-  text-align: center;
-
-  img {
-    border: solid 1px;
-    border-bottom-color: #ffe;
-    border-left-color: #eed;
-    border-right-color: #eed;
-    border-top-color: #ccb;
-    max-height: 100%;
-    max-width: 100%;
-  }
+  padding: 0 10px;
 `;
