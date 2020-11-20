@@ -14,8 +14,6 @@ export const Gallery = ({ galleryId }) => {
     navigate(`/${galleryId}/${artworkIndex | 0}`);
   };
 
-  const onGoHome = () => navigate("/");
-
   return (
     <Page>
       <Link to={"/"}>HOME</Link>
