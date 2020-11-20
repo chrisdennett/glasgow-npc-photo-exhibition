@@ -10,12 +10,14 @@ export const GalleryIntroCard = ({ onOpen, gallery }) => {
       <Card>
         <h3>{gallery.photographer}</h3>
         <p>{gallery.intro}</p>
+        <FramedPicture
+          width={300}
+          dir={gallery.directory}
+          photo={gallery.photos[0]}
+        />
         <Butt onClick={() => onOpen(gallery.galleryId)}>
           Open Gallery <BiRightArrow />
         </Butt>
-        <PictureHolder>
-          <FramedPicture width={300} />
-        </PictureHolder>
       </Card>
     </Outer>
   );
@@ -25,7 +27,6 @@ const Outer = styled.div``;
 
 const Card = styled.div`
   text-align: left;
-  /* width: 100%; */
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -54,15 +55,9 @@ const Card = styled.div`
   }
 `;
 
-const PictureHolder = styled.div`
-  width: 100%;
-  text-align: center;
-  padding: 20px 0px;
-`;
-
 const Butt = styled(Button)`
   align-self: flex-end;
-  margin-top: 15px;
+  margin-top: 0px;
   svg {
     margin-left: 7px;
   }

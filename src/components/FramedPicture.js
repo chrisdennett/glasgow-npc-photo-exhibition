@@ -4,27 +4,43 @@ import { Image } from "./Image";
 
 // w: 467
 
-export const FramedPicture = ({ width = 700, aspectRatio = 0.67 }) => {
+export const FramedPicture = ({
+  width = 700,
+  aspectRatio = 0.67,
+  photo,
+  dir,
+}) => {
   const height = width * aspectRatio;
 
+  const baseDir = `/img/${dir}/`;
+
   return (
-    <Frame maxWidth={width}>
-      <Image
-        width={width}
-        height={height}
-        placeholder="/img/photographer-1/tiny/pic-01.jpg"
-        src="/img/photographer-1/large/pic-01.jpg"
-        sizes={`(max-width: ${width}px) 100vw, ${width}px`}
-        srcSetData={{
-          srcSet: `/img/photographer-1/small/pic-01.jpg 300w,
-                  /img/photographer-1/medium/pic-01.jpg 800w,
-                  /img/photographer-1/large/pic-01.jpg 1400w`,
-          sizes: `(max-width: ${width}px) 100vw, ${width}px`,
-        }}
-      />
-    </Frame>
+    <PictureHolder targetWidth={width}>
+      <Frame maxWidth={width}>
+        <Image
+          width={width}
+          height={height}
+          placeholder={`${baseDir}tiny/${photo.file}`}
+          src={`${baseDir}large/${photo.file}`}
+          sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+          srcSetData={{
+            srcSet: `${baseDir}small/${photo.file} 300w,
+            ${baseDir}medium/${photo.file} 800w,
+            ${baseDir}large/${photo.file} 1400w`,
+            sizes: `(max-width: ${width}px) 100vw, ${width}px`,
+          }}
+        />
+      </Frame>
+    </PictureHolder>
   );
 };
+
+const PictureHolder = styled.div`
+  min-width: 250px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0px;
+`;
 
 const Frame = styled.div`
   max-width: ${(props) => props.maxWidth}px;
