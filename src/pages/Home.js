@@ -6,7 +6,7 @@ import { exhibitionData } from "../data/exhibitionData";
 
 export const Home = () => {
   const onGalleryOpen = (galleryId) => {
-    navigate(`/gallery/${galleryId}`);
+    navigate(`/${galleryId}`);
   };
 
   return (

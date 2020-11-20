@@ -18,7 +18,7 @@ light blue: #72b3c8;
 
 const Butt = styled.button`
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding: 10px 15px;
   text-transform: uppercase;

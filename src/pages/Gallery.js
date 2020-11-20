@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link, navigate } from "@reach/router";
+import { Button } from "../components/Button";
 import { FramedPicture } from "../components/FramedPicture";
 import { exhibitionData } from "../data/exhibitionData";
 
@@ -8,13 +10,23 @@ export const Gallery = ({ galleryId }) => {
     (g) => g.galleryId === galleryId
   );
 
+  const onEnterGallery = (artworkIndex) => {
+    navigate(`/${galleryId}/${artworkIndex | 0}`);
+  };
+
+  const onGoHome = () => navigate("/");
+
   return (
     <Page>
-      <h1>{currData.photographer}</h1>
-      <p>{currData.intro}</p>
+      <Link to={"/"}>HOME</Link>
+      <header>
+        <h1>{currData.photographer}</h1>
+        <p>{currData.intro}</p>
+        <Button onClick={onEnterGallery}>ENTER</Button>
+      </header>
       <Thumbs>
-        {currData.photos.map((photo) => (
-          <Thumb key={photo.file}>
+        {currData.photos.map((photo, index) => (
+          <Thumb key={photo.file} onClick={() => onEnterGallery(index)}>
             <FramedPicture width={300} photo={photo} dir={currData.directory} />
           </Thumb>
         ))}
@@ -35,6 +47,12 @@ const Thumbs = styled.div`
 `;
 
 const Page = styled.div`
-  min-height: 100%;
+  text-align: left;
   flex: 1;
+
+  header {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 `;

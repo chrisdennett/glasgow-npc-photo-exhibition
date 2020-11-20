@@ -5,6 +5,7 @@ import Select from "react-select";
 import { GalleryFooter } from "./components/GalleryFooter";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
+import { Artwork } from "./pages/Artwork";
 
 const bgOptions = [
   {
@@ -101,7 +102,8 @@ function App() {
       <main>
         <Router>
           <Home path="/" />
-          <Gallery path="gallery/:galleryId" />
+          <Gallery path="/:galleryId" />
+          <Artwork path="/:galleryId/:artworkId" />
         </Router>
       </main>
 
