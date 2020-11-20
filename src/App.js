@@ -90,7 +90,7 @@ function App() {
 
   return (
     <Container bg={currBg ? `url(/img/bgs/${currBg.img})` : ""}>
-      <Select
+      <SELECT
         options={bgOptions}
         value={currBg}
         onChange={(s) => setCurrBg(s)}
@@ -109,6 +109,10 @@ function App() {
 }
 
 export default App;
+
+const SELECT = styled(Select)`
+  max-width: 230px;
+`;
 
 const Container = styled.div`
   text-align: center;
