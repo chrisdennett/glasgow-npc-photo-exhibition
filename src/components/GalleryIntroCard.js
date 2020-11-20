@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { BiRightArrow } from "react-icons/bi";
 import { FramedPicture } from "./FramedPicture";
 import { Button } from "./Button";
 
-export const GalleryIntroCard = ({ onOpen }) => {
+export const GalleryIntroCard = ({ onOpen, galleryId = "1234" }) => {
   return (
     <Outer>
       <Card>
@@ -12,7 +13,9 @@ export const GalleryIntroCard = ({ onOpen }) => {
           John has been taking photos around Glasgow for 20 years. He
           particularly drawn to the plants and stuff.
         </p>
-        <Butt onClick={onOpen}>Open Gallery</Butt>
+        <Butt onClick={() => onOpen(galleryId)}>
+          Open Gallery <BiRightArrow />
+        </Butt>
         <PictureHolder>
           <FramedPicture width={300} />
         </PictureHolder>
@@ -52,4 +55,7 @@ const PictureHolder = styled.div`
 
 const Butt = styled(Button)`
   align-self: flex-end;
+  svg {
+    margin-left: 7px;
+  }
 `;

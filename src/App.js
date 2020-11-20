@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Select from "react-select";
-
+import { Router } from "@reach/router";
 import { useState } from "react";
-import { GalleryHeader } from "./components/GalleryHeader";
+import Select from "react-select";
 import { GalleryFooter } from "./components/GalleryFooter";
-import { GalleryIntroCard } from "./components/GalleryIntroCard";
+import { Home } from "./pages/Home";
+import { Gallery } from "./pages/Gallery";
 
 const bgOptions = [
   {
@@ -88,10 +88,6 @@ const bgOptions = [
 function App() {
   const [currBg, setCurrBg] = useState(bgOptions[0]);
 
-  const onGalleryOpen = () => {
-    console.log("onGalleryOpen");
-  };
-
   return (
     <Container bg={currBg ? `url(/img/bgs/${currBg.img})` : ""}>
       <Select
@@ -100,11 +96,11 @@ function App() {
         onChange={(s) => setCurrBg(s)}
       />
 
-      <GalleryHeader />
-
       <main>
-        <GalleryIntroCard onOpen={onGalleryOpen} />
-        <GalleryIntroCard onOpen={onGalleryOpen} />
+        <Router>
+          <Home path="/" />
+          <Gallery path="gallery/:galleryId" />
+        </Router>
       </main>
 
       <GalleryFooter />
@@ -119,11 +115,10 @@ const Container = styled.div`
   background-color: whitesmoke;
   background: ${(props) => (props.bg ? props.bg : "whitesmoke")};
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   main {
-    padding-bottom: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex: 1;
   }
 `;
