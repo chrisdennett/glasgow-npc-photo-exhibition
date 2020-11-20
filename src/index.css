@@ -15,3 +15,7 @@ p {
   letter-spacing: 0.5px;
   line-height: 1.6em;
 }
+
+button {
+  font-size: calc(12px + 0.5vmin);
+}

@@ -58,7 +58,7 @@ const Header = styled.header`
   }
 
   p {
-    max-width: 650px;
+    max-width: 760px;
     text-align: left;
   }
 `;

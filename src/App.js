@@ -2,9 +2,9 @@ import styled from "styled-components";
 import Select from "react-select";
 
 import { useState } from "react";
-import { FramedPicture } from "./components/FramedPicture";
 import { GalleryHeader } from "./components/GalleryHeader";
 import { GalleryFooter } from "./components/GalleryFooter";
+import { GalleryIntroCard } from "./components/GalleryIntroCard";
 
 const bgOptions = [
   {
@@ -88,6 +88,10 @@ const bgOptions = [
 function App() {
   const [currBg, setCurrBg] = useState(bgOptions[0]);
 
+  const onGalleryOpen = () => {
+    console.log("onGalleryOpen");
+  };
+
   return (
     <Container bg={currBg ? `url(/img/bgs/${currBg.img})` : ""}>
       <Select
@@ -99,10 +103,8 @@ function App() {
       <GalleryHeader />
 
       <main>
-        <p>John Doe has been taking photos around Glasgow for 20 years.</p>
-        <PictureHolder>
-          <FramedPicture />
-        </PictureHolder>
+        <GalleryIntroCard onOpen={onGalleryOpen} />
+        <GalleryIntroCard onOpen={onGalleryOpen} />
       </main>
 
       <GalleryFooter />
@@ -120,16 +122,8 @@ const Container = styled.div`
 
   main {
     padding-bottom: 60px;
-    /* font-size: calc(10px + 2vmin); */
-
-    p {
-      max-width: 650px;
-      text-align: left;
-      margin: auto;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-`;
-
-const PictureHolder = styled.div`
-  padding: 0 10px;
 `;

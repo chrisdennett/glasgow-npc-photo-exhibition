@@ -2,19 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { Image } from "./Image";
 
-export const FramedPicture = () => {
+// w: 467
+
+export const FramedPicture = ({ width = 700, aspectRatio = 0.67 }) => {
+  const height = width * aspectRatio;
+
   return (
-    <Frame>
+    <Frame maxWidth={width}>
       <Image
-        width={700}
-        height={467}
+        width={width}
+        height={height}
         placeholder="/img/photographer-1/tiny/pic-01.jpg"
-        src="/img/photographer-1/medium/pic-01.jpg"
-        sizes="(max-width: 700px) 100vw, 700px"
+        src="/img/photographer-1/large/pic-01.jpg"
+        sizes={`(max-width: ${width}px) 100vw, ${width}px`}
         srcSetData={{
-          srcSet: `/img/photographer-1/small/pic-01.jpg 250w,
-                  /img/photographer-1/medium/pic-01.jpg 800w`,
-          sizes: "(max-width: 700px) 100vw, 700px",
+          srcSet: `/img/photographer-1/small/pic-01.jpg 300w,
+                  /img/photographer-1/medium/pic-01.jpg 800w,
+                  /img/photographer-1/large/pic-01.jpg 1400w`,
+          sizes: `(max-width: ${width}px) 100vw, ${width}px`,
         }}
       />
     </Frame>
@@ -22,7 +27,7 @@ export const FramedPicture = () => {
 };
 
 const Frame = styled.div`
-  max-width: 700px;
+  max-width: ${(props) => props.maxWidth}px;
   width: 100%;
   background-color: whitesmoke; // mount colour
   border: solid 1.2vmin #eee;

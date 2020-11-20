@@ -13,5 +13,12 @@ const ExternalLink = ({ url, label, newTab = "true", useIcon = "true" }) => {
 export default ExternalLink;
 
 const Link = styled.a`
-  color: #a8c25e;
+  color: #ce7c41;
 `;
+
+/*
+dark blue: #124868;
+green: #a8c25e
+orange: #ce7c41;
+light blue: #72b3c8;
+*/
