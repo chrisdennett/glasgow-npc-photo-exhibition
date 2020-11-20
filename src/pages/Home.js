@@ -2,6 +2,7 @@ import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { GalleryHeader } from "../components/GalleryHeader";
 import { GalleryIntroCard } from "../components/GalleryIntroCard";
+import { exhibitionData } from "../data/exhibitionData";
 
 export const Home = () => {
   const onGalleryOpen = (galleryId) => {
@@ -13,8 +14,13 @@ export const Home = () => {
       <GalleryHeader />
 
       <Cards>
-        <GalleryIntroCard onOpen={onGalleryOpen} galleryId="john-doe" />
-        <GalleryIntroCard onOpen={onGalleryOpen} galleryId="john-snow" />
+        {exhibitionData.galleries.map((gallery) => (
+          <GalleryIntroCard
+            key={gallery.galleryId}
+            onOpen={onGalleryOpen}
+            gallery={gallery}
+          />
+        ))}
       </Cards>
     </>
   );

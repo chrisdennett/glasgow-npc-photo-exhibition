@@ -90,11 +90,13 @@ function App() {
 
   return (
     <Container bg={currBg ? `url(/img/bgs/${currBg.img})` : ""}>
-      <SELECT
-        options={bgOptions}
-        value={currBg}
-        onChange={(s) => setCurrBg(s)}
-      />
+      <SelectHolder>
+        <Select
+          options={bgOptions}
+          value={currBg}
+          onChange={(s) => setCurrBg(s)}
+        />
+      </SelectHolder>
 
       <main>
         <Router>
@@ -110,8 +112,11 @@ function App() {
 
 export default App;
 
-const SELECT = styled(Select)`
-  max-width: 230px;
+const SelectHolder = styled.div`
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  width: 230px;
 `;
 
 const Container = styled.div`

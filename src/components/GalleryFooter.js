@@ -104,18 +104,26 @@ export const GalleryFooter = () => {
   const [currBg, setCurrBg] = useState(bgOptions[0]);
   return (
     <>
-      <div style={{ maxWidth: 200 }}>
+      <SelectHolder>
         <Select
+          menuPlacement="top"
           options={bgOptions}
           value={currBg}
           onChange={(s) => setCurrBg(s)}
         />
-      </div>
+      </SelectHolder>
       <SkirtingBoard />
       <Footer bg={currBg ? `url(/img/tiles-floor/${currBg.img})` : ""}></Footer>
     </>
   );
 };
+
+const SelectHolder = styled.div`
+  position: fixed;
+  right: 0;
+  bottom: 15px;
+  width: 300px;
+`;
 
 const Footer = styled.footer`
   min-height: 60px;

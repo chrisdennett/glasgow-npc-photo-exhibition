@@ -33,7 +33,7 @@ const Header = styled.header`
   justify-content: center;
 
   padding: 20px;
-  margin: 60px 10px 0 10px;
+  margin: 20px 10px 0 10px;
 
   h1 {
     color: rgba(0, 0, 0, 0.7);

@@ -4,16 +4,13 @@ import { BiRightArrow } from "react-icons/bi";
 import { FramedPicture } from "./FramedPicture";
 import { Button } from "./Button";
 
-export const GalleryIntroCard = ({ onOpen, galleryId = "1234" }) => {
+export const GalleryIntroCard = ({ onOpen, gallery }) => {
   return (
     <Outer>
       <Card>
-        <h3>John Doe</h3>
-        <p>
-          John has been taking photos around Glasgow for 20 years. He
-          particularly drawn to the plants and stuff.
-        </p>
-        <Butt onClick={() => onOpen(galleryId)}>
+        <h3>{gallery.photographer}</h3>
+        <p>{gallery.intro}</p>
+        <Butt onClick={() => onOpen(gallery.galleryId)}>
           Open Gallery <BiRightArrow />
         </Butt>
         <PictureHolder>
@@ -28,7 +25,7 @@ const Outer = styled.div``;
 
 const Card = styled.div`
   text-align: left;
-  width: 100%;
+  /* width: 100%; */
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -40,10 +37,20 @@ const Card = styled.div`
   border-radius: 10px;
 
   h3 {
-    margin: 0;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-family: "Poppins", sans-serif;
+    /* color: rgba(0, 0, 0, 0.6); */
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    font-size: calc(10px + 1vmin);
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
   }
   p {
     margin: 0;
+    font-size: calc(12px + 0.5vmin);
   }
 `;
 
@@ -55,6 +62,7 @@ const PictureHolder = styled.div`
 
 const Butt = styled(Button)`
   align-self: flex-end;
+  margin-top: 15px;
   svg {
     margin-left: 7px;
   }
