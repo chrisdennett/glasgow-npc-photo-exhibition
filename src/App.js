@@ -99,6 +99,7 @@ function App() {
       <GalleryHeader />
 
       <main>
+        <p>John Doe has been taking photos around Glasgow for 20 years.</p>
         <PictureHolder>
           <FramedPicture />
         </PictureHolder>
@@ -117,26 +118,15 @@ const Container = styled.div`
   background: ${(props) => (props.bg ? props.bg : "whitesmoke")};
   min-height: 100vh;
 
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    padding: 20px;
-
-    h1,
-    h2 {
-      margin: 0;
-    }
-  }
-
   main {
     padding-bottom: 60px;
-  }
+    /* font-size: calc(10px + 2vmin); */
 
-  a {
-    color: #61dafb;
+    p {
+      max-width: 650px;
+      text-align: left;
+      margin: auto;
+    }
   }
 `;
 
