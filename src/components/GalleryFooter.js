@@ -103,7 +103,7 @@ const bgOptions = [
 export const GalleryFooter = () => {
   const [currBg, setCurrBg] = useState(bgOptions[0]);
   return (
-    <>
+    <div>
       <SelectHolder>
         <Select
           menuPlacement="top"
@@ -114,7 +114,7 @@ export const GalleryFooter = () => {
       </SelectHolder>
       <SkirtingBoard />
       <Footer bg={currBg ? `url(/img/tiles-floor/${currBg.img})` : ""}></Footer>
-    </>
+    </div>
   );
 };
 

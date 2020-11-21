@@ -1,5 +1,6 @@
 import { navigate } from "@reach/router";
 import styled from "styled-components";
+import { GalleryFooter } from "../components/GalleryFooter";
 import { GalleryHeader } from "../components/GalleryHeader";
 import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
@@ -22,6 +23,8 @@ export const Home = () => {
           />
         ))}
       </Cards>
+
+      <GalleryFooter />
     </>
   );
 };

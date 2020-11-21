@@ -99,15 +99,11 @@ function App() {
         />
       </SelectHolder>
 
-      <main>
-        <Router>
-          <Home path="/" />
-          <Gallery path="/:galleryId" />
-          <Artwork path="/:galleryId/:artworkId" />
-        </Router>
-      </main>
-
-      <GalleryFooter />
+      <Router>
+        <Home path="/" />
+        <Gallery path="/:galleryId" />
+        <Artwork path="/:galleryId/:artworkId" />
+      </Router>
     </Container>
   );
 }

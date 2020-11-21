@@ -4,6 +4,7 @@ import { Link, navigate } from "@reach/router";
 import { Button } from "../components/Button";
 import { FramedPicture } from "../components/FramedPicture";
 import { exhibitionData } from "../data/exhibitionData";
+import { GalleryFooter } from "../components/GalleryFooter";
 
 export const Gallery = ({ galleryId }) => {
   const currData = exhibitionData.galleries.find(
@@ -29,6 +30,7 @@ export const Gallery = ({ galleryId }) => {
           </Thumb>
         ))}
       </Thumbs>
+      <GalleryFooter />
     </Page>
   );
 };
