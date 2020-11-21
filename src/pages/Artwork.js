@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, navigate } from "@reach/router";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -13,17 +14,13 @@ export const Artwork = ({ galleryId, artworkId }) => {
 
   const onPrevClick = (e) => {
     const currIndex = parseInt(artworkId);
-
     navigate(`/${galleryId}/${currIndex - 1}`);
   };
 
   const onNextClick = (e) => {
     const currIndex = parseInt(artworkId);
-
     navigate(`/${galleryId}/${currIndex + 1}`);
   };
-
-  console.log("artworkId: ", artworkId);
 
   return (
     <Page>
@@ -31,8 +28,12 @@ export const Artwork = ({ galleryId, artworkId }) => {
         <Link to={"/"}>HOME</Link>
         <Link to={`/${galleryId}`}>gallery</Link>
       </Breadcrumb>
-      <PrevButton onClick={onPrevClick}>PREV</PrevButton>
-      <NextButton onClick={onNextClick}>NEXT</NextButton>
+      <PrevButton onClick={onPrevClick}>
+        <IoIosArrowBack />
+      </PrevButton>
+      <NextButton onClick={onNextClick}>
+        <IoIosArrowForward />
+      </NextButton>
       <SliderThing
         slideIndex={parseInt(artworkId)}
         dir={currData.directory}
@@ -67,19 +68,45 @@ const SliderThing = ({ slideIndex, dir, photos }) => {
   );
 };
 
-const PrevButton = styled.button`
+const buttProps = `
   position: fixed;
   height: 100vh;
   z-index: 998;
-  padding: 20px;
+  padding: 5px 15px;
+  border: none;
+  background: none;
+  opacity: 0.8;
+  outline: none;
+  font-size: 24px;
+
+  :focus {
+    opacity: 1;
+    border: none;
+  }
+  :hover {
+    opacity: 1;
+  }
+
+  transition: opacity 0.5s;
+}`;
+
+const PrevButton = styled.button`
+  ${buttProps}
   left: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(50, 50, 50, 0.6),
+    rgba(50, 50, 50, 0)
+  );
 `;
 const NextButton = styled.button`
-  position: fixed;
-  height: 100vh;
-  z-index: 998;
-  padding: 20px;
+  ${buttProps}
   right: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(50, 50, 50, 0),
+    rgba(50, 50, 50, 0.6)
+  );
 `;
 
 const Breadcrumb = styled.div`
