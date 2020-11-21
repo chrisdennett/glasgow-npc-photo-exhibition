@@ -4,12 +4,8 @@ import { Image } from "./Image";
 
 // w: 467
 
-export const FramedPicture = ({
-  width = 700,
-  aspectRatio = 0.67,
-  photo,
-  dir,
-}) => {
+export const FramedPicture = ({ width = 700, photo, dir }) => {
+  const aspectRatio = photo.aspectRatio;
   const height = width * aspectRatio;
 
   const baseDir = `/img/${dir}/`;
@@ -39,7 +35,7 @@ const PictureHolder = styled.div`
   min-width: 250px;
   width: 100%;
   text-align: center;
-  padding: 20px 0px;
+  /* padding: 20px 0px; */
 `;
 
 const Frame = styled.div`

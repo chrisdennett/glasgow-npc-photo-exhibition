@@ -3,9 +3,8 @@ import { Link } from "@reach/router";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { FramedPicture } from "../components/FramedPicture";
 import { exhibitionData } from "../data/exhibitionData";
-import { GalleryFooter } from "../components/GalleryFooter";
+import { Room } from "../components/Room";
 
 export const Artwork = ({ galleryId, artworkId }) => {
   const currData = exhibitionData.galleries.find(
@@ -14,8 +13,10 @@ export const Artwork = ({ galleryId, artworkId }) => {
 
   return (
     <Page>
-      <Link to={"/"}>HOME</Link>
-      <Link to={`/${galleryId}`}>gallery</Link>
+      <Breadcrumb>
+        <Link to={"/"}>HOME</Link>
+        <Link to={`/${galleryId}`}>gallery</Link>
+      </Breadcrumb>
       <Carousel
         styles={{ height: "100vh" }}
         autoPlay={false}
@@ -31,22 +32,17 @@ export const Artwork = ({ galleryId, artworkId }) => {
         useKeyboardArrows={true}
       >
         {currData.photos.map((photo) => (
-          <Room>
-            <PictureHolder>
-              <FramedPicture
-                key={photo.file}
-                width={900}
-                photo={photo}
-                dir={currData.directory}
-              />
-            </PictureHolder>
-            <GalleryFooter />
-          </Room>
+          <Room key={photo.file} photo={photo} dir={currData.directory} />
         ))}
       </Carousel>
     </Page>
   );
 };
+
+const Breadcrumb = styled.div`
+  position: fixed;
+  z-index: 999;
+`;
 
 const Page = styled.div`
   text-align: left;
@@ -75,18 +71,4 @@ const Page = styled.div`
   .carousel .slide {
     background: none;
   }
-`;
-
-const Room = styled.div`
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const PictureHolder = styled.div`
-  max-height: 100%;
-  display: flex;
-  align-items: center;
-  flex: 1;
 `;
