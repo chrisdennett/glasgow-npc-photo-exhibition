@@ -6,24 +6,30 @@ import { Button } from "./Button";
 
 export const GalleryIntroCard = ({ onOpen, gallery }) => {
   return (
-    <Outer>
+    <div>
       <Card>
         <h3>{gallery.photographer}</h3>
         <p>{gallery.intro}</p>
-        <FramedPicture
-          width={300}
-          dir={gallery.directory}
-          photo={gallery.photos[0]}
-        />
+        <PictureHolder>
+          <FramedPicture
+            width={300}
+            dir={gallery.directory}
+            photo={gallery.photos[0]}
+          />
+        </PictureHolder>
+
         <Butt onClick={() => onOpen(gallery.galleryId)}>
           Open Gallery <BiRightArrow />
         </Butt>
       </Card>
-    </Outer>
+    </div>
   );
 };
 
-const Outer = styled.div``;
+const PictureHolder = styled.div`
+  width: 100%;
+  padding: 20px 0 20px 0;
+`;
 
 const Card = styled.div`
   text-align: left;
