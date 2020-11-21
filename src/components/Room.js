@@ -38,4 +38,5 @@ const PictureHolder = styled.div`
   display: flex;
   align-items: center;
   flex: 1;
+  padding: 0 2%;
 `;

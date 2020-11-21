@@ -18,7 +18,6 @@ export const Artwork = ({ galleryId, artworkId }) => {
         <Link to={`/${galleryId}`}>gallery</Link>
       </Breadcrumb>
       <Carousel
-        styles={{ height: "100vh" }}
         autoPlay={false}
         showThumbs={false}
         infiniteLoop={false}
@@ -26,7 +25,7 @@ export const Artwork = ({ galleryId, artworkId }) => {
         showIndicators={false}
         showStatus={false}
         stopOnHover={true}
-        swipeable={true}
+        swipeable={false}
         dynamicHeight={false}
         emulateTouch={true}
         useKeyboardArrows={true}
