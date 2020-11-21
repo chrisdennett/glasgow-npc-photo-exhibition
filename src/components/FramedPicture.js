@@ -2,12 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Image } from "./Image";
 
-// w: 467
-
 export const FramedPicture = ({ width = 700, photo, dir }) => {
   const aspectRatio = photo.aspectRatio;
   const height = width * aspectRatio;
-
   const baseDir = `/img/${dir}/`;
 
   return (

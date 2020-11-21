@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -11,32 +11,76 @@ export const Artwork = ({ galleryId, artworkId }) => {
     (g) => g.galleryId === galleryId
   );
 
+  const onPrevClick = (e) => {
+    const currIndex = parseInt(artworkId);
+
+    navigate(`/${galleryId}/${currIndex - 1}`);
+  };
+
+  const onNextClick = (e) => {
+    const currIndex = parseInt(artworkId);
+
+    navigate(`/${galleryId}/${currIndex + 1}`);
+  };
+
+  console.log("artworkId: ", artworkId);
+
   return (
     <Page>
       <Breadcrumb>
         <Link to={"/"}>HOME</Link>
         <Link to={`/${galleryId}`}>gallery</Link>
       </Breadcrumb>
-      <Carousel
-        autoPlay={false}
-        showThumbs={false}
-        infiniteLoop={false}
-        showArrows={true}
-        showIndicators={false}
-        showStatus={false}
-        stopOnHover={true}
-        swipeable={false}
-        dynamicHeight={false}
-        emulateTouch={true}
-        useKeyboardArrows={true}
-      >
-        {currData.photos.map((photo) => (
-          <Room key={photo.file} photo={photo} dir={currData.directory} />
-        ))}
-      </Carousel>
+      <PrevButton onClick={onPrevClick}>PREV</PrevButton>
+      <NextButton onClick={onNextClick}>NEXT</NextButton>
+      <SliderThing
+        slideIndex={parseInt(artworkId)}
+        dir={currData.directory}
+        photos={currData.photos}
+      />
     </Page>
   );
 };
+
+const SliderThing = ({ slideIndex, dir, photos }) => {
+  return (
+    <Carousel
+      selectedItem={slideIndex}
+      // onChange={onSlideChange}
+      // className="presentation-mode"
+      useKeyboardArrows={true}
+      autoPlay={false}
+      stopOnHover={false}
+      infiniteLoop={false}
+      showThumbs={false}
+      showArrows={false}
+      showIndicators={false}
+      showStatus={false}
+      swipeable={false}
+      dynamicHeight={false}
+      emulateTouch={false}
+    >
+      {photos.map((photo) => (
+        <Room key={photo.file} photo={photo} dir={dir} />
+      ))}
+    </Carousel>
+  );
+};
+
+const PrevButton = styled.button`
+  position: fixed;
+  height: 100vh;
+  z-index: 998;
+  padding: 20px;
+  left: 0;
+`;
+const NextButton = styled.button`
+  position: fixed;
+  height: 100vh;
+  z-index: 998;
+  padding: 20px;
+  right: 0;
+`;
 
 const Breadcrumb = styled.div`
   position: fixed;
