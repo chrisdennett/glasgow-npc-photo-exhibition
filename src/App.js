@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Router } from "@reach/router";
 import { useState } from "react";
 import Select from "react-select";
-import { GalleryFooter } from "./components/GalleryFooter";
+//import { GalleryFooter } from "./components/GalleryFooter";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
 import { Artwork } from "./pages/Artwork";
