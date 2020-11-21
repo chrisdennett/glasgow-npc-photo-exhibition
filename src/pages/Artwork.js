@@ -6,6 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { exhibitionData } from "../data/exhibitionData";
 import { Room } from "../components/Room";
+import { Breadcrumb } from "../components/Breadcrumb";
 
 export const Artwork = ({ galleryId, artworkId }) => {
   const currData = exhibitionData.galleries.find(
@@ -24,10 +25,12 @@ export const Artwork = ({ galleryId, artworkId }) => {
 
   return (
     <Page>
-      <Breadcrumb>
-        <Link to={"/"}>HOME</Link>
-        <Link to={`/${galleryId}`}>gallery</Link>
-      </Breadcrumb>
+      <Breadcrumb
+        trail={[
+          { to: "/", label: "Home" },
+          { to: `/${galleryId}`, label: currData.photographer },
+        ]}
+      />
       <PrevButton onClick={onPrevClick}>
         <IoIosArrowBack />
       </PrevButton>
@@ -71,7 +74,7 @@ const SliderThing = ({ slideIndex, dir, photos }) => {
 const buttProps = `
   position: fixed;
   height: 100vh;
-  z-index: 998;
+  z-index: 1;
   padding: 5px 15px;
   border: none;
   background: none;
@@ -107,11 +110,6 @@ const NextButton = styled.button`
     rgba(50, 50, 50, 0),
     rgba(50, 50, 50, 0.6)
   );
-`;
-
-const Breadcrumb = styled.div`
-  position: fixed;
-  z-index: 999;
 `;
 
 const Page = styled.div`

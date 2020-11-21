@@ -7,9 +7,13 @@ import { GalleryFooter } from "./GalleryFooter";
 export const Room = ({ photo, dir }) => {
   const windowSize = useWindowSize();
   let pictureWidth = 1400;
+  let showFooter = true;
 
   if (windowSize && windowSize.height) {
-    const floorHeight = 150;
+    if (windowSize.height < windowSize.width && windowSize.height < 500) {
+      showFooter = false;
+    }
+    const floorHeight = showFooter ? 150 : 0;
     const topPadding = 30;
     const availableHeight = windowSize.height - (floorHeight + topPadding);
     const widthToFit = availableHeight * photo.hToWRatio;
@@ -21,7 +25,7 @@ export const Room = ({ photo, dir }) => {
       <PictureHolder>
         <FramedPicture width={pictureWidth} photo={photo} dir={dir} />
       </PictureHolder>
-      <GalleryFooter />
+      {showFooter && <GalleryFooter />}
     </RoomOuter>
   );
 };

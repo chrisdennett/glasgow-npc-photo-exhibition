@@ -1,23 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { NpcLogo } from "../NpcLogo";
-import ExternalLink from "./ExternalLink";
+import { NpcLogo } from "./NpcLogo";
 
-export const GalleryHeader = () => {
+export const GalleryHeader = ({ children }) => {
   return (
     <Header>
       <StyledNpcLogo />
-      <h1>Glasgow National Park City</h1>
-      <h2>Photo Exhibition</h2>
-      <p>
-        Some intro blurb about the NPC project should go in here introducing
-        this photo exhibition with a link:{" "}
-        <ExternalLink
-          url="https://www.glasgownationalparkcity.org/"
-          label="
-        Glasgow National Park City Project"
-        />
-      </p>
+      {children}
     </Header>
   );
 };
@@ -33,7 +22,7 @@ const Header = styled.header`
   justify-content: center;
 
   padding: 20px;
-  margin: 20px 10px 0 10px;
+  margin: 60px 10px 0 10px;
 
   h1 {
     color: rgba(0, 0, 0, 0.7);

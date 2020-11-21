@@ -3,22 +3,25 @@ import styled from "styled-components";
 import { BiRightArrow } from "react-icons/bi";
 import { FramedPicture } from "./FramedPicture";
 import { Button } from "./Button";
+import { Boop } from "./Boop";
 
 export const GalleryIntroCard = ({ onOpen, gallery }) => {
   return (
     <div>
-      <Card>
+      <Card onClick={() => onOpen(gallery.galleryId)}>
         <h3>{gallery.photographer}</h3>
         <p>{gallery.intro}</p>
         <PictureHolder>
-          <FramedPicture
-            width={300}
-            dir={gallery.directory}
-            photo={gallery.photos[0]}
-          />
+          <Boop>
+            <FramedPicture
+              width={300}
+              dir={gallery.directory}
+              photo={gallery.photos[0]}
+            />
+          </Boop>
         </PictureHolder>
 
-        <Butt onClick={() => onOpen(gallery.galleryId)}>
+        <Butt>
           Open Gallery <BiRightArrow />
         </Butt>
       </Card>
@@ -32,6 +35,7 @@ const PictureHolder = styled.div`
 `;
 
 const Card = styled.div`
+  cursor: pointer;
   text-align: left;
   display: inline-flex;
   flex-direction: column;

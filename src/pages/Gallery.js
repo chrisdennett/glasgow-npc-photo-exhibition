@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, navigate } from "@reach/router";
+import { navigate } from "@reach/router";
 import { Button } from "../components/Button";
 import { FramedPicture } from "../components/FramedPicture";
 import { exhibitionData } from "../data/exhibitionData";
 import { GalleryFooter } from "../components/GalleryFooter";
+import { Breadcrumb } from "../components/Breadcrumb";
+import { GalleryHeader } from "../components/GalleryHeader";
+import { Boop } from "../components/Boop";
 
 export const Gallery = ({ galleryId }) => {
   const currData = exhibitionData.galleries.find(
@@ -17,16 +20,22 @@ export const Gallery = ({ galleryId }) => {
 
   return (
     <Page>
-      <Link to={"/"}>HOME</Link>
-      <header>
+      <Breadcrumb trail={[{ to: "/", label: "Home" }]} />
+      <GalleryHeader>
         <h1>{currData.photographer}</h1>
         <p>{currData.intro}</p>
         <Button onClick={onEnterGallery}>ENTER</Button>
-      </header>
+      </GalleryHeader>
       <Thumbs>
         {currData.photos.map((photo, index) => (
           <Thumb key={photo.file} onClick={() => onEnterGallery(index)}>
-            <FramedPicture width={300} photo={photo} dir={currData.directory} />
+            <Boop>
+              <FramedPicture
+                width={300}
+                photo={photo}
+                dir={currData.directory}
+              />
+            </Boop>
           </Thumb>
         ))}
       </Thumbs>
@@ -38,6 +47,7 @@ export const Gallery = ({ galleryId }) => {
 const Thumb = styled.div`
   width: 300px;
   padding: 1.5%;
+  cursor: pointer;
 `;
 
 const Thumbs = styled.div`
@@ -49,10 +59,4 @@ const Thumbs = styled.div`
 const Page = styled.div`
   text-align: left;
   flex: 1;
-
-  header {
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-  }
 `;

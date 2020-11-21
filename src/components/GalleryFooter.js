@@ -120,6 +120,7 @@ export const GalleryFooter = () => {
 
 const SelectHolder = styled.div`
   position: fixed;
+  display: none;
   right: 0;
   bottom: 15px;
   width: 300px;

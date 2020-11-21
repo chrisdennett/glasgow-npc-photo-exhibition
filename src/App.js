@@ -111,6 +111,7 @@ function App() {
 export default App;
 
 const SelectHolder = styled.div`
+  display: none;
   position: fixed;
   top: 5px;
   right: 5px;
