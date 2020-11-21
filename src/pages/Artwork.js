@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "@reach/router";
+import { navigate } from "@reach/router";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
