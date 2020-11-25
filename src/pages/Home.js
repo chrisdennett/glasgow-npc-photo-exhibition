@@ -8,7 +8,7 @@ import { ExternalLink } from "../components/ExternalLink";
 
 export const Home = () => {
   const onGalleryOpen = (galleryId) => {
-    navigate(`/${galleryId}`);
+    navigate(`/${galleryId}/0`);
   };
 
   return (

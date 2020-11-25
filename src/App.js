@@ -99,9 +99,10 @@ function App() {
         />
       </SelectHolder>
 
-      <Router>
+      <Router style={{ flex: 1 }}>
         <Home path="/" />
-        <Gallery path="/:galleryId" />
+        {/* <Gallery path="/:galleryId" /> */}
+        <Artwork path="/:galleryId" />
         <Artwork path="/:galleryId/:artworkId" />
       </Router>
     </Container>

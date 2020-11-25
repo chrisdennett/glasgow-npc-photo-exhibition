@@ -7,20 +7,23 @@ import { Carousel } from "react-responsive-carousel";
 import { exhibitionData } from "../data/exhibitionData";
 import { Room } from "../components/Room";
 import { Breadcrumb } from "../components/Breadcrumb";
+import { GalleryIntro } from "../components/GalleryIntro";
 
-export const Artwork = ({ galleryId, artworkId }) => {
+export const Artwork = ({ galleryId, artworkId = 0 }) => {
   const currData = exhibitionData.galleries.find(
     (g) => g.galleryId === galleryId
   );
+  const currIndex = parseInt(artworkId);
+  const totalImgs = currData.photos.length;
 
   const onPrevClick = (e) => {
-    const currIndex = parseInt(artworkId);
-    navigate(`/${galleryId}/${currIndex - 1}`);
+    const newIndex = currIndex > 0 ? currIndex - 1 : totalImgs;
+    navigate(`/${galleryId}/${newIndex}`);
   };
 
   const onNextClick = (e) => {
-    const currIndex = parseInt(artworkId);
-    navigate(`/${galleryId}/${currIndex + 1}`);
+    const newIndex = currIndex === totalImgs ? 0 : currIndex + 1;
+    navigate(`/${galleryId}/${newIndex}`);
   };
 
   return (
@@ -28,7 +31,7 @@ export const Artwork = ({ galleryId, artworkId }) => {
       <Breadcrumb
         trail={[
           { to: "/", label: "Home" },
-          { to: `/${galleryId}`, label: currData.photographer },
+          { to: `/${galleryId}/0`, label: currData.photographer },
         ]}
       />
       <PrevButton onClick={onPrevClick}>
@@ -37,8 +40,10 @@ export const Artwork = ({ galleryId, artworkId }) => {
       <NextButton onClick={onNextClick}>
         <IoIosArrowForward />
       </NextButton>
+
       <SliderThing
-        slideIndex={parseInt(artworkId)}
+        galleryId={galleryId}
+        slideIndex={parseInt(artworkId | 0)}
         dir={currData.directory}
         photos={currData.photos}
       />
@@ -46,7 +51,7 @@ export const Artwork = ({ galleryId, artworkId }) => {
   );
 };
 
-const SliderThing = ({ slideIndex, dir, photos }) => {
+const SliderThing = ({ slideIndex, dir, photos, galleryId }) => {
   return (
     <Carousel
       selectedItem={slideIndex}
@@ -64,6 +69,7 @@ const SliderThing = ({ slideIndex, dir, photos }) => {
       dynamicHeight={false}
       emulateTouch={false}
     >
+      <GalleryIntro galleryId={galleryId} />
       {photos.map((photo) => (
         <Room key={photo.file} photo={photo} dir={dir} />
       ))}

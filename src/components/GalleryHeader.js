@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { NpcLogo } from "./NpcLogo";
 
-export const GalleryHeader = ({ children }) => {
+export const GalleryHeader = ({ children, style }) => {
   return (
-    <Header>
+    <Header style={style}>
       <StyledNpcLogo />
       {children}
     </Header>
