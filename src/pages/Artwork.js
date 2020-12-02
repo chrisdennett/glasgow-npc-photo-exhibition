@@ -3,7 +3,6 @@ import { navigate } from "@reach/router";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import { exhibitionData } from "../data/exhibitionData";
 import { Room } from "../components/Room";
 import { Breadcrumb } from "../components/Breadcrumb";
@@ -13,8 +12,9 @@ export const Artwork = ({ galleryId, artworkId = 0 }) => {
   const currData = exhibitionData.galleries.find(
     (g) => g.galleryId === galleryId
   );
-  const currIndex = parseInt(artworkId);
   const totalImgs = currData.photos.length;
+  let currIndex = parseInt(artworkId);
+  if (currIndex > totalImgs - 1) currIndex = totalImgs - 1;
 
   const onPrevClick = (e) => {
     const newIndex = currIndex > 0 ? currIndex - 1 : totalImgs;
@@ -22,9 +22,12 @@ export const Artwork = ({ galleryId, artworkId = 0 }) => {
   };
 
   const onNextClick = (e) => {
-    const newIndex = currIndex === totalImgs ? 0 : currIndex + 1;
+    const newIndex = currIndex >= totalImgs - 1 ? 0 : currIndex + 1;
+
     navigate(`/${galleryId}/${newIndex}`);
   };
+
+  const photoId = parseInt(currIndex | 0);
 
   return (
     <Page>
@@ -41,39 +44,16 @@ export const Artwork = ({ galleryId, artworkId = 0 }) => {
         <IoIosArrowForward />
       </NextButton>
 
-      <SliderThing
-        galleryId={galleryId}
-        slideIndex={parseInt(artworkId | 0)}
-        dir={currData.directory}
-        photos={currData.photos}
-      />
-    </Page>
-  );
-};
+      {photoId === 0 && <GalleryIntro galleryId={galleryId} />}
 
-const SliderThing = ({ slideIndex, dir, photos, galleryId }) => {
-  return (
-    <Carousel
-      selectedItem={slideIndex}
-      // onChange={onSlideChange}
-      // className="presentation-mode"
-      useKeyboardArrows={true}
-      autoPlay={false}
-      stopOnHover={false}
-      infiniteLoop={false}
-      showThumbs={false}
-      showArrows={false}
-      showIndicators={false}
-      showStatus={false}
-      swipeable={false}
-      dynamicHeight={false}
-      emulateTouch={false}
-    >
-      <GalleryIntro galleryId={galleryId} />
-      {photos.map((photo) => (
-        <Room key={photo.file} photo={photo} dir={dir} />
-      ))}
-    </Carousel>
+      {photoId > 0 && (
+        <Room
+          key={currData.photos[photoId].file}
+          photo={currData.photos[photoId]}
+          dir={currData.directory}
+        />
+      )}
+    </Page>
   );
 };
 

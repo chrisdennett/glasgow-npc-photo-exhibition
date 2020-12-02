@@ -26,38 +26,13 @@ export const Gallery = ({ galleryId }) => {
         <h1>{currData.photographer}</h1>
         <p>{currData.intro}</p>
         <Boop>
-          <Button onClick={onEnterGallery}>ENTER</Button>
+          <Button onClick={onEnterGallery}>ENTER55</Button>
         </Boop>
       </GalleryHeader>
-      {/* <Thumbs>
-        {currData.photos.map((photo, index) => (
-          <Thumb key={photo.file} onClick={() => onEnterGallery(index)}>
-            <Boop>
-              <FramedPicture
-                width={300}
-                photo={photo}
-                dir={currData.directory}
-              />
-            </Boop>
-          </Thumb>
-        ))}
-      </Thumbs> */}
       <GalleryFooter />
     </Page>
   );
 };
-
-// const Thumb = styled.div`
-//   width: 300px;
-//   padding: 1.5%;
-//   cursor: pointer;
-// `;
-
-// const Thumbs = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-// `;
 
 const Page = styled.div`
   text-align: left;
