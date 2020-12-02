@@ -12,22 +12,21 @@ export const Artwork = ({ galleryId, artworkId = 0 }) => {
   const currData = exhibitionData.galleries.find(
     (g) => g.galleryId === galleryId
   );
-  const totalImgs = currData.photos.length;
+  const totalRooms = currData.photos.length;
   let currIndex = parseInt(artworkId);
-  if (currIndex > totalImgs - 1) currIndex = totalImgs - 1;
+  if (currIndex > totalRooms) currIndex = totalRooms;
 
-  const onPrevClick = (e) => {
-    const newIndex = currIndex > 0 ? currIndex - 1 : totalImgs;
+  const onPrevClick = () => {
+    const newIndex = currIndex > 0 ? currIndex - 1 : totalRooms;
     navigate(`/${galleryId}/${newIndex}`);
   };
 
-  const onNextClick = (e) => {
-    const newIndex = currIndex >= totalImgs - 1 ? 0 : currIndex + 1;
-
+  const onNextClick = () => {
+    const newIndex = currIndex >= totalRooms ? 0 : currIndex + 1;
     navigate(`/${galleryId}/${newIndex}`);
   };
 
-  const photoId = parseInt(currIndex | 0);
+  const roomId = parseInt(currIndex | 0);
 
   return (
     <Page>
@@ -44,12 +43,12 @@ export const Artwork = ({ galleryId, artworkId = 0 }) => {
         <IoIosArrowForward />
       </NextButton>
 
-      {photoId === 0 && <GalleryIntro galleryId={galleryId} />}
+      {roomId === 0 && <GalleryIntro galleryId={galleryId} />}
 
-      {photoId > 0 && (
+      {roomId > 0 && (
         <Room
-          key={currData.photos[photoId].file}
-          photo={currData.photos[photoId]}
+          key={currData.photos[roomId - 1].file}
+          photo={currData.photos[roomId - 1]}
           dir={currData.directory}
         />
       )}
