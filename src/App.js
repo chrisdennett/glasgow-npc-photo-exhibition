@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { Router } from "@reach/router";
 import { useState } from "react";
 import Select from "react-select";
-//import { GalleryFooter } from "./components/GalleryFooter";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
-import { Artwork } from "./pages/Artwork";
 
 const bgOptions = [
   {
@@ -102,8 +100,8 @@ function App() {
       <Router style={{ flex: 1 }}>
         <Home path="/" />
         {/* <Gallery path="/:galleryId" /> */}
-        <Artwork path="/:galleryId" />
-        <Artwork path="/:galleryId/:artworkId" />
+        <Gallery path="/:galleryId" />
+        <Gallery path="/:galleryId/:artworkId" />
       </Router>
     </Container>
   );

@@ -1,6 +1,57 @@
-import React, { useState } from "react";
-import Select from "react-select";
+import React from "react";
 import styled from "styled-components";
+
+export const GalleryFooter = () => {
+  const currBg = bgOptions[0];
+  return (
+    <div>
+      <SkirtingBoard />
+      <Footer bg={`url(/img/tiles-floor/${currBg.img})`} />
+    </div>
+  );
+};
+
+const Footer = styled.footer`
+  min-height: 60px;
+  background: ${(props) => (props.bg ? props.bg : "whitesmoke")};
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4) inset;
+  /* width: 200vw; */
+`;
+
+const SkirtingBoard = () => {
+  return (
+    <div>
+      <BoardTop></BoardTop>
+      <Board></Board>
+    </div>
+  );
+};
+
+const BoardTop = styled.div`
+  min-height: 9px;
+  background: whitesmoke;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgb(214, 214, 214);
+  background: linear-gradient(
+    0deg,
+    rgba(214, 214, 214, 1) 0%,
+    rgba(255, 255, 255, 1) 85%,
+    rgba(255, 255, 255, 1) 100%
+  );
+`;
+
+const Board = styled.div`
+  min-height: 30px;
+  background: whitesmoke;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(210, 210, 210, 1) 0%,
+    rgba(225, 225, 225, 1) 50%,
+    rgba(205, 205, 205, 1) 100%
+  );
+`;
 
 const bgOptions = [
   {
@@ -99,71 +150,3 @@ const bgOptions = [
     label: "Wood-2756b.jpg",
   },
 ];
-
-export const GalleryFooter = () => {
-  const [currBg, setCurrBg] = useState(bgOptions[0]);
-  return (
-    <div>
-      <SelectHolder>
-        <Select
-          menuPlacement="top"
-          options={bgOptions}
-          value={currBg}
-          onChange={(s) => setCurrBg(s)}
-        />
-      </SelectHolder>
-      <SkirtingBoard />
-      <Footer bg={currBg ? `url(/img/tiles-floor/${currBg.img})` : ""}></Footer>
-    </div>
-  );
-};
-
-const SelectHolder = styled.div`
-  position: fixed;
-  display: none;
-  right: 0;
-  bottom: 15px;
-  width: 300px;
-`;
-
-const Footer = styled.footer`
-  min-height: 60px;
-  background: ${(props) => (props.bg ? props.bg : "whitesmoke")};
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4) inset;
-  /* width: 200vw; */
-`;
-
-const SkirtingBoard = () => {
-  return (
-    <div>
-      <BoardTop></BoardTop>
-      <Board></Board>
-    </div>
-  );
-};
-
-const BoardTop = styled.div`
-  min-height: 9px;
-  background: whitesmoke;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background: rgb(214, 214, 214);
-  background: linear-gradient(
-    0deg,
-    rgba(214, 214, 214, 1) 0%,
-    rgba(255, 255, 255, 1) 85%,
-    rgba(255, 255, 255, 1) 100%
-  );
-`;
-
-const Board = styled.div`
-  min-height: 30px;
-  background: whitesmoke;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(210, 210, 210, 1) 0%,
-    rgba(225, 225, 225, 1) 50%,
-    rgba(205, 205, 205, 1) 100%
-  );
-`;

@@ -1,46 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 import { useWindowSize } from "../hooks/useWindowSize";
-import { FramedPicture } from "./FramedPicture";
 import { GalleryFooter } from "./GalleryFooter";
 
-export const Room = ({ photo, dir }) => {
+export const Room = () => {
   const windowSize = useWindowSize();
-  let pictureWidth = 1400;
   let showFooter = true;
-
-  if (windowSize && windowSize.height) {
-    if (windowSize.height < windowSize.width && windowSize.height < 500) {
-      showFooter = false;
-    }
-    const floorHeight = showFooter ? 150 : 0;
-    const topPadding = 30;
-    const availableHeight = windowSize.height - (floorHeight + topPadding);
-    const widthToFit = availableHeight * photo.hToWRatio;
-    pictureWidth = widthToFit;
+  if (windowSize.height < windowSize.width && windowSize.height < 500) {
+    showFooter = false;
   }
 
   return (
     <RoomOuter>
-      <PictureHolder>
-        <FramedPicture width={pictureWidth} photo={photo} dir={dir} />
-      </PictureHolder>
-      {showFooter && <GalleryFooter />}
+      {showFooter && (
+        <FooterHolder>
+          <GalleryFooter />
+        </FooterHolder>
+      )}
     </RoomOuter>
   );
 };
 
 const RoomOuter = styled.div`
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  min-height: 100vh;
 `;
 
-const PictureHolder = styled.div`
-  max-height: 100%;
-  display: flex;
-  align-items: center;
-  flex: 1;
-  padding: 0 2%;
+const FooterHolder = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
