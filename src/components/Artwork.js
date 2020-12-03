@@ -12,10 +12,6 @@ export const Artwork = ({
   direction = 1,
   showingFooter,
 }) => {
-  // use intro on zero index
-
-  console.log("showingFooter: ", showingFooter);
-
   return (
     <Outer>
       <AnimatePresence initial={false} custom={direction}>
