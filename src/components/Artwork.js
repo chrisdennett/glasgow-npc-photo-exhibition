@@ -1,19 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { GalleryIntro } from "../components/GalleryIntro";
-import { FramedPicture } from "../components/FramedPicture";
+
+import { GalleryIntro } from "./GalleryIntro";
+import { FramedPicture } from "./FramedPicture";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Artwork = ({ galleryData, currArtworkIndex, direction = 1 }) => {
+export const Artwork = ({
+  pictureWidth,
+  galleryData,
+  photo,
+  direction = 1,
+  showingFooter,
+}) => {
   // use intro on zero index
-  const photo =
-    currArtworkIndex > 0 ? galleryData.photos[currArtworkIndex - 1] : null;
+
+  console.log("showingFooter: ", showingFooter);
 
   return (
     <Outer>
       <AnimatePresence initial={false} custom={direction}>
         {!photo && (
           <PictureHolder
+            showFooter={showingFooter}
             key={"intro"}
             custom={direction}
             variants={variants}
@@ -27,6 +35,7 @@ export const Artwork = ({ galleryData, currArtworkIndex, direction = 1 }) => {
         {photo && (
           <PictureHolder
             key={photo.file}
+            showFooter={showingFooter}
             custom={direction}
             variants={variants}
             initial="enter"
@@ -34,7 +43,7 @@ export const Artwork = ({ galleryData, currArtworkIndex, direction = 1 }) => {
             exit="exit"
           >
             <FramedPicture
-              width={700}
+              pictureWidth={pictureWidth}
               photo={photo}
               dir={galleryData.directory}
             />
@@ -79,7 +88,7 @@ const PictureHolder = styled(motion.div)`
   top: 0;
   left: 0;
   right: 0;
-  bottom: 130px;
+  bottom: ${(props) => (props.showFooter ? 130 : 0)}px;
   display: flex;
   align-items: center;
   justify-content: center;

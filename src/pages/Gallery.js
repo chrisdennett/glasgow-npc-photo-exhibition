@@ -3,10 +3,9 @@ import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { exhibitionData } from "../data/exhibitionData";
-import { Room } from "../components/Room";
 import { Breadcrumb } from "../components/Breadcrumb";
-import { Artwork } from "./Artwork";
 import usePrevious from "../hooks/usePrevious";
+import { Exhibit } from "../components/Exhibit";
 
 // deals with navigation and current artwork
 export const Gallery = ({ galleryId, artworkId = 0 }) => {
@@ -54,33 +53,14 @@ export const Gallery = ({ galleryId, artworkId = 0 }) => {
         <IoIosArrowForward />
       </NextButton>
 
-      <Room />
-      <Artwork
+      <Exhibit
         galleryData={currGalleryData}
-        currArtworkIndex={currArtworkIndex}
+        artworkIndex={currArtworkIndex}
         direction={direction}
       />
     </Page>
   );
 };
-
-// const getGalleryLayoutProps = (windowSize, photo) => {
-//   let pictureWidth = 1400;
-//   let showFooter = true;
-//   if (windowSize.height < windowSize.width && windowSize.height < 500) {
-//     showFooter = false;
-//   }
-//   const floorHeight = showFooter ? 150 : 0;
-//   const topPadding = 30;
-//   const availableHeight = windowSize.height - (floorHeight + topPadding);
-//   const widthToFit = availableHeight * photo.hToWRatio;
-//   pictureWidth = widthToFit;
-
-//   return {
-//     pictureWidth,
-//     showFooter,
-//   };
-// };
 
 const buttProps = `
   cursor: pointer;
@@ -138,17 +118,5 @@ const Page = styled.div`
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
-  }
-
-  // ensure the carousel fills full height
-  .carousel-root,
-  .carousel,
-  .slider-wrapper,
-  .slider {
-    height: 100%;
-  }
-
-  .carousel .slide {
-    background: none;
   }
 `;

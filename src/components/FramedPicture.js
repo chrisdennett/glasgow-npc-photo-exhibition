@@ -2,24 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { Image } from "./Image";
 
-export const FramedPicture = ({ width = 700, photo, dir }) => {
+export const FramedPicture = ({ pictureWidth = 700, photo, dir }) => {
   const aspectRatio = photo.aspectRatio;
-  const height = width * aspectRatio;
+  const height = pictureWidth * aspectRatio;
   const baseDir = `/img/${dir}/`;
 
   return (
-    <Frame maxWidth={width}>
+    <Frame maxWidth={pictureWidth}>
       <Image
-        width={width}
+        width={pictureWidth}
         height={height}
         placeholder={`${baseDir}tiny/${photo.file}`}
         src={`${baseDir}large/${photo.file}`}
-        sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+        sizes={`(max-width: ${pictureWidth}px) 100vw, ${pictureWidth}px`}
         srcSetData={{
           srcSet: `${baseDir}small/${photo.file} 300w,
             ${baseDir}medium/${photo.file} 800w,
             ${baseDir}large/${photo.file} 1400w`,
-          sizes: `(max-width: ${width}px) 100vw, ${width}px`,
+          sizes: `(max-width: ${pictureWidth}px) 100vw, ${pictureWidth}px`,
         }}
       />
     </Frame>
