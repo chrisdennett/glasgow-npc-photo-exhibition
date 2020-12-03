@@ -57,6 +57,8 @@ export const Gallery = ({ galleryId, artworkId = 0 }) => {
         galleryData={currGalleryData}
         artworkIndex={currArtworkIndex}
         direction={direction}
+        onNext={onNextClick}
+        onPrev={onPrevClick}
       />
     </Page>
   );

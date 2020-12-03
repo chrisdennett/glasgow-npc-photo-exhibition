@@ -2,7 +2,13 @@ import { Room } from "./Room";
 import { Artwork } from "./Artwork";
 import { useWindowSize } from "../hooks/useWindowSize";
 
-export const Exhibit = ({ galleryData, artworkIndex, direction }) => {
+export const Exhibit = ({
+  galleryData,
+  artworkIndex,
+  direction,
+  onNext,
+  onPrev,
+}) => {
   const windowSize = useWindowSize();
   let pictureWidth = 700;
   const photo = artworkIndex > 0 ? galleryData.photos[artworkIndex - 1] : null;
@@ -31,6 +37,8 @@ export const Exhibit = ({ galleryData, artworkIndex, direction }) => {
         photo={photo}
         direction={direction}
         showingFooter={showingFooter}
+        onNext={onNext}
+        onPrev={onPrev}
       />
     </>
   );

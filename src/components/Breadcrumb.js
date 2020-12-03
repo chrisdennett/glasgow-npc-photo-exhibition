@@ -26,7 +26,7 @@ const Inner = styled.div`
 const Holder = styled.div`
   position: fixed;
   top: 0;
-  z-index: 5;
+  z-index: 999;
   margin-left: 20px;
   display: flex;
   align-items: center;

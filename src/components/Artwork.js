@@ -11,6 +11,8 @@ export const Artwork = ({
   photo,
   direction = 1,
   showingFooter,
+  onNext,
+  onPrev,
 }) => {
   return (
     <Outer>
@@ -37,6 +39,22 @@ export const Artwork = ({
             initial="enter"
             animate="center"
             exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
+
+              if (swipe < -swipeConfidenceThreshold) {
+                onNext();
+              } else if (swipe > swipeConfidenceThreshold) {
+                onPrev();
+              }
+            }}
           >
             <FramedPicture
               pictureWidth={pictureWidth}
@@ -69,6 +87,10 @@ const variants = {
       opacity: 0,
     };
   },
+};
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
 };
 
 const Outer = styled.div`
