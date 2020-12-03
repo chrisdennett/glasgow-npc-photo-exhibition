@@ -4,24 +4,42 @@ import { GalleryIntro } from "../components/GalleryIntro";
 import { FramedPicture } from "../components/FramedPicture";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Artwork = ({ galleryId, photoData, dir, direction = 1 }) => {
-  const showIntro = false;
+export const Artwork = ({ galleryData, currArtworkIndex, direction = 1 }) => {
+  // use intro on zero index
+  const photo =
+    currArtworkIndex > 0 ? galleryData.photos[currArtworkIndex - 1] : null;
 
   return (
     <Outer>
-      {showIntro === 0 && <GalleryIntro galleryId={galleryId} />}
-
       <AnimatePresence initial={false} custom={direction}>
-        <PictureHolder
-          key={photoData.file}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          <FramedPicture width={700} photo={photoData} dir={dir} />
-        </PictureHolder>
+        {!photo && (
+          <PictureHolder
+            key={"intro"}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            <GalleryIntro galleryId={galleryData.galleryId} />
+          </PictureHolder>
+        )}
+        {photo && (
+          <PictureHolder
+            key={photo.file}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            <FramedPicture
+              width={700}
+              photo={photo}
+              dir={galleryData.directory}
+            />
+          </PictureHolder>
+        )}
       </AnimatePresence>
     </Outer>
   );
@@ -61,5 +79,8 @@ const PictureHolder = styled(motion.div)`
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

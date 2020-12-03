@@ -8,32 +8,23 @@ export const FramedPicture = ({ width = 700, photo, dir }) => {
   const baseDir = `/img/${dir}/`;
 
   return (
-    <PictureHolder targetWidth={width}>
-      <Frame maxWidth={width}>
-        <Image
-          width={width}
-          height={height}
-          placeholder={`${baseDir}tiny/${photo.file}`}
-          src={`${baseDir}large/${photo.file}`}
-          sizes={`(max-width: ${width}px) 100vw, ${width}px`}
-          srcSetData={{
-            srcSet: `${baseDir}small/${photo.file} 300w,
+    <Frame maxWidth={width}>
+      <Image
+        width={width}
+        height={height}
+        placeholder={`${baseDir}tiny/${photo.file}`}
+        src={`${baseDir}large/${photo.file}`}
+        sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+        srcSetData={{
+          srcSet: `${baseDir}small/${photo.file} 300w,
             ${baseDir}medium/${photo.file} 800w,
             ${baseDir}large/${photo.file} 1400w`,
-            sizes: `(max-width: ${width}px) 100vw, ${width}px`,
-          }}
-        />
-      </Frame>
-    </PictureHolder>
+          sizes: `(max-width: ${width}px) 100vw, ${width}px`,
+        }}
+      />
+    </Frame>
   );
 };
-
-const PictureHolder = styled.div`
-  min-width: 250px;
-  width: 100%;
-  text-align: center;
-  /* padding: 20px 0px; */
-`;
 
 const Frame = styled.div`
   max-width: ${(props) => props.maxWidth}px;

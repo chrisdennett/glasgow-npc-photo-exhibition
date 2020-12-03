@@ -12,11 +12,11 @@ import usePrevious from "../hooks/usePrevious";
 export const Gallery = ({ galleryId, artworkId = 0 }) => {
   const prevArtworkId = usePrevious(parseInt(artworkId, 0));
 
-  const currData = exhibitionData.galleries.find(
+  const currGalleryData = exhibitionData.galleries.find(
     (g) => g.galleryId === galleryId
   );
 
-  const totalPhotos = currData.photos.length - 1;
+  const totalPhotos = currGalleryData.photos.length;
   let currArtworkIndex = parseInt(artworkId);
   if (currArtworkIndex > totalPhotos) currArtworkIndex = totalPhotos;
   let direction = currArtworkIndex < prevArtworkId ? -1 : 1;
@@ -28,8 +28,6 @@ export const Gallery = ({ galleryId, artworkId = 0 }) => {
   if (prevArtworkId === 0 && currArtworkIndex === totalPhotos) {
     direction = -1;
   }
-
-  const currPhotoData = currData.photos[currArtworkIndex];
 
   const onPrevClick = () => {
     const newIndex = currArtworkIndex > 0 ? currArtworkIndex - 1 : totalPhotos;
@@ -46,7 +44,7 @@ export const Gallery = ({ galleryId, artworkId = 0 }) => {
       <Breadcrumb
         trail={[
           { to: "/", label: "Home" },
-          { to: `/${galleryId}/0`, label: currData.photographer },
+          { to: `/${galleryId}/0`, label: currGalleryData.photographer },
         ]}
       />
       <PrevButton onClick={onPrevClick}>
@@ -58,9 +56,8 @@ export const Gallery = ({ galleryId, artworkId = 0 }) => {
 
       <Room />
       <Artwork
-        galleryId={galleryId}
-        dir={currData.directory}
-        photoData={currPhotoData}
+        galleryData={currGalleryData}
+        currArtworkIndex={currArtworkIndex}
         direction={direction}
       />
     </Page>
