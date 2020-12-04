@@ -11,6 +11,7 @@ export const Artwork = ({
   photo,
   direction = 1,
   showingFooter,
+  showPeople,
   onNext,
   onPrev,
 }) => {
@@ -41,6 +42,8 @@ export const Artwork = ({
 
   return (
     <Outer>
+      {showingFooter && <FloorShadow />}
+
       <AnimatePresence initial={false} custom={direction}>
         {!photo && (
           <PictureHolder key={"intro"} {...props}>
@@ -54,6 +57,17 @@ export const Artwork = ({
               photo={photo}
               dir={galleryData.directory}
             />
+            {showPeople && (
+              <>
+                <PersonImg
+                  src={"/img/exhibit-props/woman-standing-1-darker_179x450.png"}
+                />
+                <PersonImg
+                  style={{ left: 0 }}
+                  src={"/img/exhibit-props/people-walking-1-darker_336x440.png"}
+                />
+              </>
+            )}
           </PictureHolder>
         )}
       </AnimatePresence>
@@ -86,6 +100,29 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
+const PersonImg = styled.img`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+`;
+
+const FloorShadow = styled.div`
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 0.7) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  right: 0;
+`;
+
 const Outer = styled.div`
   position: fixed;
   top: 0;
@@ -99,7 +136,8 @@ const PictureHolder = styled(motion.div)`
   top: 0;
   left: 0;
   right: 0;
-  bottom: ${(props) => (props.showFooter ? 130 : 0)}px;
+  bottom: 0;
+  padding-bottom: ${(props) => (props.showFooter ? 130 : 0)}px;
   display: flex;
   align-items: center;
   justify-content: center;

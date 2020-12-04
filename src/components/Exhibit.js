@@ -13,10 +13,15 @@ export const Exhibit = ({
   let pictureWidth = 700;
   const photo = artworkIndex > 0 ? galleryData.photos[artworkIndex - 1] : null;
   let showingFooter = true;
+  let showPeople = false;
 
   if (windowSize && windowSize.height) {
     if (windowSize.height < windowSize.width && windowSize.height < 500) {
       showingFooter = false;
+    }
+
+    if (windowSize.height > 700 && windowSize.width > 1000) {
+      showPeople = true;
     }
 
     if (photo) {
@@ -36,6 +41,7 @@ export const Exhibit = ({
         galleryData={galleryData}
         photo={photo}
         direction={direction}
+        showPeople={showPeople}
         showingFooter={showingFooter}
         onNext={onNext}
         onPrev={onPrev}

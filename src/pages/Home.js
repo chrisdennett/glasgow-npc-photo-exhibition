@@ -1,4 +1,3 @@
-import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { GalleryFooter } from "../components/GalleryFooter";
 import { GalleryHeader } from "../components/GalleryHeader";
@@ -6,9 +5,9 @@ import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
 import { ExternalLink } from "../components/ExternalLink";
 
-export const Home = () => {
-  const onGalleryOpen = (galleryId) => {
-    navigate(`/${galleryId}/0`);
+export const Home = ({ onGalleryOpen }) => {
+  const onOpen = (galleryId) => {
+    onGalleryOpen(galleryId);
   };
 
   return (
@@ -30,7 +29,7 @@ export const Home = () => {
         {exhibitionData.galleries.map((gallery) => (
           <GalleryIntroCard
             key={gallery.galleryId}
-            onOpen={onGalleryOpen}
+            onOpen={onOpen}
             gallery={gallery}
           />
         ))}

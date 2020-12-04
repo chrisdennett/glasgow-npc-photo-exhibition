@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "@reach/router";
 import { MdArrowForward } from "react-icons/md";
 import styled from "styled-components";
+import { Button } from "./Button";
 
-export const Breadcrumb = ({ trail }) => {
+export const Breadcrumb = ({ trail, goHome }) => {
   if (!trail) return null;
 
   return (
     <Holder>
+      <Button onClick={goHome}>HOME</Button>
+      <MdArrowForward style={{ marginLeft: 10 }} />
       {trail.map((crumb, index) => (
         <Inner key={index}>
           <Link to={crumb.to}>{crumb.label}</Link>

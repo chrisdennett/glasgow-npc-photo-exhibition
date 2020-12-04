@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Router } from "@reach/router";
-import { useState } from "react";
-import Select from "react-select";
+import { navigate, Router } from "@reach/router";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
+import useSound from "use-sound";
+import ambience from "./sounds/gallery-sounds-1min.mp3";
 
 const bgOptions = [
   {
@@ -85,37 +85,38 @@ const bgOptions = [
 ];
 
 function App() {
-  const [currBg, setCurrBg] = useState(bgOptions[0]);
+  const [play, { sound, isPlaying, stop }] = useSound(ambience);
+
+  const onGalleryOpen = (galleryId) => {
+    if (isPlaying) {
+      stop();
+    }
+
+    sound.loop(true);
+    sound.volume(0.8);
+    play();
+
+    navigate(`/${galleryId}/0`);
+  };
+
+  const goHome = () => {
+    stop();
+    navigate(`/`);
+  };
 
   return (
-    <Container bg={currBg ? `url(/img/bgs/${currBg.img})` : ""}>
-      <SelectHolder>
-        <Select
-          options={bgOptions}
-          value={currBg}
-          onChange={(s) => setCurrBg(s)}
-        />
-      </SelectHolder>
-
+    <Container bg={`url(/img/bgs/${bgOptions[0].img})`}>
       <Router style={{ flex: 1 }}>
-        <Home path="/" />
+        <Home path="/" onGalleryOpen={onGalleryOpen} />
         {/* <Gallery path="/:galleryId" /> */}
-        <Gallery path="/:galleryId" />
-        <Gallery path="/:galleryId/:artworkId" />
+        <Gallery path="/:galleryId" goHome={goHome} />
+        <Gallery path="/:galleryId/:artworkId" goHome={goHome} />
       </Router>
     </Container>
   );
 }
 
 export default App;
-
-const SelectHolder = styled.div`
-  display: none;
-  position: fixed;
-  top: 5px;
-  right: 5px;
-  width: 230px;
-`;
 
 const Container = styled.div`
   text-align: center;

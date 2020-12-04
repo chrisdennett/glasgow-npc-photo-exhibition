@@ -8,7 +8,7 @@ import usePrevious from "../hooks/usePrevious";
 import { Exhibit } from "../components/Exhibit";
 
 // deals with navigation and current artwork
-export const Gallery = ({ galleryId, artworkId = 0 }) => {
+export const Gallery = ({ galleryId, artworkId = 0, goHome }) => {
   const prevArtworkId = usePrevious(parseInt(artworkId, 0));
 
   const currGalleryData = exhibitionData.galleries.find(
@@ -41,10 +41,8 @@ export const Gallery = ({ galleryId, artworkId = 0 }) => {
   return (
     <Page>
       <Breadcrumb
-        trail={[
-          { to: "/", label: "Home" },
-          { to: `/${galleryId}/0`, label: currGalleryData.photographer },
-        ]}
+        goHome={goHome}
+        trail={[{ to: `/${galleryId}/0`, label: currGalleryData.photographer }]}
       />
       <PrevButton onClick={onPrevClick}>
         <IoIosArrowBack />
