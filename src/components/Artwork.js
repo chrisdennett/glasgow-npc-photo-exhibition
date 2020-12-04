@@ -14,65 +14,41 @@ export const Artwork = ({
   onNext,
   onPrev,
 }) => {
+  const props = {
+    showFooter: showingFooter,
+    custom: direction,
+    variants: variants,
+    initial: "enter",
+    animate: "center",
+    exit: "exit",
+    transition: {
+      x: { type: "spring", stiffness: 300, damping: 30 },
+      opacity: { duration: 1 },
+    },
+    drag: "x",
+    dragConstraints: { left: 0, right: 0 },
+    dragElastic: 1,
+    onDragEnd: (e, { offset, velocity }) => {
+      console.log("offset: ", offset);
+      const swipe = swipePower(offset.x, velocity.x);
+      if (swipe < -swipeConfidenceThreshold) {
+        onNext();
+      } else if (swipe > swipeConfidenceThreshold) {
+        onPrev();
+      }
+    },
+  };
+
   return (
     <Outer>
       <AnimatePresence initial={false} custom={direction}>
         {!photo && (
-          <PictureHolder
-            showFooter={showingFooter}
-            key={"intro"}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              console.log("offset: ", offset);
-              const swipe = swipePower(offset.x, velocity.x);
-              if (swipe < -swipeConfidenceThreshold) {
-                onNext();
-              } else if (swipe > swipeConfidenceThreshold) {
-                onPrev();
-              }
-            }}
-          >
+          <PictureHolder key={"intro"} {...props}>
             <GalleryIntro galleryId={galleryData.galleryId} />
           </PictureHolder>
         )}
         {photo && (
-          <PictureHolder
-            key={photo.file}
-            showFooter={showingFooter}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              console.log("offset: ", offset);
-              const swipe = swipePower(offset.x, velocity.x);
-
-              if (swipe < -swipeConfidenceThreshold) {
-                onNext();
-              } else if (swipe > swipeConfidenceThreshold) {
-                onPrev();
-              }
-            }}
-          >
+          <PictureHolder key={photo.file} {...props}>
             <FramedPicture
               pictureWidth={pictureWidth}
               photo={photo}
@@ -88,7 +64,7 @@ export const Artwork = ({
 const variants = {
   enter: (direction) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 1900 : -1900,
       opacity: 0,
     };
   },
@@ -100,7 +76,7 @@ const variants = {
   exit: (direction) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 1900 : -1900,
       opacity: 0,
     };
   },
