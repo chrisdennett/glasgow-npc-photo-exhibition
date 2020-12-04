@@ -21,7 +21,7 @@ export const Exhibit = ({
 
     if (photo) {
       const floorHeight = showingFooter ? 150 : 0;
-      const topPadding = 30;
+      const topPadding = windowSize.height > 500 ? 110 : 30;
       const availableHeight = windowSize.height - (floorHeight + topPadding);
       const widthToFit = availableHeight * photo.hToWRatio;
       pictureWidth = widthToFit;
