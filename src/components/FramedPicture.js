@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Image } from "./Image";
 
 export const FramedPicture = ({ pictureWidth = 700, photo, dir }) => {
-  const aspectRatio = photo.aspectRatio;
+  const aspectRatio = photo.wToHRatio;
   const height = pictureWidth * aspectRatio;
   const baseDir = `/img/${dir}/`;
 

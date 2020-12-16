@@ -6,11 +6,13 @@ import { Button } from "./Button";
 import { Boop } from "./Boop";
 
 export const GalleryIntroCard = ({ onOpen, gallery }) => {
+  const excerpt = gallery.intro.slice(0, 150).concat("…");
+
   return (
     <div>
       <Card onClick={() => onOpen(gallery.galleryId)}>
         <h3>{gallery.photographer}</h3>
-        <p>{gallery.intro}</p>
+        <p>{excerpt}</p>
         <PictureHolder>
           <Boop>
             <FramedPicture
