@@ -20,7 +20,7 @@ export const Exhibit = ({
       showingFooter = false;
     }
 
-    if (windowSize.height > 700 && windowSize.width > 1000) {
+    if (windowSize.height > 500 && windowSize.width > 800) {
       showPeople = true;
     }
 
