@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { navigate, Router } from "@reach/router";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
-import useSound from "use-sound";
-import ambience from "./sounds/gallery-sounds-1min.mp3";
+// import useSound from "use-sound";
+// import ambience from "./sounds/gallery-sounds-1min.mp3";
 
 const bgOptions = [
   {
@@ -85,22 +85,22 @@ const bgOptions = [
 ];
 
 function App() {
-  const [play, { sound, isPlaying, stop }] = useSound(ambience);
+  // const [play, { sound, isPlaying, stop }] = useSound(ambience);
 
   const onGalleryOpen = (galleryId) => {
-    if (isPlaying) {
-      stop();
-    }
+    // if (isPlaying) {
+    //   stop();
+    // }
 
-    sound.loop(true);
-    sound.volume(0.8);
-    play();
+    // sound.loop(true);
+    // sound.volume(0.8);
+    // play();
 
     navigate(`/${galleryId}/0`);
   };
 
   const goHome = () => {
-    stop();
+    // stop();
     navigate(`/`);
   };
 
