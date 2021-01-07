@@ -137,6 +137,7 @@ const PictureHolder = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
+  /* padding-top: 60px; */
   padding-bottom: ${(props) => (props.showFooter ? 130 : 0)}px;
   display: flex;
   align-items: center;

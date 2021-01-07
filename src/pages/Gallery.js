@@ -44,12 +44,15 @@ export const Gallery = ({ galleryId, artworkId = 0, goHome }) => {
         goHome={goHome}
         trail={[{ to: `/${galleryId}/0`, label: currGalleryData.photographer }]}
       />
-      <PrevButton onClick={onPrevClick}>
-        <IoIosArrowBack />
-      </PrevButton>
-      <NextButton onClick={onNextClick}>
-        <IoIosArrowForward />
-      </NextButton>
+
+      <nav>
+        <PrevButton onClick={onPrevClick}>
+          <IoIosArrowBack /> PREVIOUS
+        </PrevButton>
+        <NextButton onClick={onNextClick}>
+          NEXT <IoIosArrowForward />
+        </NextButton>
+      </nav>
 
       <Exhibit
         galleryData={currGalleryData}
@@ -61,48 +64,6 @@ export const Gallery = ({ galleryId, artworkId = 0, goHome }) => {
     </Page>
   );
 };
-
-const buttProps = `
-  cursor: pointer;
-  position: fixed;
-  height: 100vh;
-  z-index: 100;
-  padding: 5px 15px;
-  border: none;
-  background: none;
-  opacity: 0.8;
-  outline: none;
-  font-size: 24px;
-
-  :focus {
-    opacity: 1;
-    border: none;
-  }
-  :hover {
-    opacity: 1;
-  }
-
-  transition: opacity 0.5s;
-}`;
-
-const PrevButton = styled.button`
-  ${buttProps}
-  left: 0;
-  background-image: linear-gradient(
-    to right,
-    rgba(50, 50, 50, 0.6),
-    rgba(50, 50, 50, 0)
-  );
-`;
-const NextButton = styled.button`
-  ${buttProps}
-  right: 0;
-  background-image: linear-gradient(
-    to right,
-    rgba(50, 50, 50, 0),
-    rgba(50, 50, 50, 0.6)
-  );
-`;
 
 const Page = styled.div`
   text-align: left;
@@ -119,4 +80,53 @@ const Page = styled.div`
     max-width: 500px;
     margin: 0 auto;
   }
+
+  nav {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const buttProps = `
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 60px;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  background: none;
+  opacity: 0.8;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px #000;
+
+  svg{
+    height: 24px;
+    width: 24px;
+  }
+
+  :focus {
+    opacity: 1;
+    border: none;
+  }
+  :hover {
+    opacity: 1;
+  }
+
+  transition: opacity 0.5s;
+}`;
+
+const PrevButton = styled.button`
+  ${buttProps}
+`;
+const NextButton = styled.button`
+  ${buttProps}
 `;
