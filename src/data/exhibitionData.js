@@ -3,8 +3,15 @@ export const exhibitionData = {
     {
       photographer: "Emma Taylor",
       galleryId: "emma-taylor",
-      intro:
-        "Emma is a recent sustainable development graduate living in the Southside of Glasgow with her two preschoolers. An amateur photographer primarily capturing and sharing the biodiversity that her local parks and woodlands possess. From the start of the initial lockdown, her family set out and continues to work towards their John Muir Award for conservation. This includes identifying species throughout Castlemilk park. When not volunteering, King's park is a favourite haunt for the family. Here is where the children have space to run, climb, play and picnic. Her photos aim to highlight the importance Glasgow's parks have on the wellbeing of local families and biodiversity. She chose these specific photos to highlight how green, healthy and wild Glasgow really is. They are all taken within Castlemilk and King's park, yet she stresses, the vast majority of Glasgow's green space holds similar qualities and should be nationally celebrated.",
+      intro: `
+      
+      <p>Emma is a recent sustainable development graduate living in the Southside of Glasgow with her two preschoolers. </p>
+       
+      <p>An amateur photographer primarily capturing and sharing the biodiversity that her local parks and woodlands possess. From the start of the initial lockdown, her family set out and continues to work towards their John Muir Award for conservation. This includes identifying species throughout Castlemilk park. </p>
+       
+      <p>When not volunteering, King's park is a favourite haunt for the family. Here is where the children have space to run, climb, play and picnic. Her photos aim to highlight the importance Glasgow's parks have on the wellbeing of local families and biodiversity.</p>
+       
+      <p>She chose these specific photos to highlight how green, healthy and wild Glasgow really is. They are all taken within Castlemilk and King's park, yet she stresses, the vast majority of Glasgow's green space holds similar qualities and should be nationally celebrated.</p>`,
       directory: "emma-taylor",
       photos: [
         {

@@ -6,17 +6,18 @@ import { Button } from "./Button";
 import { Boop } from "./Boop";
 
 export const GalleryIntroCard = ({ onOpen, gallery }) => {
-  const excerpt = gallery.intro.slice(0, 150).concat("…");
+  const excerpt = gallery.intro.slice(0, 100).concat("…");
 
   return (
     <div>
       <Card onClick={() => onOpen(gallery.galleryId)}>
         <h3>{gallery.photographer}</h3>
-        <p>{excerpt}</p>
+        <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
         <PictureHolder>
           <Boop>
             <FramedPicture
               width={300}
+              maxHeight={300}
               dir={gallery.directory}
               photo={gallery.photos[0]}
             />
@@ -34,6 +35,7 @@ export const GalleryIntroCard = ({ onOpen, gallery }) => {
 const PictureHolder = styled.div`
   width: 100%;
   padding: 20px 0 20px 0;
+  text-align: center;
 `;
 
 const Card = styled.div`
