@@ -28,31 +28,34 @@ const SkirtingBoard = () => {
 
 const BoardTop = styled.div`
   min-height: 9px;
-  background: whitesmoke;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background: rgb(220, 220, 220);
+  background: rgb(100, 100, 100);
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 15%,
-    rgba(220, 220, 220, 1) 100%
+    rgb(210, 210, 210) 0%,
+    rgb(190, 190, 190) 50%,
+    rgb(120, 120, 120) 100%
   );
 `;
 
 const Board = styled.div`
   min-height: 30px;
-  background: whitesmoke;
-  background: rgb(220, 220, 220);
+  background: rgb(100, 100, 100);
   background: linear-gradient(
     to bottom,
-    rgba(205, 205, 205, 1) 0%,
-    rgba(245, 245, 245, 1) 5%,
-    rgba(220, 220, 220, 1) 100%
+    rgb(210, 210, 210) 0%,
+    rgb(190, 190, 190) 20%,
+    rgb(100, 100, 100) 100%
   );
 `;
 
 const bgOptions = [
+  {
+    img: "parquet_angled.png",
+    value: "Parquet Seamless Texture #6826.jpg",
+    label: "Parquet Seamless Texture #6826.jpg",
+  },
   {
     img: "parquet_400x400.jpg",
     value: "Parquet Seamless Texture #6826.jpg",
