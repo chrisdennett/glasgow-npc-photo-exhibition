@@ -15,7 +15,6 @@ const Footer = styled.footer`
   min-height: 60px;
   background: ${(props) => (props.bg ? props.bg : "whitesmoke")};
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4) inset;
-  /* width: 200vw; */
 `;
 
 const SkirtingBoard = () => {
@@ -32,24 +31,24 @@ const BoardTop = styled.div`
   background: whitesmoke;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background: rgb(214, 214, 214);
+  background: rgb(220, 220, 220);
   background: linear-gradient(
-    0deg,
-    rgba(214, 214, 214, 1) 0%,
-    rgba(255, 255, 255, 1) 85%,
-    rgba(255, 255, 255, 1) 100%
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(220, 220, 220, 1) 100%
   );
 `;
 
 const Board = styled.div`
   min-height: 30px;
   background: whitesmoke;
-  background: rgb(255, 255, 255);
+  background: rgb(220, 220, 220);
   background: linear-gradient(
-    0deg,
-    rgba(210, 210, 210, 1) 0%,
-    rgba(225, 225, 225, 1) 50%,
-    rgba(205, 205, 205, 1) 100%
+    to bottom,
+    rgba(205, 205, 205, 1) 0%,
+    rgba(245, 245, 245, 1) 5%,
+    rgba(220, 220, 220, 1) 100%
   );
 `;
 

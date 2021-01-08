@@ -30,7 +30,6 @@ export const Artwork = ({
     dragConstraints: { left: 0, right: 0 },
     dragElastic: 1,
     onDragEnd: (e, { offset, velocity }) => {
-      console.log("offset: ", offset);
       const swipe = swipePower(offset.x, velocity.x);
       if (swipe < -swipeConfidenceThreshold) {
         onNext();
@@ -137,7 +136,7 @@ const PictureHolder = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  /* padding-top: 60px; */
+  padding-top: ${(props) => (props.showFooter ? 10 : 0)}px;
   padding-bottom: ${(props) => (props.showFooter ? 130 : 0)}px;
   display: flex;
   align-items: center;

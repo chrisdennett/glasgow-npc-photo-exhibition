@@ -31,10 +31,10 @@ const Frame = styled.div`
   width: 100%;
   background-color: whitesmoke; // mount colour
   border: solid 1.2vmin #eee;
-  border-top-color: rgb(80, 80, 80); // lightest
-  border-left-color: rgb(60, 60, 60);
-  border-right-color: rgb(40, 40, 40);
-  border-bottom-color: rgb(20, 20, 20); // darkest
+  border-top-color: rgb(40, 40, 40); // lightest
+  border-left-color: rgb(30, 30, 30);
+  border-right-color: rgb(20, 20, 20);
+  border-bottom-color: rgb(10, 10, 10); // darkest
   border-radius: 2px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) inset,
     0 5px 10px 5px rgba(0, 0, 0, 0.25);

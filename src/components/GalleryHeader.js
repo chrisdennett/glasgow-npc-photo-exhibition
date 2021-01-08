@@ -47,7 +47,7 @@ const Header = styled.header`
   }
 
   p {
-    max-width: 760px;
+    max-width: 800px;
     text-align: left;
   }
 `;

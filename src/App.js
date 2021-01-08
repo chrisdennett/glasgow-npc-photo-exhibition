@@ -103,6 +103,7 @@ function App() {
     // stop();
     navigate(`/`);
   };
+  // <Container bg={`url(/img/bgs/${bgOptions[0].img})`}>
 
   return (
     <Container bg={`url(/img/bgs/${bgOptions[0].img})`}>

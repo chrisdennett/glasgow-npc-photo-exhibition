@@ -11,19 +11,26 @@ export const Room = () => {
   }
 
   return (
-    <RoomOuter>
+    <Wall>
       {showFooter && (
         <FooterHolder>
           <GalleryFooter />
         </FooterHolder>
       )}
-    </RoomOuter>
+    </Wall>
   );
 };
 
-const RoomOuter = styled.div`
+const Wall = styled.div`
   position: relative;
   min-height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("/img/bgs/red-brick_200x200.jpg");
 `;
 
 const FooterHolder = styled.div`
