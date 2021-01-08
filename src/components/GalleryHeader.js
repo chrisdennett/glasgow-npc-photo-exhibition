@@ -28,13 +28,10 @@ const Header = styled.header`
     color: rgba(0, 0, 0, 0.7);
     font-size: calc(24px + 2vmin);
     line-height: 1em;
-    /* font-size: 1.7em; */
     margin: 0;
     letter-spacing: 1px;
     font-weight: 800;
     font-family: "Poppins", sans-serif;
-    /* font-family: "Londrina Sketch", cursive; */
-    /* font-family: "Big Shoulders Stencil Display", cursive; */
   }
 
   h2 {
@@ -44,10 +41,5 @@ const Header = styled.header`
     font-weight: 200;
     font-family: "Poppins", sans-serif;
     padding-bottom: 20px;
-  }
-
-  p {
-    max-width: 800px;
-    text-align: left;
   }
 `;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { GalleryFooter } from "../components/GalleryFooter";
 import { GalleryHeader } from "../components/GalleryHeader";
 import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
@@ -48,7 +47,25 @@ export const Home = ({ onGalleryOpen }) => {
         ))}
       </Cards>
 
-      <GalleryFooter />
+      {/* <GalleryFooter /> */}
+
+      <SiteFooter>
+        <p>
+          ©2021{" "}
+          <ExternalLink
+            url="https://www.glasgownationalparkcity.org/"
+            label="
+        Glasgow National Park City"
+          />
+        </p>
+        <span>
+          SITE BY:{" "}
+          <ExternalLink
+            url={"https://artfly.io/chris-dennett"}
+            label={"Chris Dennett"}
+          />
+        </span>
+      </SiteFooter>
     </>
   );
 };
@@ -62,4 +79,27 @@ const Cards = styled.div`
 
 const IntroP = styled.p`
   margin: 10px 0;
+  text-align: center;
+  max-width: 800px;
+`;
+
+const SiteFooter = styled.div`
+  background: rgba(0, 0, 0, 0.7);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  p,
+  a,
+  span {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 22px;
+  }
+
+  span {
+    font-size: 16px;
+  }
 `;
