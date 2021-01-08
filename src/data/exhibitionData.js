@@ -79,7 +79,7 @@ export const exhibitionData = {
     {
       photographer: "Glasgow Deliveroo",
       galleryId: "glasgow-deliveroo",
-      intro: "Intro blurb for Glasgow Deliveroo goes in here.",
+      intro: "<p>Intro blurb for Glasgow Deliveroo goes in here.</p>",
       directory: "glasgow-deliveroo",
       photos: [
         {
@@ -165,8 +165,7 @@ export const exhibitionData = {
     {
       photographer: "Alisdair Woodburn",
       galleryId: "alisdair-woodburn",
-      intro:
-        "Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. Intro blurb for Alisdair Woodburn goes in here. ",
+      intro: "<p>Intro blurb for Alisdair Woodburn goes in here</p>",
       directory: "alisdair-woodburn",
       photos: [
         {
@@ -287,8 +286,7 @@ export const exhibitionData = {
     {
       photographer: "Liam Paterson",
       galleryId: "liam-paterson",
-      intro:
-        "All the info you need about Liam Paterson and his pictures. All the info you need about Liam Paterson and his pictures. All the info you need about Liam Paterson and his pictures. All the info you need about Liam Paterson and his pictures.",
+      intro: "<p>Intro blurb for Liam Paterson goes here</p>",
       directory: "liam-paterson",
       photos: [
         {

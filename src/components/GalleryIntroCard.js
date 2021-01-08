@@ -6,7 +6,11 @@ import { Button } from "./Button";
 import { Boop } from "./Boop";
 
 export const GalleryIntroCard = ({ onOpen, gallery }) => {
-  const excerpt = gallery.intro.slice(0, 100).concat("…");
+  const maxCharacters = 100;
+  let excerpt = gallery.intro.slice(0, maxCharacters);
+  if (maxCharacters < gallery.intro.length) {
+    excerpt = excerpt.concat("…");
+  }
 
   return (
     <div>
