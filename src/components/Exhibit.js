@@ -12,21 +12,10 @@ export const Exhibit = ({
   const windowSize = useWindowSize();
   let pictureWidth = 700;
   const photo = artworkIndex > 0 ? galleryData.photos[artworkIndex - 1] : null;
-  let showingFooter = true;
-  let showPeople = true;
 
   if (windowSize && windowSize.height) {
-    // if (windowSize.height < windowSize.width && windowSize.height < 500) {
-    //   showingFooter = false;
-    // }
-
-    // if (windowSize.height > 500 && windowSize.width > 800) {
-    //   showPeople = true;
-    // }
-
     if (photo) {
-      const floorHeight = showingFooter ? 150 : 0;
-      // const topNavHeight = 60;
+      const floorHeight = windowSize.height > 500 ? 150 : 110;
       const topPadding = windowSize.height > 500 ? 110 : 30;
       const availableHeight = windowSize.height - (floorHeight + topPadding);
       const widthToFit = availableHeight * photo.hToWRatio;
@@ -36,15 +25,13 @@ export const Exhibit = ({
 
   return (
     <>
-      <Room showingFooter={showingFooter} />
+      <Room windowSize={windowSize} />
       <Artwork
         pictureWidth={pictureWidth}
         galleryData={galleryData}
         photo={photo}
         direction={direction}
-        showPeople={showPeople}
         windowSize={windowSize}
-        showingFooter={showingFooter}
         onNext={onNext}
         onPrev={onPrev}
       />

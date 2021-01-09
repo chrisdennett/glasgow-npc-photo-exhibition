@@ -1,36 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const options = [
-  "woman-standing-1-darker_179x450.png",
-  "people-walking-1-darker_336x440.png",
-  "people-sitting-1.png",
-  "man-1.png",
-  "woman-2.png",
-  "woman-3.png",
-];
-
 export const PeopleAndProps = ({ windowSize }) => {
-  const maxHeight = windowSize.height ? windowSize.height / 2.3 : 500;
+  const [person, setPerson] = useState(null);
+
+  const dir = "/img/exhibit-props/";
+
+  useEffect(() => {
+    const person = getRandomPerson(windowSize);
+    setPerson(person);
+  }, [windowSize]);
+
+  if (!windowSize.width) return null;
 
   return (
     <>
-      <PersonImg
-        height={maxHeight}
-        src={"/img/exhibit-props/woman-standing-1-darker_179x450.png"}
-      />
-      <PersonImg
-        style={{ left: 0 }}
-        height={maxHeight}
-        src={"/img/exhibit-props/people-walking-1-darker_336x440.png"}
-      />
+      {person && (
+        <PersonImg
+          style={{ left: person.xPos }}
+          height={person.height}
+          src={dir + person.file}
+        />
+      )}
     </>
   );
 };
 
+// scale 1 = 2m
+const options = [
+  {
+    file: "woman-standing-1-darker_179x450.png",
+    scale: 1,
+    origWidth: 179,
+    origHeight: 450,
+  },
+  {
+    file: "people-walking-1-darker_336x440.png",
+    scale: 1,
+    origWidth: 336,
+    origHeight: 440,
+  },
+  {
+    file: "people-sitting-1.png",
+    scale: 0.65,
+    origWidth: 647,
+    origHeight: 418,
+  },
+  { file: "man-1.png", scale: 1, origWidth: 142, origHeight: 439 },
+  { file: "woman-2.png", scale: 1, origWidth: 123, origHeight: 410 },
+  { file: "woman-3.png", scale: 1, origWidth: 125, origHeight: 414 },
+];
+
+function getRandomPerson(windowSize) {
+  let maxHeight = windowSize.height / 2.3;
+  const randIndex = Math.floor(Math.random() * options.length);
+  const person = options[randIndex];
+
+  const personHeight = maxHeight * person.scale;
+  const hToWRatio = personHeight / person.origHeight;
+  const personWidth = person.origWidth * hToWRatio;
+
+  const xPos = Math.random() * (windowSize.width - personWidth);
+
+  return { ...person, height: personHeight, xPos };
+}
+
 const PersonImg = styled.img`
   position: fixed;
   bottom: 0;
-  right: 0;
   z-index: 999;
 `;

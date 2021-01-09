@@ -51,6 +51,18 @@ const Intro = styled.div`
     font-weight: normal;
     color: rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-height: 500px) {
+    padding: 10px 0;
+
+    h1 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 12px;
+    }
+  }
 `;
 
 const IntroText = styled.div`
@@ -66,6 +78,12 @@ const IntroText = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
 
   p {
+    margin: 0 0 10px 0;
+  }
+
+  @media (max-height: 500px) {
+    padding: 15px;
+
     margin: 0 0 10px 0;
   }
 

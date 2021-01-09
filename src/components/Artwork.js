@@ -11,14 +11,11 @@ export const Artwork = ({
   galleryData,
   photo,
   direction = 1,
-  showingFooter,
-  showPeople,
   windowSize,
   onNext,
   onPrev,
 }) => {
   const props = {
-    showFooter: showingFooter,
     custom: direction,
     variants: variants,
     initial: "enter",
@@ -43,7 +40,7 @@ export const Artwork = ({
 
   return (
     <Outer>
-      {showingFooter && <FloorShadow />}
+      <FloorShadow />
 
       <AnimatePresence initial={false} custom={direction}>
         {!photo && (
@@ -58,7 +55,8 @@ export const Artwork = ({
               photo={photo}
               dir={galleryData.directory}
             />
-            {showPeople && <PeopleAndProps windowSize={windowSize} />}
+
+            <PeopleAndProps windowSize={windowSize} />
           </PictureHolder>
         )}
       </AnimatePresence>
@@ -92,13 +90,6 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-const PersonImg = styled.img`
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
-`;
-
 const FloorShadow = styled.div`
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -129,8 +120,8 @@ const PictureHolder = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  padding-top: ${(props) => (props.showFooter ? 10 : 0)}px;
-  padding-bottom: ${(props) => (props.showFooter ? 130 : 0)}px;
+  padding-top: 10px;
+  padding-bottom: 110px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,22 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { useWindowSize } from "../hooks/useWindowSize";
 import { GalleryFooter } from "./GalleryFooter";
 
-export const Room = () => {
-  const windowSize = useWindowSize();
-  let showFooter = true;
-  if (windowSize.height < windowSize.width && windowSize.height < 500) {
-    showFooter = false;
-  }
-
+export const Room = ({ windowSize }) => {
   return (
     <Wall>
-      {/* {showFooter && ( */}
       <FooterHolder>
-        <GalleryFooter />
+        <GalleryFooter windowSize={windowSize} />
       </FooterHolder>
-      {/* )} */}
     </Wall>
   );
 };
