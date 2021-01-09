@@ -100,6 +100,9 @@ const SiteFooter = styled.div`
   }
 
   span {
-    font-size: 16px;
+    font-size: 18px;
+    a {
+      font-size: 18px;
+    }
   }
 `;
