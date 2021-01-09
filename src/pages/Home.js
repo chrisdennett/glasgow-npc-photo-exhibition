@@ -3,6 +3,7 @@ import { GalleryHeader } from "../components/GalleryHeader";
 import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
 import { ExternalLink } from "../components/ExternalLink";
+import { Ribbon } from "../components/Ribbon";
 
 export const Home = ({ onGalleryOpen }) => {
   const onOpen = (galleryId) => {
@@ -50,6 +51,8 @@ export const Home = ({ onGalleryOpen }) => {
       {/* <GalleryFooter /> */}
 
       <SiteFooter>
+        <Ribbon />
+
         <p>
           ©2021{" "}
           <ExternalLink
