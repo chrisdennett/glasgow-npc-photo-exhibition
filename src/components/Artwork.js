@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { GalleryIntro } from "./GalleryIntro";
 import { FramedPicture } from "./FramedPicture";
 import { motion, AnimatePresence } from "framer-motion";
+import { PeopleAndProps } from "./PeopleAndProps";
 
 export const Artwork = ({
   pictureWidth,
@@ -12,6 +13,7 @@ export const Artwork = ({
   direction = 1,
   showingFooter,
   showPeople,
+  windowSize,
   onNext,
   onPrev,
 }) => {
@@ -56,17 +58,7 @@ export const Artwork = ({
               photo={photo}
               dir={galleryData.directory}
             />
-            {showPeople && (
-              <>
-                <PersonImg
-                  src={"/img/exhibit-props/woman-standing-1-darker_179x450.png"}
-                />
-                <PersonImg
-                  style={{ left: 0 }}
-                  src={"/img/exhibit-props/people-walking-1-darker_336x440.png"}
-                />
-              </>
-            )}
+            {showPeople && <PeopleAndProps windowSize={windowSize} />}
           </PictureHolder>
         )}
       </AnimatePresence>
@@ -94,6 +86,7 @@ const variants = {
     };
   },
 };
+
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;

@@ -12,11 +12,11 @@ export const Room = () => {
 
   return (
     <Wall>
-      {showFooter && (
-        <FooterHolder>
-          <GalleryFooter />
-        </FooterHolder>
-      )}
+      {/* {showFooter && ( */}
+      <FooterHolder>
+        <GalleryFooter />
+      </FooterHolder>
+      {/* )} */}
     </Wall>
   );
 };

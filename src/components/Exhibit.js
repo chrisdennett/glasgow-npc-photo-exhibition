@@ -13,16 +13,16 @@ export const Exhibit = ({
   let pictureWidth = 700;
   const photo = artworkIndex > 0 ? galleryData.photos[artworkIndex - 1] : null;
   let showingFooter = true;
-  let showPeople = false;
+  let showPeople = true;
 
   if (windowSize && windowSize.height) {
-    if (windowSize.height < windowSize.width && windowSize.height < 500) {
-      showingFooter = false;
-    }
+    // if (windowSize.height < windowSize.width && windowSize.height < 500) {
+    //   showingFooter = false;
+    // }
 
-    if (windowSize.height > 500 && windowSize.width > 800) {
-      showPeople = true;
-    }
+    // if (windowSize.height > 500 && windowSize.width > 800) {
+    //   showPeople = true;
+    // }
 
     if (photo) {
       const floorHeight = showingFooter ? 150 : 0;
@@ -43,6 +43,7 @@ export const Exhibit = ({
         photo={photo}
         direction={direction}
         showPeople={showPeople}
+        windowSize={windowSize}
         showingFooter={showingFooter}
         onNext={onNext}
         onPrev={onPrev}
