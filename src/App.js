@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { navigate, Router } from "@reach/router";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
+import { useWindowSize } from "./hooks/useWindowSize";
 // import useSound from "use-sound";
 // import ambience from "./sounds/gallery-sounds-1min.mp3";
 
@@ -85,6 +86,7 @@ const bgOptions = [
 ];
 
 function App() {
+  const windowSize = useWindowSize();
   // const [play, { sound, isPlaying, stop }] = useSound(ambience);
 
   const onGalleryOpen = (galleryId) => {
@@ -103,15 +105,17 @@ function App() {
     // stop();
     navigate(`/`);
   };
-  // <Container bg={`url(/img/bgs/${bgOptions[0].img})`}>
 
   return (
     <Container bg={`url(/img/bgs/${bgOptions[0].img})`}>
       <Router style={{ flex: 1 }}>
         <Home path="/" onGalleryOpen={onGalleryOpen} />
-        {/* <Gallery path="/:galleryId" /> */}
-        <Gallery path="/:galleryId" goHome={goHome} />
-        <Gallery path="/:galleryId/:artworkId" goHome={goHome} />
+        <Gallery
+          path="/:galleryId/:artworkId"
+          goHome={goHome}
+          windowSize={windowSize}
+        />
+        <Gallery path="/:galleryId" goHome={goHome} windowSize={windowSize} />
       </Router>
     </Container>
   );

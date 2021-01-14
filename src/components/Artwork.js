@@ -1,17 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import { GalleryIntro } from "./GalleryIntro";
 import { FramedPicture } from "./FramedPicture";
 import { motion, AnimatePresence } from "framer-motion";
-import { PeopleAndProps } from "./PeopleAndProps";
 
 export const Artwork = ({
   pictureWidth,
   galleryData,
   photo,
   direction = 1,
-  windowSize,
   onNext,
   onPrev,
 }) => {
@@ -30,6 +27,7 @@ export const Artwork = ({
     dragElastic: 1,
     onDragEnd: (e, { offset, velocity }) => {
       const swipe = swipePower(offset.x, velocity.x);
+
       if (swipe < -swipeConfidenceThreshold) {
         onNext();
       } else if (swipe > swipeConfidenceThreshold) {
@@ -40,14 +38,7 @@ export const Artwork = ({
 
   return (
     <Outer>
-      <FloorShadow />
-
       <AnimatePresence initial={false} custom={direction}>
-        {!photo && (
-          <PictureHolder key={"intro"} {...props}>
-            <GalleryIntro galleryId={galleryData.galleryId} />
-          </PictureHolder>
-        )}
         {photo && (
           <PictureHolder key={photo.file} {...props}>
             <FramedPicture
@@ -55,8 +46,6 @@ export const Artwork = ({
               photo={photo}
               dir={galleryData.directory}
             />
-
-            <PeopleAndProps windowSize={windowSize} />
           </PictureHolder>
         )}
       </AnimatePresence>
@@ -90,22 +79,6 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-const FloorShadow = styled.div`
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 0.7) 0%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  right: 0;
-`;
-
 const Outer = styled.div`
   position: fixed;
   top: 0;
@@ -120,8 +93,7 @@ const PictureHolder = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  padding-top: 10px;
-  padding-bottom: 110px;
+  padding: 0 5px 80px 5px;
   display: flex;
   align-items: center;
   justify-content: center;

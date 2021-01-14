@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export const PeopleAndProps = ({ windowSize }) => {
+export const PeopleAndProps = ({ windowSize, artworkIndex }) => {
   const [person, setPerson] = useState(null);
 
   const dir = "/img/exhibit-props/";
 
   useEffect(() => {
+    if (!windowSize || !windowSize.width) return;
     const person = getRandomPerson(windowSize);
     setPerson(person);
-  }, [windowSize]);
-
-  if (!windowSize.width) return null;
+  }, [windowSize, artworkIndex]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
@@ -6,35 +6,52 @@ import { exhibitionData } from "../data/exhibitionData";
 import { Breadcrumb } from "../components/Breadcrumb";
 import usePrevious from "../hooks/usePrevious";
 import { Exhibit } from "../components/Exhibit";
+import { GalleryIntro } from "../components/GalleryIntro";
+import { GalleryTitle } from "../components/GalleryTitle";
 
-// deals with navigation and current artwork
-export const Gallery = ({ galleryId, artworkId = 0, goHome }) => {
+export const Gallery = ({ galleryId, artworkId, goHome, windowSize }) => {
+  const [showIntro, setShowIntro] = useState(true);
+
   const prevArtworkId = usePrevious(parseInt(artworkId, 0));
+
+  // If there's no artwork id redirect to first artwork
+  if (!artworkId) {
+    navigate(`/${galleryId}/0`);
+    return null;
+  }
 
   const currGalleryData = exhibitionData.galleries.find(
     (g) => g.galleryId === galleryId
   );
 
+  // if the galleryId doesn't exist redirect home
+  if (!currGalleryData) {
+    navigate(`/`);
+    return null;
+  }
+
   const totalPhotos = currGalleryData.photos.length;
   let currArtworkIndex = parseInt(artworkId);
-  if (currArtworkIndex > totalPhotos) currArtworkIndex = totalPhotos;
+  if (currArtworkIndex > totalPhotos - 1) currArtworkIndex = totalPhotos - 1;
   let direction = currArtworkIndex < prevArtworkId ? -1 : 1;
   // if going from last to first force right
-  if (prevArtworkId === totalPhotos && currArtworkIndex === 0) {
+  if (prevArtworkId === totalPhotos - 1 && currArtworkIndex === 0) {
     direction = 1;
   }
   // if going from first to last force left
-  if (prevArtworkId === 0 && currArtworkIndex === totalPhotos) {
+  if (prevArtworkId === 0 && currArtworkIndex === totalPhotos - 1) {
     direction = -1;
   }
 
   const onPrevClick = () => {
-    const newIndex = currArtworkIndex > 0 ? currArtworkIndex - 1 : totalPhotos;
+    const newIndex =
+      currArtworkIndex > 0 ? currArtworkIndex - 1 : totalPhotos - 1;
     navigate(`/${galleryId}/${newIndex}`);
   };
 
   const onNextClick = () => {
-    const newIndex = currArtworkIndex >= totalPhotos ? 0 : currArtworkIndex + 1;
+    const newIndex =
+      currArtworkIndex >= totalPhotos - 1 ? 0 : currArtworkIndex + 1;
     navigate(`/${galleryId}/${newIndex}`);
   };
 
@@ -45,22 +62,38 @@ export const Gallery = ({ galleryId, artworkId = 0, goHome }) => {
         trail={[{ to: `/${galleryId}/0`, label: currGalleryData.photographer }]}
       />
 
-      <nav>
-        <PrevButton onClick={onPrevClick}>
-          <IoIosArrowBack /> PREVIOUS
-        </PrevButton>
-        <NextButton onClick={onNextClick}>
-          NEXT <IoIosArrowForward />
-        </NextButton>
-      </nav>
+      {showIntro && (
+        <GalleryIntro
+          currGalleryData={currGalleryData}
+          onEnterGallery={() => setShowIntro(false)}
+        />
+      )}
 
-      <Exhibit
-        galleryData={currGalleryData}
-        artworkIndex={currArtworkIndex}
-        direction={direction}
-        onNext={onNextClick}
-        onPrev={onPrevClick}
-      />
+      {!showIntro && (
+        <>
+          <GalleryTitle
+            title={currGalleryData.photographer}
+            onClick={() => setShowIntro(true)}
+          />
+
+          <Exhibit
+            galleryData={currGalleryData}
+            artworkIndex={currArtworkIndex}
+            direction={direction}
+            onNext={onNextClick}
+            onPrev={onPrevClick}
+            windowSize={windowSize}
+          />
+          <nav>
+            <PrevButton onClick={onPrevClick}>
+              <IoIosArrowBack /> PREV
+            </PrevButton>
+            <NextButton onClick={onNextClick}>
+              NEXT <IoIosArrowForward />
+            </NextButton>
+          </nav>
+        </>
+      )}
     </Page>
   );
 };
@@ -74,6 +107,13 @@ const Page = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("/img/bgs/red-brick_200x200.jpg");
 
   header {
     text-align: center;
@@ -90,6 +130,7 @@ const Page = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
   }
 `;
 

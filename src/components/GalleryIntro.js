@@ -1,27 +1,36 @@
 import React from "react";
-import { navigate } from "@reach/router";
-import { Button } from "../components/Button";
-import { exhibitionData } from "../data/exhibitionData";
+import { Button } from "./Button";
 import styled from "styled-components";
 
-export const GalleryIntro = ({ galleryId }) => {
-  const currData = exhibitionData.galleries.find(
-    (g) => g.galleryId === galleryId
-  );
-
-  const onEnterGallery = () => {
-    navigate(`/${galleryId}/1`);
-  };
-
+export const GalleryIntro = ({ currGalleryData, onEnterGallery }) => {
   return (
-    <Intro>
-      <h2>GALLERY:</h2>
-      <h1>{currData.photographer}</h1>
-      <IntroText dangerouslySetInnerHTML={{ __html: currData.intro }} />
-      <Button onClick={onEnterGallery}>ENTER</Button>
-    </Intro>
+    <Outer>
+      <Intro>
+        <h2>GALLERY:</h2>
+        <h1>{currGalleryData.photographer}</h1>
+        <IntroText
+          dangerouslySetInnerHTML={{ __html: currGalleryData.intro }}
+        />
+        <Button onClick={onEnterGallery}>ENTER</Button>
+      </Intro>
+    </Outer>
   );
 };
+
+const Outer = styled.div`
+  position: relative;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("/img/bgs/red-brick_200x200.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
 
 const Intro = styled.div`
   display: flex;
@@ -29,7 +38,8 @@ const Intro = styled.div`
   align-items: center;
   justify-content: center;
   background: hsl(0, 0%, 95%);
-  margin-top: 60px;
+  max-height: 90%;
+  max-width: 800px;
 
   box-shadow: 0 0 15px rgba(0, 0, 0, 1);
 
@@ -37,7 +47,6 @@ const Intro = styled.div`
 
   border-top: 2px solid white;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  /* border-left: 2px solid rgba(0, 0, 0, 0.3); */
   border-right: 1px solid rgba(0, 0, 0, 0.5);
 
   h1 {
@@ -52,7 +61,7 @@ const Intro = styled.div`
     color: rgba(0, 0, 0, 0.5);
   }
 
-  @media (max-height: 500px) {
+  @media (max-height: 700px) {
     padding: 10px 0;
 
     h1 {
@@ -68,9 +77,8 @@ const Intro = styled.div`
 const IntroText = styled.div`
   margin: 0 0 20px 0;
   max-width: 800px;
-  max-height: 34vh;
+  max-height: 100%;
   overflow-y: auto;
-  margin: 0 0 20px 0;
   padding: 20px;
   /* border: 1px solid rgba(0, 0, 0, 0.1); */
 
@@ -81,7 +89,7 @@ const IntroText = styled.div`
     margin: 0 0 10px 0;
   }
 
-  @media (max-height: 500px) {
+  @media (max-height: 700px) {
     padding: 15px;
 
     margin: 0 0 10px 0;

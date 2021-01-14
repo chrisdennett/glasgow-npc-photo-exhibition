@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export const GalleryFooter = ({ windowSize }) => {
-  const skirtingHeight = windowSize.height ? windowSize.height * 0.05 : 60;
+  const skirtingHeight = windowSize.height ? windowSize.height * 0.04 : 60;
   const currBg = bgOptions[0];
   return (
     <div>
