@@ -15,10 +15,12 @@ export const TopBar = ({
         <NpcLogo />
       </Butt>
       {!introShowing && (
-        <GalleryTitle
-          title={currGalleryData.photographer}
-          onClick={onShowIntro}
-        />
+        <TitleHolder>
+          <GalleryTitle
+            title={currGalleryData.photographer}
+            onClick={onShowIntro}
+          />
+        </TitleHolder>
       )}
     </Holder>
   );
@@ -37,6 +39,12 @@ const Holder = styled.div`
   padding: 10px 0 0 10px;
   display: flex;
   align-items: flex-start;
+`;
+
+const TitleHolder = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
 const Butt = styled.button`
