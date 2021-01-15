@@ -2,81 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 import { FramedPicture } from "./FramedPicture";
-import { motion, AnimatePresence } from "framer-motion";
 
-export const Artwork = ({
-  pictureWidth,
-  galleryData,
-  photo,
-  direction = 1,
-  onNext,
-  onPrev,
-}) => {
-  const props = {
-    custom: direction,
-    variants: variants,
-    initial: "enter",
-    animate: "center",
-    exit: "exit",
-    transition: {
-      x: { type: "spring", stiffness: 300, damping: 30 },
-      opacity: { duration: 1 },
-    },
-    drag: "x",
-    dragConstraints: { left: 0, right: 0 },
-    dragElastic: 1,
-    onDragEnd: (e, { offset, velocity }) => {
-      const swipe = swipePower(offset.x, velocity.x);
-
-      if (swipe < -swipeConfidenceThreshold) {
-        onNext();
-      } else if (swipe > swipeConfidenceThreshold) {
-        onPrev();
-      }
-    },
-  };
-
+export const Artwork = ({ pictureWidth, galleryData, photo }) => {
   return (
     <Outer>
-      <AnimatePresence initial={false} custom={direction}>
-        {photo && (
-          <PictureHolder key={photo.file} {...props}>
-            <FramedPicture
-              pictureWidth={pictureWidth}
-              photo={photo}
-              dir={galleryData.directory}
-            />
-          </PictureHolder>
-        )}
-      </AnimatePresence>
+      <PictureHolder>
+        <FramedPicture
+          pictureWidth={pictureWidth}
+          photo={photo}
+          dir={galleryData.directory}
+        />
+      </PictureHolder>
     </Outer>
   );
-};
-
-const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1900 : -1900,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1900 : -1900,
-      opacity: 0,
-    };
-  },
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
 };
 
 const Outer = styled.div`
@@ -87,7 +25,7 @@ const Outer = styled.div`
   bottom: 0;
 `;
 
-const PictureHolder = styled(motion.div)`
+const PictureHolder = styled.div`
   position: fixed;
   top: 0;
   left: 0;

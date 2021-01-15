@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { GalleryFooter } from "./GalleryFooter";
 import { PeopleAndProps } from "./PeopleAndProps";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Exhibit = ({
   galleryData,
@@ -25,18 +26,46 @@ export const Exhibit = ({
     }
   }, [windowSize, photo.hToWRatio]);
 
+  const props = {
+    custom: direction,
+    variants: variants,
+    initial: "enter",
+    animate: "center",
+    exit: "exit",
+    transition: {
+      x: { type: "spring", stiffness: 300, damping: 30 },
+      opacity: { duration: 1 },
+    },
+    drag: "x",
+    dragConstraints: { left: 0, right: 0 },
+    dragElastic: 1,
+    onDragEnd: (e, { offset, velocity }) => {
+      const swipe = swipePower(offset.x, velocity.x);
+
+      if (swipe < -swipeConfidenceThreshold) {
+        onNext();
+      } else if (swipe > swipeConfidenceThreshold) {
+        onPrev();
+      }
+    },
+  };
+
   return (
     <Wall>
       <>
-        <Artwork
-          pictureWidth={pictureWidth}
-          galleryData={galleryData}
-          photo={photo}
-          direction={direction}
-          windowSize={windowSize}
-          onNext={onNext}
-          onPrev={onPrev}
-        />
+        <AnimatePresence initial={false} custom={direction}>
+          <ArtworkHolder key={photo.file} {...props}>
+            <Artwork
+              pictureWidth={pictureWidth}
+              galleryData={galleryData}
+              photo={photo}
+              direction={direction}
+              windowSize={windowSize}
+              onNext={onNext}
+              onPrev={onPrev}
+            />
+          </ArtworkHolder>
+        </AnimatePresence>
         <PeopleAndProps windowSize={windowSize} artworkIndex={artworkIndex} />
       </>
 
@@ -47,6 +76,14 @@ export const Exhibit = ({
     </Wall>
   );
 };
+
+const ArtworkHolder = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
 
 const Wall = styled.div`
   position: relative;
@@ -82,3 +119,29 @@ const FloorShadow = styled.div`
   left: 0;
   right: 0;
 `;
+
+const variants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1900 : -1900,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1900 : -1900,
+      opacity: 0,
+    };
+  },
+};
+
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
+};
