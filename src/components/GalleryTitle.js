@@ -6,63 +6,55 @@ export const GalleryTitle = ({ title, onClick }) => {
   return (
     <Holder onClick={onClick}>
       <Tab>
-        <h2>GALLERY:</h2>
-        <h1>{title}</h1>
-        <FaInfoCircle />
+        {/* <h2>GALLERY:</h2> */}
+        <h1>
+          {title}{" "}
+          <sup>
+            <FaInfoCircle />
+          </sup>
+        </h1>
       </Tab>
     </Holder>
   );
 };
 
 const Tab = styled.div`
-  background: rgba(0, 0, 0, 0.7);
-  color: whitesmoke;
+  width: 100%;
+  margin-left: 60px;
   text-align: center;
-  padding: 10px 20px;
   border-radius: 10px;
   position: relative;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 
   h1 {
+    color: rgba(255, 255, 255, 0.85);
     margin: 0;
-    font-size: 1.5em;
+    padding-top: 15px;
+    font-size: 2.5em;
     text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: 1em;
-    margin: 0;
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.5);
+    font-family: "Big Shoulders Stencil Text", cursive;
+    max-width: calc(100% - 60px);
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.7);
   }
 
   svg {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 17px;
-    height: 17px;
+    font-size: 0.7em;
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   }
 
-  @media (max-height: 700px) {
+  @media (max-width: 500px) {
     h1 {
-      font-size: 16px;
-    }
-    h2 {
-      font-size: 12px;
+      padding-top: 20px;
+      font-size: 1.7em;
     }
   }
 `;
 
 const Holder = styled.div`
   position: fixed;
-  top: 10px;
-  left: 50px;
+  top: 0;
+  left: 0;
   right: 0;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
 `;
