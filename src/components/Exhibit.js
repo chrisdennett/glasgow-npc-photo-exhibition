@@ -64,9 +64,12 @@ export const Exhibit = ({
               onNext={onNext}
               onPrev={onPrev}
             />
+            <PeopleAndProps
+              windowSize={windowSize}
+              artworkIndex={artworkIndex}
+            />
           </ArtworkHolder>
         </AnimatePresence>
-        <PeopleAndProps windowSize={windowSize} artworkIndex={artworkIndex} />
       </>
 
       <FooterHolder>
