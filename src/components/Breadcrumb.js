@@ -1,33 +1,16 @@
 import React from "react";
-// import { Link } from "@reach/router";
-// import { MdArrowForward } from "react-icons/md";
 import styled from "styled-components";
-// import { Button } from "./Button";
 import { NpcLogo } from "./NpcLogo";
 
-export const Breadcrumb = ({ trail, goHome }) => {
-  if (!trail) return null;
-
+export const Breadcrumb = ({ goHome }) => {
   return (
     <Holder>
       <Butt onClick={goHome}>
         <NpcLogo />
       </Butt>
-      {/* <MdArrowForward style={{ marginLeft: 10 }} />
-      {trail.map((crumb, index) => (
-        <Inner key={index}>
-          <Link to={crumb.to}>{crumb.label}</Link>
-          {index < trail.length - 1 && <MdArrowForward />}
-        </Inner>
-      ))} */}
     </Holder>
   );
 };
-
-// const Inner = styled.div`
-//   display: flex;
-//   align-items: center;
-// `;
 
 const Butt = styled.button`
   cursor: pointer;

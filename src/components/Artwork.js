@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { FramedPicture } from "./FramedPicture";
+import { Plaque } from "./Plaque";
 
 export const Artwork = ({ pictureWidth, galleryData, photo }) => {
   return (
@@ -12,6 +13,9 @@ export const Artwork = ({ pictureWidth, galleryData, photo }) => {
           photo={photo}
           dir={galleryData.directory}
         />
+        {photo.plaque && (
+          <Plaque plaque={photo.plaque} galleryData={galleryData} />
+        )}
       </PictureHolder>
     </Outer>
   );
