@@ -62,7 +62,7 @@ export const Home = ({ onGalleryOpen }) => {
           />
         </p>
         <span>
-          SITE BY:{" "}
+          Site by:{" "}
           <ExternalLink
             url={"https://artfly.io/chris-dennett"}
             label={"Chris Dennett"}
@@ -99,13 +99,30 @@ const SiteFooter = styled.div`
   span {
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
-    font-size: 22px;
+    font-size: 18px;
   }
 
   span {
-    font-size: 18px;
+    font-size: 16px;
     a {
-      font-size: 18px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    p,
+    a,
+    span {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    span {
+      font-size: 14px;
+      a {
+        font-size: 14px;
+      }
     }
   }
 `;

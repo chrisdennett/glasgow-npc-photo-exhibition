@@ -17,6 +17,7 @@ export const ExternalLink = ({
 
 const Link = styled.a`
   color: #ce7c41;
+  text-decoration: none;
 `;
 
 /*
