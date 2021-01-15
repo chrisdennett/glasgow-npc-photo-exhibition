@@ -17,8 +17,8 @@ export const Exhibit = ({
 
   useEffect(() => {
     if (windowSize && windowSize.height) {
-      const floorHeight = windowSize.height > 500 ? 150 : 70;
-      const topPadding = windowSize.height > 500 ? 110 : 40;
+      const floorHeight = windowSize.height > 600 ? 150 : 80;
+      const topPadding = windowSize.height > 600 ? 110 : 80;
       const availableHeight = windowSize.height - (floorHeight + topPadding);
       const widthToFit = availableHeight * photo.hToWRatio;
       setPictureWidth(widthToFit, photo.hToWRatio);

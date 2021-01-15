@@ -1,21 +1,82 @@
 import React from "react";
 import { Button } from "./Button";
 import styled from "styled-components";
+import { SocialLink } from "./SocialMediaLink";
 
 export const GalleryIntro = ({ currGalleryData, onEnterGallery }) => {
   return (
     <Outer>
-      <Intro>
-        <h2>GALLERY:</h2>
-        <h1>{currGalleryData.photographer}</h1>
+      <Intro id="intro">
+        <HeaderBar>
+          <Title>
+            <h2>GALLERY:</h2>
+            <h1>{currGalleryData.photographer}</h1>
+          </Title>
+          <Button onClick={onEnterGallery}>ENTER</Button>
+        </HeaderBar>
+        <LinkBar>
+          {currGalleryData.twitter && (
+            <SocialLink link={currGalleryData.twitter} type={"twitter"} />
+          )}
+          {currGalleryData.instagram && (
+            <SocialLink link={currGalleryData.instagram} type={"instagram"} />
+          )}
+          {currGalleryData.facebook && (
+            <SocialLink link={currGalleryData.facebook} type={"facebook"} />
+          )}
+          {currGalleryData.website && (
+            <SocialLink link={currGalleryData.website} type={"website"} />
+          )}
+        </LinkBar>
         <IntroText
           dangerouslySetInnerHTML={{ __html: currGalleryData.intro }}
         />
-        <Button onClick={onEnterGallery}>ENTER</Button>
       </Intro>
     </Outer>
   );
 };
+
+const HeaderBar = styled.div`
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+
+  button {
+    margin-right: 10px;
+    max-height: 55px;
+  }
+`;
+
+const LinkBar = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 0;
+  margin-top: 5px;
+  border-top: 1px dashed #ddd;
+  svg {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 1034px) and (max-height: 850px) {
+    justify-content: center;
+    padding: 10px 0;
+    a {
+      span {
+        display: none;
+      }
+    }
+  }
+`;
+
+const Title = styled.div`
+  @media (max-width: 1034px) and (max-height: 850px) {
+    padding-left: 80px;
+    padding-top: 10px;
+  }
+`;
 
 const Outer = styled.div`
   position: relative;
@@ -30,6 +91,10 @@ const Outer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  @media (max-width: 1034px) and (max-height: 850px) {
+    align-items: flex-start;
+  }
 `;
 
 const Intro = styled.div`
@@ -38,8 +103,9 @@ const Intro = styled.div`
   align-items: center;
   justify-content: center;
   background: hsl(0, 0%, 95%);
-  max-height: 90%;
+  max-height: 96vh;
   max-width: 800px;
+  margin: 0 20px;
 
   box-shadow: 0 0 15px rgba(0, 0, 0, 1);
 
@@ -50,7 +116,7 @@ const Intro = styled.div`
   border-right: 1px solid rgba(0, 0, 0, 0.5);
 
   h1 {
-    margin: 0 0 20px 0;
+    margin: 0;
     text-transform: uppercase;
   }
 
@@ -61,15 +127,18 @@ const Intro = styled.div`
     color: rgba(0, 0, 0, 0.5);
   }
 
-  @media (max-height: 700px) {
+  @media (max-width: 1034px) and (max-height: 850px) {
     padding: 10px 0;
+    margin: 0;
+    min-height: calc(100vh - 20px);
+    justify-content: flex-start;
 
     h1 {
-      font-size: 16px;
+      font-size: 18px;
       margin-bottom: 10px;
     }
     h2 {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 `;
@@ -89,10 +158,10 @@ const IntroText = styled.div`
     margin: 0 0 10px 0;
   }
 
-  @media (max-height: 700px) {
+  @media (max-width: 1034px) and (max-height: 850px) {
     padding: 15px;
-
-    margin: 0 0 10px 0;
+    height: 100%;
+    margin: 0 0 0 0;
   }
 
   /* width */

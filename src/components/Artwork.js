@@ -93,8 +93,12 @@ const PictureHolder = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 0 5px 80px 5px;
+  padding: 20px 5px 90px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-height: 600px) {
+    padding: 70px 5px 90px 5px;
+  }
 `;

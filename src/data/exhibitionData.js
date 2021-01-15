@@ -1,6 +1,3 @@
-// const facebookUrlStart = "https://www.facebook.com/";
-// const twitterUrlStart = "https://twitter.com/";
-
 export const exhibitionData = {
   galleries: [
     {
@@ -9,7 +6,6 @@ export const exhibitionData = {
       twitter: "Em_taylor17",
       website: "https://emmataylor-17.wixsite.com/mysite",
       intro: `
-      
       <p>Emma is a recent sustainable development graduate living in the Southside of Glasgow with her two preschoolers. </p>
        
       <p>An amateur photographer primarily capturing and sharing the biodiversity that her local parks and woodlands possess. From the start of the initial lockdown, her family set out and continues to work towards their John Muir Award for conservation. This includes identifying species throughout Castlemilk park. </p>
@@ -173,6 +169,7 @@ export const exhibitionData = {
       galleryId: "alisdair-woodburn",
       twitter: "Naburn2",
       facebook: "AlisdairsPhotos",
+      instagram: "alisdairs_photos",
       intro: `<p>Alisdair has been a supporter of the Glasgow National Park City since the beginning.  His photos have been an inspiration since we started and he has been kind enough to allow us to use his photos on our website and now in this exhibition. Alisdair is a prolific photographer of the city and alongside sharing the personality and the humour of the city, many of his photos capture the spectacular natural beauty of sites like the Clyde, Glasgow Green and many of the City's parks and green spaces.  It's no surprise that nearly 4000 people follow his Alisdair's photos facebook page - there you can enjoy many more of his beautiful photos of Glasgow.</p>`,
       directory: "alisdair-woodburn",
       photos: [

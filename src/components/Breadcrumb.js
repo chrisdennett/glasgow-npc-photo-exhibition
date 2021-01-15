@@ -34,7 +34,7 @@ const Butt = styled.button`
   background: whitesmoke;
   border-radius: 20%;
   padding: 7px 7px 3px 7px;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
