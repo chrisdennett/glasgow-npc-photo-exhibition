@@ -71,13 +71,6 @@ const LinkBar = styled.div`
   }
 `;
 
-const Title = styled.div`
-  @media (max-width: 1034px) and (max-height: 850px) {
-    padding-left: 80px;
-    padding-top: 10px;
-  }
-`;
-
 const Outer = styled.div`
   position: relative;
   background-image: linear-gradient(
@@ -97,13 +90,21 @@ const Outer = styled.div`
   }
 `;
 
+const Title = styled.div`
+  @media (max-width: 1034px) and (max-height: 850px) {
+    padding-left: 80px;
+    padding-top: 10px;
+  }
+`;
+
 const Intro = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: hsl(0, 0%, 95%);
-  max-height: 96vh;
+  /* max-height: 96vh; */
+  max-height: 85vh;
   max-width: 800px;
   margin: 0 20px;
 
@@ -155,7 +156,7 @@ const IntroText = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
 
   p {
-    margin: 0 0 10px 0;
+    margin: 0 0 22px 0;
   }
 
   @media (max-width: 1034px) and (max-height: 850px) {

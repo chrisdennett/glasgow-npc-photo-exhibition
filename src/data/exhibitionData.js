@@ -81,7 +81,11 @@ export const exhibitionData = {
       photographer: "Rider Glasgow",
       galleryId: "rider-glasgow",
       twitter: "RiderGlasgow",
-      intro: `<p>We've followed Rider Glasgow on twitter over the last year.  We've loved the photos so were delighted to be allowed to include some in this exhibition.  Rider Glasgow's fantastic twitter profile provides "The (unofficial) view from a Glasgow Deliveroo rider's saddle" and it's this unique perspective which make his photos such a great snapshot of Glasgow. Everything from Friday night streets, to parks and green spaces and the hidden garden's and closes dropping off takeaways the photos really bring the beauty and the personality of Glasgow to life. </p>`,
+      intro: `<p>We've followed Rider Glasgow on twitter over the last year.  We've loved the photos so were delighted to be allowed to include some in this exhibition.
+      </p><p>
+      Rider Glasgow's fantastic twitter profile provides "The (unofficial) view from a Glasgow Deliveroo rider's saddle" and it's this unique perspective which make his photos such a great snapshot of Glasgow. 
+      </p><p>
+      Everything from Friday night streets, to parks and green spaces and the hidden garden's and closes dropping off takeaways the photos really bring the beauty and the personality of Glasgow to life. </p>`,
       directory: "glasgow-deliveroo",
       photos: [
         {
@@ -170,7 +174,11 @@ export const exhibitionData = {
       twitter: "Naburn2",
       facebook: "AlisdairsPhotos",
       instagram: "alisdairs_photos",
-      intro: `<p>Alisdair has been a supporter of the Glasgow National Park City since the beginning.  His photos have been an inspiration since we started and he has been kind enough to allow us to use his photos on our website and now in this exhibition. Alisdair is a prolific photographer of the city and alongside sharing the personality and the humour of the city, many of his photos capture the spectacular natural beauty of sites like the Clyde, Glasgow Green and many of the City's parks and green spaces.  It's no surprise that nearly 4000 people follow his Alisdair's photos facebook page - there you can enjoy many more of his beautiful photos of Glasgow.</p>`,
+      intro: `<p>Alisdair has been a supporter of the Glasgow National Park City since the beginning.  His photos have been an inspiration since we started and he has been kind enough to allow us to use his photos on our website and now in this exhibition. 
+      </p><p>
+      Alisdair is a prolific photographer of the city and alongside sharing the personality and the humour of the city, many of his photos capture the spectacular natural beauty of sites like the Clyde, Glasgow Green and many of the City's parks and green spaces.  
+      </p><p>
+      It's no surprise that nearly 4000 people follow his Alisdair's photos facebook page - there you can enjoy many more of his beautiful photos of Glasgow.</p>`,
       directory: "alisdair-woodburn",
       photos: [
         {
@@ -289,28 +297,36 @@ export const exhibitionData = {
       ],
     },
     {
-      photographer: "Liam Paterson",
+      photographer: "Walk to Work Glasgow (Liam Paterson)",
       galleryId: "liam-paterson",
       twitter: "to_glasgow",
-      intro: `<p>Walk to Work Glasgow (Liam Paterson)
-      I started my Twitter feed as Walk to Work Glasgow in April 2019. I’m fortunate to be able to walk to
-      work mostly along the River Kelvin and through the Botanic Gardens. It was spring and I was  
-      gradually starting to take more notice of the season changing around me as I walked, and often
+      intro: `<p>
+      I started my Twitter feed as Walk to Work Glasgow in April 2019. 
+      </p>
+      <p>
+      I’m fortunate to be able to walk to work mostly along the River Kelvin and through the Botanic Gardens. It was spring and I was gradually starting to take more notice of the season changing around me as I walked, and often
       stopping to take photos with my phone. I was using Twitter at work at the time, so I decided to start
-      my own feed as a daily journal of the walk. The first images were the obvious stuff - sun on the
-      river, tree shadows, pink rhododendrons bursting out - but I wanted to see a bit more detail. I
-      bought a couple of clip-on macro lenses for the phone and then my focus expanded to tiny water
-      droplets on feathers and petals, insects, ice and frost structures, spiders’ webs. I’m fascinated by
-      combinations of colours, shapes and textures and the infinitely varied effects of light.
+      my own feed as a daily journal of the walk. 
+      </p>
+      <p>
+      The first images were the obvious stuff - sun on the river, tree shadows, pink rhododendrons bursting out - but I wanted to see a bit more detail. I
+      bought a couple of clip-on macro lenses for the phone and then my focus expanded to tiny water droplets on feathers and petals, insects, ice and frost structures, spiders’ webs. I’m fascinated by combinations of colours, shapes and textures and the infinitely varied effects of light.
+      </p>
+      <p>
       Rather ironically, I’ve been working from home since last March rather than walking to work, but
       I’ve kept up my daily walks in the park. The fact that Glasgow still has a good network of public
       parks and open spaces will have been a great help to many during the course of the pandemic - it
-      has been much busier along the Kelvin at times in recent months. This period of lockdown has
+      has been much busier along the Kelvin at times in recent months. 
+      </p>
+      <p>
+      This period of lockdown has
       emphasised how important it is for people in such a large city to have access to safe places to
       exercise, to slow down and stop, to just breathe. You can choose to be solitary in a park, or be in
       company - I’ve met a few people from my Twitter feed while taking photos, and I even had
       someone coming over to check I wasn’t having a heart attack while I was kneeling in the wet grass
       getting close-up shots!
+      </p>
+      <p>
       The images I’ve chosen for this exhibition represent a chronological year of walking, from January
       to December. They aren’t obviously ‘photos of Glasgow”, as they are all close-ups - but they show
       the beauty and variety of nature that is always there around us, whether on a dull day or when the
