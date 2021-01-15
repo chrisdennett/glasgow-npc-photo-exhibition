@@ -4,8 +4,6 @@ import styled from "styled-components";
 export const Plaque = ({ plaque, galleryData }) => {
   if (!plaque) return null;
 
-  console.log("galleryData: ", galleryData);
-
   const [title, subtitle] = plaque.split("-");
 
   return (

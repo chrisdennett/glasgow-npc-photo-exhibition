@@ -3,11 +3,10 @@ import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { exhibitionData } from "../data/exhibitionData";
-import { Breadcrumb } from "../components/Breadcrumb";
+import { TopBar } from "../components/TopBar";
 import usePrevious from "../hooks/usePrevious";
 import { Exhibit } from "../components/Exhibit";
 import { GalleryIntro } from "../components/GalleryIntro";
-import { GalleryTitle } from "../components/GalleryTitle";
 
 export const Gallery = ({ galleryId, artworkId, goHome, windowSize }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -57,9 +56,11 @@ export const Gallery = ({ galleryId, artworkId, goHome, windowSize }) => {
 
   return (
     <Page>
-      <Breadcrumb
+      <TopBar
         goHome={goHome}
-        trail={[{ to: `/${galleryId}/0`, label: currGalleryData.photographer }]}
+        currGalleryData={currGalleryData}
+        onShowIntro={() => setShowIntro(true)}
+        introShowing={showIntro}
       />
 
       {showIntro && (
@@ -71,11 +72,6 @@ export const Gallery = ({ galleryId, artworkId, goHome, windowSize }) => {
 
       {!showIntro && (
         <>
-          <GalleryTitle
-            title={currGalleryData.photographer}
-            onClick={() => setShowIntro(true)}
-          />
-
           <Exhibit
             galleryData={currGalleryData}
             artworkIndex={currArtworkIndex}
