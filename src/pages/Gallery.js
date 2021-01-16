@@ -7,9 +7,11 @@ import { TopBar } from "../components/TopBar";
 import usePrevious from "../hooks/usePrevious";
 import { Exhibit } from "../components/Exhibit";
 import { GalleryIntro } from "../components/GalleryIntro";
+import { SideMenu } from "../components/sideMenu/SideMenu";
 
-export const Gallery = ({ galleryId, artworkId, goHome, windowSize }) => {
+export const Gallery = ({ galleryId, artworkId, windowSize }) => {
   const [showIntro, setShowIntro] = useState(true);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   const prevArtworkId = usePrevious(parseInt(artworkId, 0));
 
@@ -57,10 +59,15 @@ export const Gallery = ({ galleryId, artworkId, goHome, windowSize }) => {
   return (
     <Page>
       <TopBar
-        goHome={goHome}
+        openSideBar={() => setIsSideBarOpen(true)}
         currGalleryData={currGalleryData}
         onShowIntro={() => setShowIntro(true)}
         introShowing={showIntro}
+      />
+
+      <SideMenu
+        isOpen={isSideBarOpen}
+        onClose={() => setIsSideBarOpen(false)}
       />
 
       {showIntro && (

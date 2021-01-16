@@ -4,14 +4,14 @@ import { GalleryTitle } from "./GalleryTitle";
 import { NpcLogo } from "./NpcLogo";
 
 export const TopBar = ({
-  goHome,
+  openSideBar,
   currGalleryData,
   onShowIntro,
   introShowing,
 }) => {
   return (
     <Holder iconOnly={introShowing}>
-      <Butt onClick={goHome}>
+      <Butt onClick={openSideBar}>
         <NpcLogo />
       </Butt>
       {!introShowing && (
