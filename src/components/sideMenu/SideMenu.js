@@ -1,6 +1,7 @@
 import { Link } from "@reach/router";
 import React from "react";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiFillCamera } from "react-icons/ai";
+// import { RiGalleryFill } from "react-icons/";
 import styles from "./sideMenu.module.css";
 import { exhibitionData } from "../../data/exhibitionData";
 
@@ -21,11 +22,11 @@ export const SideMenu = ({ isOpen, onClose }) => {
           <AiFillHome /> HOME
         </Link>
 
-        <h2 className={styles.menuHeader}>Photographers:</h2>
+        <h2 className={styles.menuHeader}>Galleries:</h2>
 
         {galleryLinks.map((l) => (
           <Link key={l.link} to={l.link}>
-            {l.label}
+            <AiFillCamera /> {l.label}
           </Link>
         ))}
       </div>

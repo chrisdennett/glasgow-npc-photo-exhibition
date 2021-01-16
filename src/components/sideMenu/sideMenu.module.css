@@ -33,11 +33,18 @@
   text-align: left;
 }
 
+.navList svg {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
 .navList a {
   margin-bottom: 15px;
   color: black;
   text-decoration: none;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .menuHeader {
