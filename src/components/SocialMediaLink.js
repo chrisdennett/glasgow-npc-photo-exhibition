@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FaFacebook, FaInstagram, FaLink, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaLink, FaTwitter } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 export const SocialLink = ({ type, link }) => {
   if (type === "twitter") {
@@ -14,7 +15,7 @@ export const SocialLink = ({ type, link }) => {
   if (type === "instagram") {
     return (
       <Anchor href={instagramUrlStart + link}>
-        <FaInstagram />
+        <RiInstagramFill />
         <span>{`${link}`}</span>
       </Anchor>
     );
@@ -49,4 +50,13 @@ const Anchor = styled.a`
   padding: 0 10px;
   color: #555;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  svg {
+    padding-top: 2px;
+    width: 18px;
+    height: auto;
+    color: #333;
+  }
 `;
