@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { navigate } from "@reach/router";
 import styled from "styled-components";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { exhibitionData } from "../data/exhibitionData";
 import usePrevious from "../hooks/usePrevious";
 import { Exhibit } from "../components/Exhibit";
 import { GalleryIntro } from "../components/GalleryIntro";
 import { GalleryHeader } from "../components/GalleryHeader";
+import { FooterNav } from "../components/footerNav/FooterNav";
 
 export const Gallery = ({ galleryId, artworkId, windowSize }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -54,6 +54,13 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
     navigate(`/${galleryId}/${newIndex}`);
   };
 
+  // Add gallery props to currArtwork object for convenience
+  const currArtwork = {
+    ...currGalleryData.photos[currArtworkIndex],
+    directory: currGalleryData.directory,
+    photographer: currGalleryData.photographer,
+  };
+
   return (
     <Page>
       {showIntro && (
@@ -70,21 +77,18 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
             onShowIntro={() => setShowIntro(true)}
           />
           <Exhibit
-            galleryData={currGalleryData}
-            artworkIndex={currArtworkIndex}
+            currArtwork={currArtwork}
             direction={direction}
             onNext={onNextClick}
             onPrev={onPrevClick}
             windowSize={windowSize}
           />
-          <nav>
-            <PrevButton onClick={onPrevClick}>
-              <IoIosArrowBack /> PREV
-            </PrevButton>
-            <NextButton onClick={onNextClick}>
-              NEXT <IoIosArrowForward />
-            </NextButton>
-          </nav>
+
+          <FooterNav
+            onPrev={onPrevClick}
+            onNext={onNextClick}
+            plaque={currArtwork.plaque}
+          />
         </>
       )}
     </Page>
@@ -113,54 +117,4 @@ const Page = styled.div`
     max-width: 500px;
     margin: 0 auto;
   }
-
-  nav {
-    position: fixed;
-    z-index: 100;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
-`;
-
-const buttProps = `
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  height: 60px;
-  color: white;
-  padding: 5px 15px;
-  border: none;
-  background: none;
-  opacity: 0.8;
-  outline: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px #000;
-
-  svg{
-    height: 24px;
-    width: 24px;
-  }
-
-  :focus {
-    opacity: 1;
-    border: none;
-  }
-  :hover {
-    opacity: 1;
-  }
-
-  transition: opacity 0.5s;
-}`;
-
-const PrevButton = styled.button`
-  ${buttProps}
-`;
-const NextButton = styled.button`
-  ${buttProps}
 `;

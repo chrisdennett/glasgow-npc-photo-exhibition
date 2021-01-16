@@ -6,25 +6,23 @@ import { PeopleAndProps } from "./PeopleAndProps";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const Exhibit = ({
-  galleryData,
-  artworkIndex,
+  currArtwork,
   direction,
   onNext,
   onPrev,
   windowSize,
 }) => {
   const [pictureWidth, setPictureWidth] = useState(700);
-  const photo = galleryData.photos[artworkIndex];
 
   useEffect(() => {
     if (windowSize && windowSize.height) {
       const floorHeight = windowSize.height > 600 ? 150 : 80;
       const topPadding = windowSize.height > 600 ? 110 : 80;
       const availableHeight = windowSize.height - (floorHeight + topPadding);
-      const widthToFit = availableHeight * photo.hToWRatio;
-      setPictureWidth(widthToFit, photo.hToWRatio);
+      const widthToFit = availableHeight * currArtwork.hToWRatio;
+      setPictureWidth(widthToFit, currArtwork.hToWRatio);
     }
-  }, [windowSize, photo.hToWRatio]);
+  }, [windowSize, currArtwork.hToWRatio]);
 
   const props = {
     custom: direction,
@@ -54,20 +52,16 @@ export const Exhibit = ({
     <Wall>
       <>
         <AnimatePresence initial={false} custom={direction}>
-          <ArtworkHolder key={photo.file} {...props}>
+          <ArtworkHolder key={currArtwork.file} {...props}>
             <Artwork
               pictureWidth={pictureWidth}
-              galleryData={galleryData}
-              photo={photo}
+              currArtwork={currArtwork}
               direction={direction}
               windowSize={windowSize}
               onNext={onNext}
               onPrev={onPrev}
             />
-            <PeopleAndProps
-              windowSize={windowSize}
-              artworkIndex={artworkIndex}
-            />
+            <PeopleAndProps windowSize={windowSize} currArtwork={currArtwork} />
           </ArtworkHolder>
         </AnimatePresence>
       </>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Plaque = ({ plaque, galleryData }) => {
+export const Plaque = ({ plaque, photographer }) => {
   if (!plaque) return null;
 
   const [title, subtitle] = plaque.split("-");
@@ -10,7 +10,7 @@ export const Plaque = ({ plaque, galleryData }) => {
     <Outer>
       <h1>{title}</h1>
       {subtitle && <h2>- {subtitle}</h2>}
-      <h3>{galleryData.photographer}</h3>
+      <h3>{photographer}</h3>
     </Outer>
   );
 };

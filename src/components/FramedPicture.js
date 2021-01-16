@@ -5,15 +5,15 @@ import { Image } from "./Image";
 export const FramedPicture = ({
   pictureWidth = 700,
   maxHeight,
-  photo,
+  currArtwork,
   dir,
 }) => {
   let width = pictureWidth;
-  let height = pictureWidth * photo.wToHRatio;
+  let height = pictureWidth * currArtwork.wToHRatio;
 
   if (maxHeight && height > maxHeight) {
     height = maxHeight;
-    width = height * photo.hToWRatio;
+    width = height * currArtwork.hToWRatio;
   }
 
   const baseDir = `/img/${dir}/`;
@@ -23,13 +23,13 @@ export const FramedPicture = ({
       <Image
         width={width}
         height={height}
-        placeholder={`${baseDir}tiny/${photo.file}`}
-        src={`${baseDir}large/${photo.file}`}
+        placeholder={`${baseDir}tiny/${currArtwork.file}`}
+        src={`${baseDir}large/${currArtwork.file}`}
         sizes={`(max-width: ${width}px) 100vw, ${width}px`}
         srcSetData={{
-          srcSet: `${baseDir}small/${photo.file} 300w,
-            ${baseDir}medium/${photo.file} 800w,
-            ${baseDir}large/${photo.file} 1400w`,
+          srcSet: `${baseDir}small/${currArtwork.file} 300w,
+            ${baseDir}medium/${currArtwork.file} 800w,
+            ${baseDir}large/${currArtwork.file} 1400w`,
           sizes: `(max-width: ${width}px) 100vw, ${width}px`,
         }}
       />

@@ -4,17 +4,20 @@ import styled from "styled-components";
 import { FramedPicture } from "./FramedPicture";
 import { Plaque } from "./Plaque";
 
-export const Artwork = ({ pictureWidth, galleryData, photo }) => {
+export const Artwork = ({ pictureWidth, currArtwork }) => {
   return (
     <Outer>
       <PictureHolder>
         <FramedPicture
           pictureWidth={pictureWidth}
-          photo={photo}
-          dir={galleryData.directory}
+          currArtwork={currArtwork}
+          dir={currArtwork.directory}
         />
-        {photo.plaque && (
-          <Plaque plaque={photo.plaque} galleryData={galleryData} />
+        {currArtwork.plaque && (
+          <Plaque
+            plaque={currArtwork.plaque}
+            photographer={currArtwork.photographer}
+          />
         )}
       </PictureHolder>
     </Outer>

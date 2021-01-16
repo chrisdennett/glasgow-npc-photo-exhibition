@@ -17,7 +17,7 @@ export const exhibitionData = {
       photos: [
         {
           file: "3CD6F6CE-6B60-4500-9126-B65428F29016.jpeg",
-          plaque: "A place for diminished species to thrive  - Castlemilk Park",
+          plaque: "A place for diminished species to thrive - Castlemilk Park",
           orientation: 1,
           wToHRatio: 1.3251982916412446,
           hToWRatio: 0.7546040515653776,
@@ -31,21 +31,21 @@ export const exhibitionData = {
         },
         {
           file: "B0DD3BF7-CA90-46C9-A9AB-9CE6A6E6A108.jpeg",
-          plaque: "A place to connect- King’s Park",
+          plaque: "A place to connect - King’s Park",
           orientation: 1,
           wToHRatio: 1.3975762314308053,
           hToWRatio: 0.7155244755244755,
         },
         {
           file: "A62A26DC-2718-4F3E-B2C0-4E0EAE63E1B3.jpeg",
-          plaque: "A place to feel free- King’s Park",
+          plaque: "A place to feel free - King’s Park",
           orientation: 1,
           wToHRatio: 0.75,
           hToWRatio: 1.3333333333333333,
         },
         {
           file: "C3FB964A-27F9-4FD4-B826-522ED61829F7.jpeg",
-          plaque: "A place for our pollinators  - Castlemilk Park",
+          plaque: "A place for our pollinators - Castlemilk Park",
           orientation: 1,
           wToHRatio: 1.3333333333333333,
           hToWRatio: 0.75,
@@ -73,7 +73,7 @@ export const exhibitionData = {
         },
         {
           file: "24ABB29B-6013-478E-95E7-73F37E5D1740.jpeg",
-          plaque: "A place for our senses -Castlemilk Park",
+          plaque: "A place for our senses - Castlemilk Park",
           orientation: 1,
           wToHRatio: 1.3333333333333333,
           hToWRatio: 0.75,
