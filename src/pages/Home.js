@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GalleryHeader } from "../components/GalleryHeader";
+import { HomeHeader } from "../components/HomeHeader";
 import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
 import { ExternalLink } from "../components/ExternalLink";
@@ -12,7 +12,7 @@ export const Home = ({ onGalleryOpen }) => {
 
   return (
     <>
-      <GalleryHeader>
+      <HomeHeader>
         <h1>Glasgow National Park City</h1>
         <h2>Photo Exhibition</h2>
         <IntroP>
@@ -37,7 +37,7 @@ export const Home = ({ onGalleryOpen }) => {
           their potential for people and nature. We hope you enjoy it and are
           inspired to get involved.
         </IntroP>
-      </GalleryHeader>
+      </HomeHeader>
       <Cards>
         {exhibitionData.galleries.map((gallery) => (
           <GalleryIntroCard

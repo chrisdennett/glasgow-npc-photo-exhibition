@@ -1,50 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { GalleryTitle } from "./GalleryTitle";
 import { NpcLogo } from "./NpcLogo";
 
-export const TopBar = ({
-  openSideBar,
-  currGalleryData,
-  onShowIntro,
-  introShowing,
-}) => {
+export const TopBar = ({ openSideBar }) => {
   return (
-    <Holder iconOnly={introShowing}>
+    <Holder>
       <Butt onClick={openSideBar}>
         <NpcLogo />
       </Butt>
-      {!introShowing && (
-        <TitleHolder>
-          <GalleryTitle
-            title={currGalleryData.photographer}
-            onClick={onShowIntro}
-          />
-        </TitleHolder>
-      )}
     </Holder>
   );
 };
 
 const Holder = styled.div`
   position: fixed;
-  background-image: ${(props) =>
-    props.iconOnly
-      ? "none"
-      : "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1))"};
   top: 0;
   left: 0;
-  right: ${(props) => (props.iconOnly ? "" : 0)};
   z-index: 999;
   padding: 10px 0 0 10px;
   display: flex;
   align-items: flex-start;
-`;
-
-const TitleHolder = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
 `;
 
 const Butt = styled.button`

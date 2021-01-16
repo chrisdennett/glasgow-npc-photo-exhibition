@@ -1,45 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { NpcLogo } from "./NpcLogo";
+import { GalleryTitle } from "./GalleryTitle";
 
-export const GalleryHeader = ({ children, style }) => {
+export const GalleryHeader = ({ onShowIntro, galleryName = "TESTING" }) => {
   return (
-    <Header style={style}>
-      <StyledNpcLogo />
-      {children}
-    </Header>
+    <TitleHolder>
+      <GalleryTitle title={galleryName} onClick={onShowIntro} />
+    </TitleHolder>
   );
 };
 
-const StyledNpcLogo = styled(NpcLogo)`
-  margin-bottom: 30px;
-`;
-
-const Header = styled.header`
+const TitleHolder = styled.div`
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-
-  padding: 20px;
-  margin: 60px 10px 0 10px;
-
-  h1 {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: calc(24px + 2vmin);
-    line-height: 1em;
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 800;
-    font-family: "Poppins", sans-serif;
-  }
-
-  h2 {
-    margin: 0;
-    letter-spacing: 5px;
-    font-size: calc(10px + 2vmin);
-    font-weight: 200;
-    font-family: "Poppins", sans-serif;
-    padding-bottom: 20px;
-  }
+  width: 100vw;
+  padding: 10px 0 0 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
 `;

@@ -3,15 +3,13 @@ import { navigate } from "@reach/router";
 import styled from "styled-components";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { exhibitionData } from "../data/exhibitionData";
-import { TopBar } from "../components/TopBar";
 import usePrevious from "../hooks/usePrevious";
 import { Exhibit } from "../components/Exhibit";
 import { GalleryIntro } from "../components/GalleryIntro";
-import { SideMenu } from "../components/sideMenu/SideMenu";
+import { GalleryHeader } from "../components/GalleryHeader";
 
 export const Gallery = ({ galleryId, artworkId, windowSize }) => {
   const [showIntro, setShowIntro] = useState(true);
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   const prevArtworkId = usePrevious(parseInt(artworkId, 0));
 
@@ -58,18 +56,6 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
 
   return (
     <Page>
-      <TopBar
-        openSideBar={() => setIsSideBarOpen(true)}
-        currGalleryData={currGalleryData}
-        onShowIntro={() => setShowIntro(true)}
-        introShowing={showIntro}
-      />
-
-      <SideMenu
-        isOpen={isSideBarOpen}
-        onClose={() => setIsSideBarOpen(false)}
-      />
-
       {showIntro && (
         <GalleryIntro
           currGalleryData={currGalleryData}
@@ -79,6 +65,10 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
 
       {!showIntro && (
         <>
+          <GalleryHeader
+            galleryName={currGalleryData.photographer}
+            onShowIntro={() => setShowIntro(true)}
+          />
           <Exhibit
             galleryData={currGalleryData}
             artworkIndex={currArtworkIndex}
