@@ -60,6 +60,7 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
     directory: currGalleryData.directory,
     photographer: currGalleryData.photographer,
   };
+  const totalArtworks = currGalleryData.photos.length;
 
   return (
     <Page>
@@ -88,6 +89,8 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
             onPrev={onPrevClick}
             onNext={onNextClick}
             plaque={currArtwork.plaque}
+            totalArtworks={totalArtworks}
+            currArtworkIndex={currArtworkIndex}
           />
         </>
       )}
