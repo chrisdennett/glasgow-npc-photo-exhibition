@@ -1,5 +1,6 @@
 import { Link } from "@reach/router";
 import React from "react";
+import { AiFillHome } from "react-icons/ai";
 import styles from "./sideMenu.module.css";
 import { exhibitionData } from "../../data/exhibitionData";
 
@@ -16,7 +17,9 @@ export const SideMenu = ({ isOpen, onClose }) => {
   return (
     <div className={`${styles.flyoutMenu} ${visibility}`} onClick={onClose}>
       <div className={styles.navList}>
-        <Link to={"/"}>HOME</Link>
+        <Link to={"/"}>
+          <AiFillHome /> HOME
+        </Link>
 
         <h2 className={styles.menuHeader}>Photographers:</h2>
 

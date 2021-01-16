@@ -19,6 +19,6 @@ const TitleHolder = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 30px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
 `;
