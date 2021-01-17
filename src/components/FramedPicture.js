@@ -8,6 +8,8 @@ export const FramedPicture = ({
   currArtwork,
   dir,
 }) => {
+  if (!currArtwork) return null;
+
   let width = pictureWidth;
   let height = pictureWidth * currArtwork.wToHRatio;
 

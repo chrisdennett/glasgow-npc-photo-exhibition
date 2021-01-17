@@ -23,7 +23,7 @@ export const GalleryIntroCard = ({ onOpen, gallery }) => {
               width={300}
               maxHeight={300}
               dir={gallery.directory}
-              photo={gallery.photos[0]}
+              currArtwork={gallery.photos[0]}
             />
           </Boop>
         </PictureHolder>
