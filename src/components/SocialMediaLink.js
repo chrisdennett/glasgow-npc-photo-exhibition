@@ -31,7 +31,7 @@ export const SocialLink = ({ type, link }) => {
   }
   if (type === "website") {
     return (
-      <Anchor href={facebookUrlStart + link}>
+      <Anchor href={link}>
         <FaLink />
         <span>{shortenedWebAddress(link)}</span>
       </Anchor>

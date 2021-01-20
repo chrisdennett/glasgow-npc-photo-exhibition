@@ -446,6 +446,7 @@ export const exhibitionData = {
       galleryId: "becky-duncan",
       twitter: "open_aye",
       website: "https://www.openaye.co.uk/",
+      directory: "becky-duncan",
       intro: `
       <p>Becky runs Open Aye who provide provides engaging photography and videos for charity, social enterprise and community sector clients. They specialise in creating visual stories which show positive social change and aim to accurately reflect Scotland’s people, places, issues and solutions.
       </p>
@@ -462,7 +463,7 @@ export const exhibitionData = {
       All of these images were taken in Glasgow parks.  
       </footer>
      `,
-      directory: "becky-duncan",
+
       photos: [
         {
           file: "7-lochs-phase2-115.jpg",
