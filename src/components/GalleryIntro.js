@@ -159,6 +159,13 @@ const IntroText = styled.div`
     margin: 0 0 22px 0;
   }
 
+  footer {
+    font-style: italic;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 10px;
+    font-size: 90%;
+  }
+
   @media (max-width: 1034px) and (max-height: 850px) {
     padding: 15px;
     height: 100%;

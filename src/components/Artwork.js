@@ -16,6 +16,7 @@ export const Artwork = ({ pictureWidth, currArtwork }) => {
         {currArtwork.plaque && (
           <Plaque
             plaque={currArtwork.plaque}
+            copyright={currArtwork.copyright}
             photographer={currArtwork.photographer}
           />
         )}

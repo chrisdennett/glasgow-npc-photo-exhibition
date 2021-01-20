@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Plaque = ({ plaque, photographer }) => {
+export const Plaque = ({ plaque, copyright, photographer }) => {
   if (!plaque) return null;
 
-  const [title, subtitle] = plaque.split("-");
+  let [title, subtitle] = plaque.split("-");
 
   return (
     <Outer>
       <h1>{title}</h1>
       {subtitle && <h2>- {subtitle}</h2>}
-      <h3>{photographer}</h3>
+
+      {copyright ? <h3>© {copyright}</h3> : <h3>{photographer}</h3>}
     </Outer>
   );
 };
@@ -50,7 +51,6 @@ const Outer = styled.div`
   }
 
   @media (max-width: 700px) {
-    position: absolute;
     display: none;
   }
 `;

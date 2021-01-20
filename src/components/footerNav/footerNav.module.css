@@ -46,13 +46,17 @@
 .plaqueText {
   display: none;
   text-align: center;
-  background: white;
-  color: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(0, 0, 0, 1);
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding: 5px;
   font-size: 14px;
   margin-bottom: -10px;
+}
+
+.plaqueText aside {
+  font-size: 11px;
 }
 
 .navText {

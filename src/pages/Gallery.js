@@ -88,6 +88,7 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
           <FooterNav
             onPrev={onPrevClick}
             onNext={onNextClick}
+            copyright={currArtwork.copyright}
             plaque={currArtwork.plaque}
             totalArtworks={totalArtworks}
             currArtworkIndex={currArtworkIndex}

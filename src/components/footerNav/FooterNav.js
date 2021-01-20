@@ -6,12 +6,19 @@ export const FooterNav = ({
   onPrev,
   onNext,
   plaque,
+  copyright,
   totalArtworks,
   currArtworkIndex,
 }) => {
   return (
     <div className={styles.footer}>
-      {plaque && <div className={styles.plaqueText}>{plaque}</div>}
+      {plaque && (
+        <div className={styles.plaqueText}>
+          <div>{plaque}</div>
+          {copyright && <aside>© {copyright}</aside>}
+        </div>
+      )}
+
       <nav className={styles.footerNav}>
         <button className={styles.butt} onClick={onPrev}>
           <IoIosArrowBack /> PREV

@@ -441,5 +441,169 @@ export const exhibitionData = {
         },
       ],
     },
+    {
+      photographer: "Becky Duncan",
+      galleryId: "becky-duncan",
+      twitter: "open_aye",
+      website: "https://www.openaye.co.uk/",
+      intro: `
+      <p>Becky runs Open Aye who provide provides engaging photography and videos for charity, social enterprise and community sector clients. They specialise in creating visual stories which show positive social change and aim to accurately reflect Scotland’s people, places, issues and solutions.
+      </p>
+      <p>
+      They are a community interest company and create their own social impact, too. Open Aye also runs participatory photography projects, for a range of purposes, groups and topics. We run projects with advocacy outputs, therapeutic outcomes or social action research methodologies. 
+      </p>
+      <p>
+      Since 2010 we have ran over 50 major participatory photo projects, engaging with 700+ participants from communities of difference, diversity, disability and disadvantage. Experts by experience need platforms to provide answers to many social issues. Open Aye helps with this, by providing inspiration, tools and a safe space for people to come together, consider creatively and suggest solutions.
+      </p>
+      <p>
+      We're delighted to include some of Becky's photos as part of the exhibition as they capture the people who value and connect with, and in Glasgow's special places.</p>
+      <footer>
+      Becky Duncan retains the copyright of all these images, but is happy for GNPC to use them for 1-2 years to promote the work being done. <br/>
+      All of these images were taken in Glasgow parks.  
+      </footer>
+     `,
+      directory: "becky-duncan",
+      photos: [
+        {
+          file: "7-lochs-phase2-115.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "One",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "7-Lochs-Vols1-01.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Two",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "Cunningar-Loop-05.jpg",
+          orientation: 1,
+          wToHRatio: 0.6671428571428571,
+          hToWRatio: 1.4989293361884368,
+          plaque: "Three",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "G-Hamiltonhill-Sept-26.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Four",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "NKBL_22.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Five",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "DSC_4863b.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Six",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "FCS-Int-Peace-Day-16-sept16-4.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Seven",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "SNH_123.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Eight",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "snh-saltcoats_05.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Nine",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "SHA-Parkour18_02.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Ten",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "SSHA-2013-085.jpg",
+          orientation: 1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+          plaque: "Eleven",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "SNH-Autumn-001.jpg",
+          orientation: 1,
+          wToHRatio: 1.5,
+          hToWRatio: 0.6666666666666666,
+          plaque: "Twelve",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "NKBL_04.jpg",
+          orientation: 1,
+          wToHRatio: 1.5,
+          hToWRatio: 0.6666666666666666,
+          plaque: "Thirteen",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+        {
+          file: "NKBL_40.jpg",
+          orientation: 1,
+          wToHRatio: 1.5,
+          hToWRatio: 0.6666666666666666,
+          plaque: "Fourteen",
+          copyright: "Image: Becky Duncan, for Open Aye",
+        },
+      ],
+    },
   ],
 };
+
+/*
+
+EXAMPLE PHOTOGRAPHER DATE
+
+{
+      photographer: "Liam Paterson",
+      galleryId: "liam-paterson",
+      twitter: "to_glasgow",
+      facebook: "AlisdairsPhotos",
+      instagram: "alisdairs_photos",
+      website: "https://emmataylor-17.wixsite.com/mysite",
+      intro: `
+      <p></p>`,
+      directory: "liam-paterson",
+      photos: [
+        {
+          file: "01_January.jpg",
+          plaque: "January",
+          orientation: 1,
+          wToHRatio: 0.9737354085603113,
+          hToWRatio: 1.026973026973027,
+        },
+      ]
+    }
+
+ */
