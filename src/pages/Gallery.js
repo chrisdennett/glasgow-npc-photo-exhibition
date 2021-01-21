@@ -108,13 +108,13 @@ const Page = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.4)
     ),
-    url("/img/bgs/red-brick_200x200.jpg");
+    url("/img/bgs/red-brick_200x200.jpg"); */
 
   header {
     text-align: center;

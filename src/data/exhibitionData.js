@@ -579,6 +579,167 @@ export const exhibitionData = {
         },
       ],
     },
+
+    {
+      photographer: "Michael Sweeney",
+      galleryId: "michael-sweeney",
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      website: "",
+      directory: "michael-sweeney",
+      intro: `<p>
+      Hi my name is Michael M Sweeney, I’m a wildlife photographer from the East End of Glasgow. I am so grateful for the open spaces we have in our city. They allow me get out and about every day to explore these places of great wildlife diversity. 
+      </p>
+      <p>
+      I’m in love with photography and the open spaces we have - such as my local Seven Lochs Wetland Park. It brings me a lot of self-healing and well-being – and I hope that by sharing my photos I can inspire other’s love for nature and the wildlife around them.</p>`,
+      photos: [
+        {
+          file: "850_6360.jpg",
+          orientation: -1,
+          wToHRatio: 1.251,
+          hToWRatio: 0.7993605115907274,
+        },
+        {
+          file: "108382977_10217118436338030_899329293463790841_o.jpg",
+          orientation: -1,
+          wToHRatio: 0.5622745597284108,
+          hToWRatio: 1.778490566037736,
+        },
+        {
+          file: "850_6899.jpg",
+          orientation: -1,
+          wToHRatio: 0.9996922129886119,
+          hToWRatio: 1.000307881773399,
+        },
+        {
+          file: "12017421_10205043284706786_2494285890961287938_o.jpg",
+          orientation: -1,
+          wToHRatio: 0.7539582809751194,
+          hToWRatio: 1.3263333333333334,
+        },
+        {
+          file: "DSC_60-copy-3.jpg",
+          orientation: -1,
+          wToHRatio: 1,
+          hToWRatio: 1,
+        },
+        {
+          file: "pib.jpg",
+          orientation: -1,
+          wToHRatio: 0.8643333333333333,
+          hToWRatio: 1.1569610489780178,
+        },
+        {
+          file: "850_5732.jpg",
+          orientation: -1,
+          wToHRatio: 1,
+          hToWRatio: 1,
+        },
+        {
+          file: "AAA_2364.jpg",
+          orientation: -1,
+          wToHRatio: 1.009433962264151,
+          hToWRatio: 0.9906542056074766,
+        },
+        {
+          file: "DSC_4810-23copy-2.jpg",
+          orientation: -1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "AAA_24.jpg",
+          orientation: 1,
+          wToHRatio: 0.6801152737752162,
+          hToWRatio: 1.4703389830508475,
+        },
+      ],
+    },
+    {
+      photographer: "Monique Campbell",
+      galleryId: "monique-campbell",
+      directory: "monique-campbell",
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      website: "",
+      intro: `<p>Monique Campbell's photos have just been added.  Awaiting deets.</p>`,
+      photos: [
+        {
+          file: "Glasgow-Botanics-2017_MC.JPG",
+          orientation: 1,
+          wToHRatio: 0.6648989061982101,
+          hToWRatio: 1.503988035892323,
+        },
+        {
+          file: "James-Hamilton-Heritage-Park-EK-2021_MC-(1).JPG",
+          orientation: 1,
+          wToHRatio: 0.6675671112611852,
+          hToWRatio: 1.497976732422863,
+        },
+        {
+          file: "Stewartfield-EK-2021_MC.JPG",
+          orientation: 1,
+          wToHRatio: 0.6676829268292683,
+          hToWRatio: 1.4977168949771689,
+        },
+        {
+          file: "James-Hamilton-Heritage-Park-EK-2021_MC-(3).JPG",
+          orientation: 1,
+          wToHRatio: 1.497624703087886,
+          hToWRatio: 0.6677240285487708,
+        },
+        {
+          file: "Queens-Park-2019_MC.JPG",
+          orientation: 1,
+          wToHRatio: 0.667601683029453,
+          hToWRatio: 1.4978991596638656,
+        },
+        {
+          file: "James-Hamilton-Heritage-Park-EK-2021_MC-(2).JPG",
+          orientation: 1,
+          wToHRatio: 0.6675682986205032,
+          hToWRatio: 1.4979740680713127,
+        },
+        {
+          file: "Queens-Park-2019_MC(3).JPG",
+          orientation: 1,
+          wToHRatio: 0.6676136363636364,
+          hToWRatio: 1.4978723404255319,
+        },
+        {
+          file: "James-Hamilton-Heritage-Park-EK-2021_MC-(6).JPG",
+          orientation: 1,
+          wToHRatio: 0.6675929142063216,
+          hToWRatio: 1.4979188345473464,
+        },
+        {
+          file: "James-Hamilton-Heritage-Park-EK-2021_MC-(5).JPG",
+          orientation: 1,
+          wToHRatio: 0.6675557248999809,
+          hToWRatio: 1.4980022831050228,
+        },
+        {
+          file: "James-Hamilton-Heritage-Park-EK-2021_MC-(4).JPG",
+          orientation: 1,
+          wToHRatio: 0.6675598727181377,
+          hToWRatio: 1.4979929754139487,
+        },
+        {
+          file: "Queens-Park-2019_MC(2).JPG",
+          orientation: 1,
+          wToHRatio: 0.6675531914893617,
+          hToWRatio: 1.49800796812749,
+        },
+        {
+          file: "Queens-Park-2017_MC.JPG",
+          orientation: 1,
+          wToHRatio: 0.6675531914893617,
+          hToWRatio: 1.49800796812749,
+        },
+      ],
+    },
   ],
 };
 
@@ -587,15 +748,14 @@ export const exhibitionData = {
 EXAMPLE PHOTOGRAPHER DATE
 
 {
-      photographer: "Liam Paterson",
-      galleryId: "liam-paterson",
-      twitter: "to_glasgow",
-      facebook: "AlisdairsPhotos",
-      instagram: "alisdairs_photos",
-      website: "https://emmataylor-17.wixsite.com/mysite",
-      intro: `
-      <p></p>`,
-      directory: "liam-paterson",
+      photographer: "",
+      galleryId: "",
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      website: "",
+      directory: "",
+      intro: `<p></p>`,
       photos: [
         {
           file: "01_January.jpg",
