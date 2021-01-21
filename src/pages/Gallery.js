@@ -7,6 +7,7 @@ import { Exhibit } from "../components/Exhibit";
 import { GalleryIntro } from "../components/GalleryIntro";
 import { GalleryHeader } from "../components/GalleryHeader";
 import { FooterNav } from "../components/footerNav/FooterNav";
+import { ExitRoomButt } from "../components/ExitRoomButt";
 
 export const Gallery = ({ galleryId, artworkId, windowSize }) => {
   const [showIntro, setShowIntro] = useState(true);
@@ -64,6 +65,8 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
 
   return (
     <Page>
+      <ExitRoomButt />
+
       {showIntro && (
         <GalleryIntro
           currGalleryData={currGalleryData}

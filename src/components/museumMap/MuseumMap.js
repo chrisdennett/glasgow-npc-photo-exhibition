@@ -23,7 +23,7 @@ export default function MuseumMap() {
               cy="83.128"
               r="3.338"
               fill="#fff"
-              stroke="#d90000"
+              stroke="rgb(168, 194, 94)"
               strokeOpacity="1"
               overflow="visible"
               stopColor="#000"
@@ -32,7 +32,7 @@ export default function MuseumMap() {
               cx="14.099"
               cy="83.128"
               r="1.719"
-              fill="#d90000"
+              fill="rgb(168, 194, 94)"
               stroke="none"
               strokeOpacity="0.469"
               overflow="visible"
@@ -723,14 +723,6 @@ export default function MuseumMap() {
             </tspan>
           </text>
 
-          <use
-            width="100%"
-            height="100%"
-            x="0"
-            y="0"
-            transform="translate(42.576 12.302)"
-            xlinkHref="#youAreHereIcon"
-          ></use>
           <g
             strokeDasharray="none"
             strokeLinejoin="round"
@@ -809,6 +801,12 @@ export default function MuseumMap() {
             ></path>
           </g>
         </g>
+        <use
+          width="100%"
+          height="100%"
+          transform="translate(42.576 12)"
+          xlinkHref="#youAreHereIcon"
+        />
       </g>
     </svg>
   );

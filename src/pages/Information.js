@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { ExitRoomButt } from "../components/ExitRoomButt";
 import { ExternalLink } from "../components/ExternalLink";
 import { OuterRoom } from "../components/OuterRoom";
 
 export const Information = () => {
   return (
     <OuterRoom>
+      <ExitRoomButt />
       <Content>
         <IntroP>
           The idea of a National Park City is simple - to use the familiar idea

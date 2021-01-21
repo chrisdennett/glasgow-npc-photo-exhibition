@@ -1,15 +1,17 @@
 import { navigate } from "@reach/router";
 import React from "react";
 import styled from "styled-components";
-import { NpcLogo } from "./NpcLogo";
+import { ImExit } from "react-icons/im";
+// import { NpcLogo } from "./NpcLogo";
 
-export const TopBar = () => {
+export const ExitRoomButt = () => {
   const onClick = () => navigate("/");
 
   return (
     <Holder>
       <Butt onClick={onClick}>
-        <NpcLogo />
+        {/* <NpcLogo /> */}
+        <ImExit />
       </Butt>
     </Holder>
   );
@@ -19,7 +21,7 @@ const Holder = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99999;
   padding: 10px 0 0 10px;
   display: flex;
   align-items: flex-start;
@@ -27,14 +29,23 @@ const Holder = styled.div`
 
 const Butt = styled.button`
   cursor: pointer;
-  background: whitesmoke;
+  /* background: rgb(206, 124, 65);
+  background: rgb(168, 194, 94); */
+  background: rgb(114, 179, 200);
+  /* height: 50px; */
+  font-size: 32px;
+  padding: 10px 10px 10px 5px;
+  color: whitesmoke;
   border-radius: 20%;
-  padding: 7px 7px 3px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.2);
 
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
   svg {
     width: 40px;
+    transform: scaleX(-1);
   }
 `;

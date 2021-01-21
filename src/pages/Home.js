@@ -4,11 +4,13 @@ import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
 import { getGalleryLetter } from "../helpers/helpers";
 import MuseumMap from "../components/museumMap/MuseumMap";
+import { RoomIntroCard } from "../components/RoomIntroCard";
+import { navigate } from "@reach/router";
+import { FaInfo } from "react-icons/fa";
 
-export const Home = ({ onGalleryOpen }) => {
-  const onOpen = (galleryId) => {
-    onGalleryOpen(galleryId);
-  };
+export const Home = () => {
+  const onOpen = (galleryId) => navigate(`/${galleryId}/0`);
+  const onOpenInfoRoom = () => navigate(`/information`);
 
   let oddGalleries = [];
   let evenGalleries = [];
@@ -48,6 +50,14 @@ export const Home = ({ onGalleryOpen }) => {
               gallery={gallery}
             />
           ))}
+
+          <RoomIntroCard
+            onOpen={onOpenInfoRoom}
+            pictureOnLeft={true}
+            roomType={"Information"}
+            roomName={"About the gallery"}
+            icon={<FaInfo />}
+          />
         </Cards>
       </Content>
     </OuterRoom>

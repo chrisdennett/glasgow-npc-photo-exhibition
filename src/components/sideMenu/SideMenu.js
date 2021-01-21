@@ -1,7 +1,6 @@
 import { Link } from "@reach/router";
 import React from "react";
 import { AiFillHome, AiFillCamera } from "react-icons/ai";
-// import { RiGalleryFill } from "react-icons/";
 import styles from "./sideMenu.module.css";
 import { exhibitionData } from "../../data/exhibitionData";
 
