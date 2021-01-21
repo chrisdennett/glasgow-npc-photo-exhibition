@@ -74,6 +74,7 @@ const HeaderBar = styled.div`
   align-items: stretch;
   justify-content: space-between;
   width: 100%;
+  padding-left: 10px;
 
   button {
     margin-right: 10px;
@@ -125,7 +126,7 @@ const Outer = styled.div`
 
 const Title = styled.div`
   @media (max-width: 1034px) and (max-height: 850px) {
-    padding-left: 80px;
+    padding-left: 70px;
     padding-top: 10px;
   }
 `;
