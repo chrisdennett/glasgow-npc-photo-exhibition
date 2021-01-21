@@ -7,9 +7,10 @@ export const ExternalLink = ({
   label,
   newTab = "true",
   useIcon = "true",
+  className,
 }) => {
   return (
-    <Link href={url} target={newTab ? "_blank" : "_self"}>
+    <Link href={url} target={newTab ? "_blank" : "_self"} className={className}>
       {label} {useIcon && <HiExternalLink />}
     </Link>
   );

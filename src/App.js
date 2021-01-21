@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { navigate, Router } from "@reach/router";
 import { Home } from "./pages/Home";
+import { Information } from "./pages/Information";
 import { Gallery } from "./pages/Gallery";
 import { useWindowSize } from "./hooks/useWindowSize";
 import { TopBar } from "./components/TopBar";
@@ -45,6 +46,7 @@ function App() {
 
       <Router style={{ flex: 1 }}>
         <Home path="/" onGalleryOpen={onGalleryOpen} />
+        <Information path="/information" />
         <Gallery
           path="/:galleryId/:artworkId"
           goHome={goHome}

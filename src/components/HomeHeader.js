@@ -23,8 +23,8 @@ const Header = styled.header`
   padding: 60px 10px 20px 10px;
 
   h1 {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: calc(24px + 2vmin);
+    color: rgb(18, 72, 104);
+    font-size: calc(12px + 2vmin);
     line-height: 1em;
     margin: 0;
     letter-spacing: 1px;
@@ -34,6 +34,7 @@ const Header = styled.header`
 
   h2 {
     margin: 0;
+    color: rgb(18, 72, 104);
     letter-spacing: 5px;
     font-size: calc(10px + 2vmin);
     font-weight: 200;

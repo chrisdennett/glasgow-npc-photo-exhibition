@@ -447,17 +447,22 @@ export const exhibitionData = {
       twitter: "open_aye",
       website: "https://www.openaye.co.uk/",
       directory: "becky-duncan",
+      biogPic: "biogPic_250x167.jpg",
       intro: `
-      <p>Becky runs Open Aye who provide provides engaging photography and videos for charity, social enterprise and community sector clients. They specialise in creating visual stories which show positive social change and aim to accurately reflect Scotland’s people, places, issues and solutions.
+      <p>I see Glasgow as a Phenomenal Park City, and I know many others do, too.
       </p>
       <p>
-      They are a community interest company and create their own social impact, too. Open Aye also runs participatory photography projects, for a range of purposes, groups and topics. We run projects with advocacy outputs, therapeutic outcomes or social action research methodologies. 
+      The tree canopy of Kelvin Way. Kelvingrove’s green beach, in the summer sun. The Kelvin Walkway, where herons stalk walkers. The Botanic’s bold tree hunt trail. Petrified stumps in Victoria Park. Canoes on the canal. Glasgow Green: where marchers come to rest. A bird’s holiday resort on Hogganfield, leading to the 7 Lochs trails of wonder. Alexandra Park, on parade. The Cunningar kids on a Loop de Loop.  Auchenshuggle’s shrug to the motorway. Malls Mire’s community hug. The Linn Park fish that swim up the way. The majestic heights and sights of Cathkin Braes. Movers, makers, skaters and non-shavers at Queens Park. The kites flying around Bellahouston. And the biggest (and best??).. Pollok Country Park, where history resides in the North Woods and the Great Beech refuses to die. 
       </p>
       <p>
-      Since 2010 we have ran over 50 major participatory photo projects, engaging with 700+ participants from communities of difference, diversity, disability and disadvantage. Experts by experience need platforms to provide answers to many social issues. Open Aye helps with this, by providing inspiration, tools and a safe space for people to come together, consider creatively and suggest solutions.
+      And then there’s all the wee local places, where folk meet, dogs dander and kids play.  We can all play. We can all escape. Breathe the air. See the sky. Feel the city, its communities, cultures and it’s dreams. Live.
       </p>
       <p>
-      We're delighted to include some of Becky's photos as part of the exhibition as they capture the people who value and connect with, and in Glasgow's special places.</p>
+      I wish to look after these places, so that they can grow, be bio-diverse and reverse decline. We all need Our Dear Green Place. It needs us. Let’s protect and invest in Glasgow National Park City. For COP26 and beyond. So our dear green place may be an appreciated, thriving space, for good. 
+      </p>
+      <p>
+      Becky Duncan – Open Aye
+      </p>
       <footer>
       Becky Duncan retains the copyright of all these images, but is happy for GNPC to use them for 1-2 years to promote the work being done. <br/>
       All of these images were taken in Glasgow parks.  
@@ -581,10 +586,10 @@ export const exhibitionData = {
     },
 
     {
-      photographer: "Michael Sweeney",
+      photographer: "Michael M Sweeney",
       galleryId: "michael-sweeney",
       twitter: "",
-      facebook: "",
+      facebook: "horticulture11",
       instagram: "",
       website: "",
       directory: "michael-sweeney",

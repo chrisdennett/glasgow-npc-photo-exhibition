@@ -42,7 +42,15 @@ export const GalleryIntro = ({ currGalleryData, onEnterGallery }) => {
             ))}
           </PhotoBandInner>
         </PhotoBand>
-        <IntroText dangerouslySetInnerHTML={{ __html: intro }} />
+        <IntroText>
+          {/* {biogPic && (
+            <img
+              src={`/img/${directory}/${biogPic}`}
+              alt={photographer + " intro"}
+            />
+          )} */}
+          <span dangerouslySetInnerHTML={{ __html: intro }} />
+        </IntroText>
       </Intro>
     </Outer>
   );
@@ -87,9 +95,10 @@ const LinkBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 15px 0;
-  margin-top: 5px;
+  padding: 5px 0 15px 0;
+  margin: 5px 0 5px 0;
   border-top: 1px dashed #ddd;
+  /* border-bottom: 1px dashed #ddd; */
   svg {
     margin-right: 5px;
   }

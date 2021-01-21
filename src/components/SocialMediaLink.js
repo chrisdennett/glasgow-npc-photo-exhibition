@@ -6,7 +6,11 @@ import { RiInstagramFill } from "react-icons/ri";
 export const SocialLink = ({ type, link }) => {
   if (type === "twitter") {
     return (
-      <Anchor href={twitterUrlStart + link}>
+      <Anchor
+        href={twitterUrlStart + link}
+        target={"_blank"}
+        rel="noreferrer noopener"
+      >
         <FaTwitter />
         <span>{`@${link}`}</span>
       </Anchor>
@@ -14,7 +18,11 @@ export const SocialLink = ({ type, link }) => {
   }
   if (type === "instagram") {
     return (
-      <Anchor href={instagramUrlStart + link}>
+      <Anchor
+        href={instagramUrlStart + link}
+        target={"_blank"}
+        rel="noreferrer noopener"
+      >
         <RiInstagramFill />
         <span>{`${link}`}</span>
       </Anchor>
@@ -23,7 +31,11 @@ export const SocialLink = ({ type, link }) => {
 
   if (type === "facebook") {
     return (
-      <Anchor href={facebookUrlStart + link}>
+      <Anchor
+        href={facebookUrlStart + link}
+        target={"_blank"}
+        rel="noreferrer noopener"
+      >
         <FaFacebook />
         <span>{`@${link}`}</span>
       </Anchor>
@@ -31,7 +43,7 @@ export const SocialLink = ({ type, link }) => {
   }
   if (type === "website") {
     return (
-      <Anchor href={link}>
+      <Anchor href={link} target={"_blank"} rel="noreferrer noopener">
         <FaLink />
         <span>{shortenedWebAddress(link)}</span>
       </Anchor>

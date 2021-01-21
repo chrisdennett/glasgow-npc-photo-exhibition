@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 export const GalleryFooter = ({ windowSize }) => {
-  const skirtingHeight = windowSize.height ? windowSize.height * 0.04 : 60;
+  const skirtingHeight =
+    windowSize && windowSize.height ? windowSize.height * 0.04 : 60;
   return (
     <div>
       <SkirtingBoard skirtingHeight={skirtingHeight} />

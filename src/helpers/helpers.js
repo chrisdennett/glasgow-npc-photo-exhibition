@@ -1,8 +1,18 @@
 const maxImageWidth = 800;
 const maxImageHeight = 800;
 
-// Returns an image element given a file
+export function getGalleryLetter(index) {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+  return letters[index];
+}
+
+// get img link
+export function getImgSrc(directory, photo, size = "small") {
+  return `/img/${directory}/${size}/${photo.file}`;
+}
+
+// Returns an image element given a file
 export function GetImage(imgFile, callback) {
   GetPhotoOrientation(imgFile, (orientation) => {
     const reader = new FileReader();
