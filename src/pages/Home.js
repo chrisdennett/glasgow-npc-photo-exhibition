@@ -11,7 +11,7 @@ export const Home = ({ onGalleryOpen }) => {
   };
 
   return (
-    <>
+    <Page>
       <HomeHeader>
         <h1>Glasgow National Park City</h1>
         <h2>Photo Exhibition</h2>
@@ -69,9 +69,13 @@ export const Home = ({ onGalleryOpen }) => {
           />
         </span>
       </SiteFooter>
-    </>
+    </Page>
   );
 };
+
+const Page = styled.div`
+  background: url("/img/bgs/brickwall.png");
+`;
 
 const Cards = styled.div`
   display: flex;
