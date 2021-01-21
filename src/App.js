@@ -4,8 +4,6 @@ import { Home } from "./pages/Home";
 import { Information } from "./pages/Information";
 import { Gallery } from "./pages/Gallery";
 import { useWindowSize } from "./hooks/useWindowSize";
-import { TopBar } from "./components/TopBar";
-import { ExitRoomButt } from "./components/ExitRoomButt";
 
 function App() {
   const windowSize = useWindowSize();
