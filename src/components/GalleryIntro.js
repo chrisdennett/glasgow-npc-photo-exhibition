@@ -4,37 +4,70 @@ import styled from "styled-components";
 import { SocialLink } from "./SocialMediaLink";
 
 export const GalleryIntro = ({ currGalleryData, onEnterGallery }) => {
+  const {
+    photographer,
+    twitter,
+    instagram,
+    facebook,
+    website,
+    intro,
+    directory,
+    photos,
+  } = currGalleryData;
+
   return (
     <Outer>
       <Intro id="intro">
         <HeaderBar>
           <Title>
             <h2>GALLERY:</h2>
-            <h1>{currGalleryData.photographer}</h1>
+            <h1>{photographer}</h1>
           </Title>
           <Button onClick={onEnterGallery}>ENTER</Button>
         </HeaderBar>
         <LinkBar>
-          {currGalleryData.twitter && (
-            <SocialLink link={currGalleryData.twitter} type={"twitter"} />
-          )}
-          {currGalleryData.instagram && (
-            <SocialLink link={currGalleryData.instagram} type={"instagram"} />
-          )}
-          {currGalleryData.facebook && (
-            <SocialLink link={currGalleryData.facebook} type={"facebook"} />
-          )}
-          {currGalleryData.website && (
-            <SocialLink link={currGalleryData.website} type={"website"} />
-          )}
+          {twitter && <SocialLink link={twitter} type={"twitter"} />}
+          {instagram && <SocialLink link={instagram} type={"instagram"} />}
+          {facebook && <SocialLink link={facebook} type={"facebook"} />}
+          {website && <SocialLink link={website} type={"website"} />}
         </LinkBar>
-        <IntroText
-          dangerouslySetInnerHTML={{ __html: currGalleryData.intro }}
-        />
+        <PhotoBand>
+          <PhotoBandInner>
+            {photos.map((p, i) => (
+              <img
+                key={p.file}
+                src={`/img/${directory}/tiny/${p.file}`}
+                alt={`${photographer} thumbnail ${i}`}
+              />
+            ))}
+          </PhotoBandInner>
+        </PhotoBand>
+        <IntroText dangerouslySetInnerHTML={{ __html: intro }} />
       </Intro>
     </Outer>
   );
 };
+
+const PhotoBandInner = styled.div`
+  background: red;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+
+  img {
+    height: 50px;
+  }
+`;
+
+const PhotoBand = styled.div`
+  min-height: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  margin-bottom: 10px;
+`;
 
 const HeaderBar = styled.div`
   display: flex;
