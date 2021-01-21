@@ -37,10 +37,12 @@ export const Information = () => {
 
 const Content = styled.div`
   flex: 1;
+  margin-bottom: 42px;
 `;
 
 const IntroP = styled.p`
   margin: 10px auto;
+  padding: 0 10px;
   text-align: center;
   max-width: 800px;
 `;

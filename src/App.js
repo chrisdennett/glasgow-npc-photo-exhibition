@@ -13,7 +13,7 @@ function App() {
   return (
     <Container>
       <Router style={{ flex: 1 }}>
-        <Home path="/" />
+        <Home path="/" windowSize={windowSize} />
         <Information path="/information" />
         <Gallery path="/:galleryId/:artworkId" windowSize={windowSize} />
         <Gallery path="/:galleryId" windowSize={windowSize} />

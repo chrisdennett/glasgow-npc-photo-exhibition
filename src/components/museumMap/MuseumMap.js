@@ -4,7 +4,11 @@ export default function MuseumMap() {
   const opacity = 0.5;
 
   return (
-    <svg viewBox="0 0 54.635 170.598" width={140} style={{ margin: "0 2vw" }}>
+    <svg
+      viewBox="0 0 54.635 170.598"
+      width={140}
+      style={{ margin: "0 2vw 42px 2vw" }}
+    >
       <g transform="translate(-20.29 -17.373)">
         {/* YOU ARE HERE KEY */}
         <g>

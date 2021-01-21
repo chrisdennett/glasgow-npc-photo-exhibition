@@ -51,8 +51,6 @@ const TextSide = styled.div`
   h3 {
     text-transform: uppercase;
     font-weight: normal;
-    /* font-family: "Poppins", sans-serif; */
-    /* color: rgba(0, 0, 0, 0.6); */
     letter-spacing: 2px;
     margin: 0 0 5px 0;
     font-size: calc(10px + 0.5vmin);
@@ -81,21 +79,15 @@ const Card = styled.div`
     width: 100px;
     object-fit: cover;
     margin-right: -2px;
+    margin-left: -2px;
   }
 `;
 
 const Butt = styled.div`
-  /* align-self: flex-end; */
-  /* border: none; */
   background: #ce7c41;
-  /* border: 1px solid #ce7c41; */
   color: white;
   padding: 4px 5px;
   border-radius: 50%;
   font-weight: bold;
   margin: 0;
-  /* text-transform: uppercase; */
-  /* svg {
-    margin-left: 7px;
-  } */
 `;

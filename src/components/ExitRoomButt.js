@@ -34,7 +34,7 @@ const Butt = styled.button`
   background: rgb(114, 179, 200);
   /* height: 50px; */
   font-size: 32px;
-  padding: 10px 10px 10px 5px;
+  padding: 8px 8px 8px 4px;
   color: whitesmoke;
   border-radius: 20%;
   display: flex;
@@ -42,7 +42,7 @@ const Butt = styled.button`
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.2);
 
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 
   svg {
     width: 40px;

@@ -20,7 +20,7 @@ const Header = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 10px 20px 10px;
+  padding: 60px 10px 10px 10px;
 
   h1 {
     color: rgb(18, 72, 104);

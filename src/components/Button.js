@@ -26,7 +26,10 @@ const Butt = styled.button`
   background: #ce7c41;
   border: none;
   color: white;
+  height: 50px;
   border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   /* background-color: #a8c25e; */
   /* font-weight: bold; */
 `;
