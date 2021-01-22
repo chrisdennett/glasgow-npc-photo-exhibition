@@ -613,11 +613,22 @@ export const exhibitionData = {
       photographer: "Monique Campbell",
       galleryId: "monique-campbell",
       directory: "monique-campbell",
-      twitter: "",
-      facebook: "",
+      twitter: "moniquelvct",
+      facebook: "moniquelaralisephotography",
       instagram: "",
-      website: "",
-      intro: `<p>Monique Campbell's photos have just been added.  Awaiting deets.</p>`,
+      website: "https://moniquelaralisephotography.com",
+      intro: `<p>
+      I love taking photographs when I go for my ‘daily walk’. Living in Glasgow for ten years I got to know lots of the beautiful and quirky green spaces we are lucky enough to enjoy, through learning to take photographs. From exploring macro photography through extreme close-ups of water droplets after a summer rain to attempts to master shutter speed through obsessively waiting for the perfect bird in flight moment.
+      </p>
+      <p>
+The appearance of the cygnets on Queens Park pond became a yearly highlight, as I’d catch glimpses of them on my cycle to work and then grab my camera and go back to the park in the evening. There’s a lovely community of local people who do the same and I’ve always enjoyed sharing my love of photography with folk who get as excited as I do about capturing a tiny wing fluttering.
+</p>
+      <p>
+I moved to East Kilbride a couple of years ago and my camera has helped me navigate my new surroundings. I’ve fallen in love with the Loch at James Hamilton Heritage Park where most of these photos are taken. From the cheeky wee goslings in the late spring to the frozen wonder of this year’s intense ice and snow.
+</p>
+      <p>
+Taking photographs every day makes me feel better – calmer, more hopeful and inspired. There’s a whole other world that opens when you look at everyday things from a different angle. Let’s protect our parks and green spaces so the next generation can continue to enjoy the wonder and wellbeing they inspire.
+      </p>`,
       photos: [
         {
           file: "Glasgow-Botanics-2017_MC.JPG",
