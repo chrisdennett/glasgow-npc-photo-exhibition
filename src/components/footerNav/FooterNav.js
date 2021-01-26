@@ -1,5 +1,6 @@
 import React from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { useKeyboardBindings } from "../../hooks/useKeyboardBindings";
 import styles from "./footerNav.module.css";
 
 export const FooterNav = ({
@@ -10,6 +11,11 @@ export const FooterNav = ({
   totalArtworks,
   currArtworkIndex,
 }) => {
+  useKeyboardBindings({
+    ArrowRight: () => onNext(),
+    ArrowLeft: () => onPrev(),
+  });
+
   return (
     <div className={styles.footer}>
       {plaque && (
