@@ -704,6 +704,90 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
         },
       ],
     },
+    {
+      photographer: "Neil Young",
+      galleryId: "neil-young",
+      directory: "neil-young",
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      website: "",
+      intro: `<p></p>`,
+      photos: [
+        {
+          file: "IMG_0198.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4657.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4249.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4253.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4319.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4687.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4761.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4261.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4301.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4568.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4325.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4252.JPG",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+      ],
+    },
   ],
 };
 
@@ -714,11 +798,11 @@ EXAMPLE PHOTOGRAPHER DATE
 {
       photographer: "",
       galleryId: "",
+      directory: "",
       twitter: "",
       facebook: "",
       instagram: "",
       website: "",
-      directory: "",
       intro: `<p></p>`,
       photos: [
         {
