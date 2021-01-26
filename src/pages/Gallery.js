@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { navigate } from "@reach/router";
+import { motion, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { exhibitionData } from "../data/exhibitionData";
 import usePrevious from "../hooks/usePrevious";
@@ -67,37 +68,49 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
     <Page>
       <ExitRoomButt />
 
-      {showIntro && (
-        <GalleryIntro
-          currGalleryData={currGalleryData}
-          onEnterGallery={() => setShowIntro(false)}
-        />
-      )}
+      <AnimatePresence>
+        {showIntro && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <GalleryIntro
+              currGalleryData={currGalleryData}
+              onEnterGallery={() => setShowIntro(false)}
+            />
+          </motion.div>
+        )}
 
-      {!showIntro && (
-        <>
-          <GalleryHeader
-            galleryName={currGalleryData.photographer}
-            onShowIntro={() => setShowIntro(true)}
-          />
-          <Exhibit
-            currArtwork={currArtwork}
-            direction={direction}
-            onNext={onNextClick}
-            onPrev={onPrevClick}
-            windowSize={windowSize}
-          />
+        {!showIntro && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <GalleryHeader
+              galleryName={currGalleryData.photographer}
+              onShowIntro={() => setShowIntro(true)}
+            />
+            <Exhibit
+              currArtwork={currArtwork}
+              direction={direction}
+              onNext={onNextClick}
+              onPrev={onPrevClick}
+              windowSize={windowSize}
+            />
 
-          <FooterNav
-            onPrev={onPrevClick}
-            onNext={onNextClick}
-            copyright={currArtwork.copyright}
-            plaque={currArtwork.plaque}
-            totalArtworks={totalArtworks}
-            currArtworkIndex={currArtworkIndex}
-          />
-        </>
-      )}
+            <FooterNav
+              onPrev={onPrevClick}
+              onNext={onNextClick}
+              copyright={currArtwork.copyright}
+              plaque={currArtwork.plaque}
+              totalArtworks={totalArtworks}
+              currArtworkIndex={currArtworkIndex}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Page>
   );
 };

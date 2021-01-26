@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 import { OuterRoom } from "../components/OuterRoom";
 import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
@@ -34,69 +35,75 @@ export const Home = ({ windowSize }) => {
 
   return (
     <OuterRoom>
-      <Content>
-        {!showTwoCols && (
-          <>
-            <Cards>
-              <RoomIntroCard
-                onOpen={onOpenInfoRoom}
-                pictureOnLeft={true}
-                roomType={"Information"}
-                roomName={"About the gallery"}
-                icon={<FaInfo />}
-              />
-
-              {allGalleries.map((gallery) => (
-                <GalleryIntroCard
-                  key={gallery.galleryId}
-                  onOpen={onOpen}
-                  gallery={gallery}
+      <AnimatePresence>
+        <Content
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          {!showTwoCols && (
+            <>
+              <Cards>
+                <RoomIntroCard
+                  onOpen={onOpenInfoRoom}
+                  pictureOnLeft={true}
+                  roomType={"Information"}
+                  roomName={"About the gallery"}
+                  icon={<FaInfo />}
                 />
-              ))}
-            </Cards>
-            <MuseumMap />
-          </>
-        )}
 
-        {showTwoCols && (
-          <>
-            <Cards>
-              {oddGalleries.map((gallery) => (
-                <GalleryIntroCard
-                  key={gallery.galleryId}
-                  onOpen={onOpen}
-                  gallery={gallery}
+                {allGalleries.map((gallery) => (
+                  <GalleryIntroCard
+                    key={gallery.galleryId}
+                    onOpen={onOpen}
+                    gallery={gallery}
+                  />
+                ))}
+              </Cards>
+              <MuseumMap />
+            </>
+          )}
+
+          {showTwoCols && (
+            <>
+              <Cards>
+                {oddGalleries.map((gallery) => (
+                  <GalleryIntroCard
+                    key={gallery.galleryId}
+                    onOpen={onOpen}
+                    gallery={gallery}
+                  />
+                ))}
+              </Cards>
+
+              <MuseumMap />
+
+              <Cards>
+                {evenGalleries.map((gallery) => (
+                  <GalleryIntroCard
+                    key={gallery.galleryId}
+                    onOpen={onOpen}
+                    gallery={gallery}
+                  />
+                ))}
+
+                <RoomIntroCard
+                  onOpen={onOpenInfoRoom}
+                  pictureOnLeft={true}
+                  roomType={"Information"}
+                  roomName={"About the gallery"}
+                  icon={<FaInfo />}
                 />
-              ))}
-            </Cards>
-
-            <MuseumMap />
-
-            <Cards>
-              {evenGalleries.map((gallery) => (
-                <GalleryIntroCard
-                  key={gallery.galleryId}
-                  onOpen={onOpen}
-                  gallery={gallery}
-                />
-              ))}
-
-              <RoomIntroCard
-                onOpen={onOpenInfoRoom}
-                pictureOnLeft={true}
-                roomType={"Information"}
-                roomName={"About the gallery"}
-                icon={<FaInfo />}
-              />
-            </Cards>
-          </>
-        )}
-      </Content>
+              </Cards>
+            </>
+          )}
+        </Content>
+      </AnimatePresence>
     </OuterRoom>
   );
 };
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
