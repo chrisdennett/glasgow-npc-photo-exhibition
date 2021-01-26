@@ -18,24 +18,22 @@ export const GalleryIntroCard = ({ onOpen, gallery }) => {
   const imgSrc = getImgSrc(directory, photos[0], "small");
 
   return (
-    <div>
-      <Card
-        onClick={() => onOpen(gallery.galleryId)}
-        pictureOnLeft={pictureOnLeft}
-      >
-        <TextSide pictureOnLeft={pictureOnLeft}>
-          <div>
-            <p>Gallery {gallery.galleryLetter}</p>
-            <h3>{gallery.photographer}</h3>
-          </div>
-          <Butt>
-            <FaCamera />
-          </Butt>
-        </TextSide>
+    <Card
+      onClick={() => onOpen(gallery.galleryId)}
+      pictureOnLeft={pictureOnLeft}
+    >
+      <TextSide pictureOnLeft={pictureOnLeft}>
+        <div>
+          <p>Gallery {gallery.galleryLetter}</p>
+          <h3>{gallery.photographer}</h3>
+        </div>
+        <Butt>
+          <FaCamera />
+        </Butt>
+      </TextSide>
 
-        <img src={imgSrc} alt={`${photographer} example artwork`} />
-      </Card>
-    </div>
+      <img src={imgSrc} alt={`${photographer} example artwork`} />
+    </Card>
   );
 };
 

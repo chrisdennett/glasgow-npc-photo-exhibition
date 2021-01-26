@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { OuterRoom } from "../components/OuterRoom";
-import { GalleryIntroCard } from "../components/GalleryIntroCard";
 import { exhibitionData } from "../data/exhibitionData";
 import { getGalleryLetter } from "../helpers/helpers";
 import MuseumMap from "../components/museumMap/MuseumMap";
-import { RoomIntroCard } from "../components/RoomIntroCard";
 import { navigate } from "@reach/router";
-import { FaInfo } from "react-icons/fa";
+import { GalleryCards } from "../components/galleryCards/GalleryCards";
 
 export const Home = ({ windowSize }) => {
   const onOpen = (galleryId) => navigate(`/${galleryId}/0`);
@@ -43,58 +41,33 @@ export const Home = ({ windowSize }) => {
         >
           {!showTwoCols && (
             <>
-              <Cards>
-                <RoomIntroCard
-                  onOpen={onOpenInfoRoom}
-                  pictureOnLeft={true}
-                  roomType={"Information"}
-                  roomName={"About the gallery"}
-                  icon={<FaInfo />}
-                />
-
-                {allGalleries.map((gallery) => (
-                  <GalleryIntroCard
-                    key={gallery.galleryId}
-                    onOpen={onOpen}
-                    gallery={gallery}
-                  />
-                ))}
-              </Cards>
+              <GalleryCards
+                galleries={allGalleries}
+                onOpen={onOpen}
+                onOpenInfo={onOpenInfoRoom}
+                showInfoCard="start"
+              />
               <MuseumMap />
             </>
           )}
 
           {showTwoCols && (
             <>
-              <Cards>
-                {oddGalleries.map((gallery) => (
-                  <GalleryIntroCard
-                    key={gallery.galleryId}
-                    onOpen={onOpen}
-                    gallery={gallery}
-                  />
-                ))}
-              </Cards>
+              <GalleryCards
+                galleries={oddGalleries}
+                onOpen={onOpen}
+                onOpenInfo={onOpenInfoRoom}
+                showInfoCard="none"
+              />
 
               <MuseumMap />
 
-              <Cards>
-                {evenGalleries.map((gallery) => (
-                  <GalleryIntroCard
-                    key={gallery.galleryId}
-                    onOpen={onOpen}
-                    gallery={gallery}
-                  />
-                ))}
-
-                <RoomIntroCard
-                  onOpen={onOpenInfoRoom}
-                  pictureOnLeft={true}
-                  roomType={"Information"}
-                  roomName={"About the gallery"}
-                  icon={<FaInfo />}
-                />
-              </Cards>
+              <GalleryCards
+                galleries={evenGalleries}
+                onOpen={onOpen}
+                onOpenInfo={onOpenInfoRoom}
+                showInfoCard="end"
+              />
             </>
           )}
         </Content>
@@ -110,16 +83,3 @@ const Content = styled(motion.div)`
   align-items: flex-start;
   justify-content: center;
 `;
-
-const Cards = styled.div`
-  display: flex;
-  margin-top: 0px;
-  flex-direction: column;
-  margin-bottom: 50px;
-`;
-
-// const IntroP = styled.p`
-//   margin: 10px 0;
-//   text-align: center;
-//   max-width: 800px;
-// `;
