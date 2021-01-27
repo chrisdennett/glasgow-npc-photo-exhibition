@@ -54,32 +54,21 @@ export default function MuseumMap(props) {
         <Hotspot id="H" {...props}>
           <path d="M-16.07 153.348h53.882v19.686H-16.07z" />
         </Hotspot>
-        {/* <Hotspot id="Info" {...props}>
-          <path
-            id="InformationRect"
-            fill="#7c7c7c"
-            fillOpacity="1"
-            stroke="none"
-            strokeOpacity="1"
-            strokeWidth="1.058"
-            d="M20.82 207.064v-15.08h53.51v15.08H34.72z"
-            overflow="visible"
-            stopColor="#000"
-          />
-        </Hotspot> */}
+
         <Hotspot id="info" {...props}>
           <g transform={`translate(-16 173)`}>
             <rect x={0} y={0} width={53} height={16} fill="rgb(18,72,104)" />
           </g>
         </Hotspot>
 
+        {/* Moved the info bit up here for convenience with the hotspot */}
         <g transform={`translate(-16 173)`} className={styles.drawnBits}>
           <rect
             x={0}
             y={0}
             width={53}
             height={16}
-            fill="#7c7c7c"
+            fill={props.focusedRoom === "info" ? "none" : "#7c7c7c"}
             fillOpacity="0.4"
           />
 
