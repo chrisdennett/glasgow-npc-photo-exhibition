@@ -1,24 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-// import { BiRightArrow } from "react-icons/bi";
-// import { FramedPicture } from "./FramedPicture";
-// import { Button } from "./Button";
-// import { Boop } from "./Boop";
 import { getImgSrc } from "../helpers/helpers";
 import { FaCamera } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-export const GalleryIntroCard = ({ onOpen, gallery }) => {
-  // const maxCharacters = 100;
-  // let excerpt = gallery.intro.slice(0, maxCharacters);
-  // if (maxCharacters < gallery.intro.length) {
-  //   excerpt = excerpt.concat("…");
-  // }
-
+export const GalleryIntroCard = ({ onOpen, gallery, focusedRoom }) => {
   const { directory, photos, pictureOnLeft, photographer } = gallery;
   const imgSrc = getImgSrc(directory, photos[0], "small");
 
+  const isFocused = focusedRoom && focusedRoom === gallery.galleryLetter;
+  const offset = pictureOnLeft ? -15 : 15;
+
   return (
     <Card
+      animate={{ x: isFocused ? offset : 0 }}
+      transition={{
+        ease: "easeOut",
+        duration: 0.2,
+      }}
       onClick={() => onOpen(gallery.galleryId)}
       pictureOnLeft={pictureOnLeft}
     >
@@ -61,7 +60,7 @@ const TextSide = styled.div`
   }
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   cursor: pointer;
   display: flex;
   flex-direction: ${(props) => (props.pictureOnLeft ? "row-reverse" : "row")};

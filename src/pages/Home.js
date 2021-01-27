@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { OuterRoom } from "../components/OuterRoom";
@@ -7,12 +8,82 @@ import MuseumMap from "../components/museumMap/MuseumMap";
 import { navigate } from "@reach/router";
 import { GalleryCards } from "../components/galleryCards/GalleryCards";
 
+// generate all the gallery data from the static info
+const [allGalleries, oddGalleries, evenGalleries] = getGalleryLists(
+  exhibitionData
+);
+
 export const Home = ({ windowSize }) => {
+  const [focusedRoom, setFocusedRoom] = useState(null);
+
   const onOpen = (galleryId) => navigate(`/${galleryId}/0`);
   const onOpenInfoRoom = () => navigate(`/information`);
+  const onRoomSelect = (roomId) => {
+    const gallery = allGalleries.find((g) => g.galleryLetter === roomId);
+    navigate(`/${gallery.galleryId}/0`);
+  };
 
   const showTwoCols = windowSize && windowSize.width > 830;
 
+  return (
+    <OuterRoom>
+      <AnimatePresence>
+        <Content
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          {!showTwoCols && (
+            <>
+              <GalleryCards
+                focusedRoom={focusedRoom}
+                galleries={allGalleries}
+                onOpen={onOpen}
+                onOpenInfo={onOpenInfoRoom}
+                showInfoCard="start"
+              />
+
+              <MuseumMap
+                focusedRoom={focusedRoom}
+                setFocusedRoom={setFocusedRoom}
+                onRoomSelect={onRoomSelect}
+              />
+            </>
+          )}
+
+          {showTwoCols && (
+            <>
+              <GalleryCards
+                focusedRoom={focusedRoom}
+                galleries={oddGalleries}
+                onOpen={onOpen}
+                onOpenInfo={onOpenInfoRoom}
+                showInfoCard="none"
+              />
+
+              <MuseumMap
+                focusedRoom={focusedRoom}
+                setFocusedRoom={setFocusedRoom}
+                onRoomSelect={onRoomSelect}
+              />
+
+              <GalleryCards
+                focusedRoom={focusedRoom}
+                galleries={evenGalleries}
+                onOpen={onOpen}
+                onOpenInfo={onOpenInfoRoom}
+                showInfoCard="end"
+              />
+            </>
+          )}
+        </Content>
+      </AnimatePresence>
+    </OuterRoom>
+  );
+};
+
+function getGalleryLists(exhibitionData) {
+  console.log("exhibitionData: ", exhibitionData);
   let oddGalleries = [];
   let evenGalleries = [];
   let allGalleries = [];
@@ -31,50 +102,8 @@ export const Home = ({ windowSize }) => {
     allGalleries.push({ ...g, pictureOnLeft: true });
   }
 
-  return (
-    <OuterRoom>
-      <AnimatePresence>
-        <Content
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          {!showTwoCols && (
-            <>
-              <GalleryCards
-                galleries={allGalleries}
-                onOpen={onOpen}
-                onOpenInfo={onOpenInfoRoom}
-                showInfoCard="start"
-              />
-              <MuseumMap />
-            </>
-          )}
-
-          {showTwoCols && (
-            <>
-              <GalleryCards
-                galleries={oddGalleries}
-                onOpen={onOpen}
-                onOpenInfo={onOpenInfoRoom}
-                showInfoCard="none"
-              />
-
-              <MuseumMap />
-
-              <GalleryCards
-                galleries={evenGalleries}
-                onOpen={onOpen}
-                onOpenInfo={onOpenInfoRoom}
-                showInfoCard="end"
-              />
-            </>
-          )}
-        </Content>
-      </AnimatePresence>
-    </OuterRoom>
-  );
-};
+  return [allGalleries, oddGalleries, evenGalleries];
+}
 
 const Content = styled(motion.div)`
   flex: 1;

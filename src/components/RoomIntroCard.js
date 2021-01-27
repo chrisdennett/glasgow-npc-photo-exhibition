@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
@@ -7,10 +8,23 @@ export const RoomIntroCard = ({
   roomType,
   roomName,
   icon,
+  focusedRoom,
 }) => {
+  console.log("focusedRoom: ", focusedRoom);
+  const isFocused = focusedRoom && focusedRoom === "info";
+  const offset = pictureOnLeft ? -15 : 15;
+
   return (
     <div>
-      <Card onClick={() => onOpen()} pictureOnLeft={pictureOnLeft}>
+      <Card
+        animate={{ x: isFocused ? offset : 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 0.2,
+        }}
+        onClick={() => onOpen()}
+        pictureOnLeft={pictureOnLeft}
+      >
         <TextSide pictureOnLeft={pictureOnLeft}>
           <div>
             <p>{roomType}</p>
@@ -49,7 +63,7 @@ const TextSide = styled.div`
   }
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   cursor: pointer;
   display: flex;
   flex-direction: ${(props) => (props.pictureOnLeft ? "row-reverse" : "row")};

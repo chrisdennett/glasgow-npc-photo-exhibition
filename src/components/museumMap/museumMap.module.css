@@ -1,0 +1,12 @@
+.museumMap {
+  margin: 0 2vw 42px 2vw;
+}
+
+.hotspot {
+  cursor: pointer;
+}
+
+.drawnBits > * {
+  user-select: none;
+  pointer-events: none;
+}

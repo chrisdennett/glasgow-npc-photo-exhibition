@@ -10,11 +10,13 @@ export const GalleryCards = ({
   onOpen,
   onOpenInfo,
   showInfoCard,
+  focusedRoom,
 }) => {
   return (
     <Cards>
       {showInfoCard === "start" && (
         <RoomIntroCard
+          focusedRoom={focusedRoom}
           onOpen={onOpenInfo}
           pictureOnLeft={true}
           roomType={"Information"}
@@ -23,8 +25,10 @@ export const GalleryCards = ({
         />
       )}
 
-      {galleries.map((gallery) => (
+      {galleries.map((gallery, index) => (
         <GalleryIntroCard
+          index={index}
+          focusedRoom={focusedRoom}
           key={gallery.galleryId}
           onOpen={onOpen}
           gallery={gallery}
@@ -33,6 +37,7 @@ export const GalleryCards = ({
 
       {showInfoCard === "end" && (
         <RoomIntroCard
+          focusedRoom={focusedRoom}
           onOpen={onOpenInfo}
           pictureOnLeft={true}
           roomType={"Information"}
