@@ -4,11 +4,22 @@ import { getImgSrc } from "../helpers/helpers";
 import { FaCamera } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-export const GalleryIntroCard = ({ onOpen, gallery, focusedRoom }) => {
-  const { directory, photos, pictureOnLeft, photographer } = gallery;
+export const GalleryIntroCard = ({
+  onOpen,
+  gallery,
+  focusedRoom,
+  setFocusedRoom,
+}) => {
+  const {
+    directory,
+    photos,
+    pictureOnLeft,
+    photographer,
+    galleryLetter,
+  } = gallery;
   const imgSrc = getImgSrc(directory, photos[0], "small");
 
-  const isFocused = focusedRoom && focusedRoom === gallery.galleryLetter;
+  const isFocused = focusedRoom && focusedRoom === galleryLetter;
   const offset = pictureOnLeft ? -15 : 15;
 
   return (
@@ -18,12 +29,14 @@ export const GalleryIntroCard = ({ onOpen, gallery, focusedRoom }) => {
         ease: "easeOut",
         duration: 0.2,
       }}
+      onMouseOut={() => setFocusedRoom(null)}
+      onMouseOver={() => setFocusedRoom(galleryLetter)}
       onClick={() => onOpen(gallery.galleryId)}
       pictureOnLeft={pictureOnLeft}
     >
       <TextSide pictureOnLeft={pictureOnLeft}>
         <div>
-          <p>Gallery {gallery.galleryLetter}</p>
+          <p>Gallery {galleryLetter}</p>
           <h3>{gallery.photographer}</h3>
         </div>
         <Butt>

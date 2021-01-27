@@ -11,12 +11,14 @@ export const GalleryCards = ({
   onOpenInfo,
   showInfoCard,
   focusedRoom,
+  setFocusedRoom,
 }) => {
   return (
     <Cards>
       {showInfoCard === "start" && (
         <RoomIntroCard
           focusedRoom={focusedRoom}
+          setFocusedRoom={setFocusedRoom}
           onOpen={onOpenInfo}
           pictureOnLeft={true}
           roomType={"Information"}
@@ -28,6 +30,7 @@ export const GalleryCards = ({
       {galleries.map((gallery, index) => (
         <GalleryIntroCard
           index={index}
+          setFocusedRoom={setFocusedRoom}
           focusedRoom={focusedRoom}
           key={gallery.galleryId}
           onOpen={onOpen}
@@ -38,6 +41,7 @@ export const GalleryCards = ({
       {showInfoCard === "end" && (
         <RoomIntroCard
           focusedRoom={focusedRoom}
+          setFocusedRoom={setFocusedRoom}
           onOpen={onOpenInfo}
           pictureOnLeft={true}
           roomType={"Information"}
@@ -55,30 +59,3 @@ const Cards = styled.div`
   flex-direction: column;
   margin-bottom: 50px;
 `;
-
-// const list = {
-//   visible: {
-//     opacity: 1,
-//     transition: {
-//       when: "beforeChildren",
-//       staggerChildren: 0.05,
-//       duration: 0.05,
-//     },
-//   },
-//   hidden: {
-//     opacity: 0,
-//     transition: {
-//       when: "afterChildren",
-//     },
-//   },
-// };
-
-/*
- <Cards initial="hidden" animate="visible" variants={list}>
-                {oddGalleries.map((gallery) => (
-                  <motion.div variants={item}>
-                    <GalleryIntroCard onOpen={onOpen} gallery={gallery} />
-                  </motion.div>
-                ))}
-              </Cards>
-*/

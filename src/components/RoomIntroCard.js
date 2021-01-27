@@ -9,8 +9,8 @@ export const RoomIntroCard = ({
   roomName,
   icon,
   focusedRoom,
+  setFocusedRoom,
 }) => {
-  console.log("focusedRoom: ", focusedRoom);
   const isFocused = focusedRoom && focusedRoom === "info";
   const offset = pictureOnLeft ? -15 : 15;
 
@@ -22,6 +22,8 @@ export const RoomIntroCard = ({
           ease: "easeOut",
           duration: 0.2,
         }}
+        onMouseOut={() => setFocusedRoom(null)}
+        onMouseOver={() => setFocusedRoom("info")}
         onClick={() => onOpen()}
         pictureOnLeft={pictureOnLeft}
       >

@@ -36,6 +36,7 @@ export const Home = ({ windowSize }) => {
           {!showTwoCols && (
             <>
               <GalleryCards
+                setFocusedRoom={setFocusedRoom}
                 focusedRoom={focusedRoom}
                 galleries={allGalleries}
                 onOpen={onOpen}
@@ -54,6 +55,7 @@ export const Home = ({ windowSize }) => {
           {showTwoCols && (
             <>
               <GalleryCards
+                setFocusedRoom={setFocusedRoom}
                 focusedRoom={focusedRoom}
                 galleries={oddGalleries}
                 onOpen={onOpen}
@@ -68,6 +70,7 @@ export const Home = ({ windowSize }) => {
               />
 
               <GalleryCards
+                setFocusedRoom={setFocusedRoom}
                 focusedRoom={focusedRoom}
                 galleries={evenGalleries}
                 onOpen={onOpen}
