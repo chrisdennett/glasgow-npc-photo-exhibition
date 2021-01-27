@@ -34,7 +34,10 @@ export const GalleryIntroCard = ({
       onClick={() => onOpen(gallery.galleryId)}
       pictureOnLeft={pictureOnLeft}
     >
-      <TextSide pictureOnLeft={pictureOnLeft}>
+      <TextSide
+        pictureOnLeft={pictureOnLeft}
+        style={{ userSelect: "none", pointerEvents: "none" }}
+      >
         <div>
           <p>Gallery {galleryLetter}</p>
           <h3>{gallery.photographer}</h3>
@@ -44,7 +47,11 @@ export const GalleryIntroCard = ({
         </Butt>
       </TextSide>
 
-      <img src={imgSrc} alt={`${photographer} example artwork`} />
+      <img
+        src={imgSrc}
+        alt={`${photographer} example artwork`}
+        style={{ userSelect: "none", pointerEvents: "none" }}
+      />
     </Card>
   );
 };

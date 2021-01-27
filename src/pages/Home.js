@@ -86,7 +86,6 @@ export const Home = ({ windowSize }) => {
 };
 
 function getGalleryLists(exhibitionData) {
-  console.log("exhibitionData: ", exhibitionData);
   let oddGalleries = [];
   let evenGalleries = [];
   let allGalleries = [];
