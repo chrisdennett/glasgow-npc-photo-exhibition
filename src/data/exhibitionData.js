@@ -321,6 +321,7 @@ export const exhibitionData = {
     {
       photographer: "Liam Paterson",
       galleryId: "liam-paterson",
+      directory: "liam-paterson",
       twitter: "to_glasgow",
       intro: `
       <p>I started my Twitter feed as Walk to Work Glasgow in April 2019. 
@@ -353,7 +354,6 @@ export const exhibitionData = {
       to December. They aren’t obviously ‘photos of Glasgow”, as they are all close-ups - but they show
       the beauty and variety of nature that is always there around us, whether on a dull day or when the
       sun is shining.</p>`,
-      directory: "liam-paterson",
       photos: [
         {
           file: "01_January.jpg",
@@ -468,7 +468,6 @@ export const exhibitionData = {
       All of these images were taken in Glasgow parks.  
       </footer>
      `,
-
       photos: [
         {
           file: "Cunningar-Loop-05.jpg",
@@ -536,10 +535,7 @@ export const exhibitionData = {
     {
       photographer: "Michael M Sweeney",
       galleryId: "michael-sweeney",
-      twitter: "",
       facebook: "horticulture11",
-      instagram: "",
-      website: "",
       directory: "michael-sweeney",
       intro: `<p>
       Hi my name is Michael M Sweeney, I’m a wildlife photographer from the East End of Glasgow. I am so grateful for the open spaces we have in our city. They allow me get out and about every day to explore these places of great wildlife diversity. 
@@ -615,7 +611,6 @@ export const exhibitionData = {
       directory: "monique-campbell",
       twitter: "moniquelvct",
       facebook: "moniquelaralisephotography",
-      instagram: "",
       website: "https://moniquelaralisephotography.com",
       intro: `<p>
       I love taking photographs when I go for my ‘daily walk’. Living in Glasgow for ten years I got to know lots of the beautiful and quirky green spaces we are lucky enough to enjoy, through learning to take photographs. From exploring macro photography through extreme close-ups of water droplets after a summer rain to attempts to master shutter speed through obsessively waiting for the perfect bird in flight moment.
@@ -708,80 +703,103 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
       photographer: "Neil Young",
       galleryId: "neil-young",
       directory: "neil-young",
-      twitter: "",
-      facebook: "",
-      instagram: "",
-      website: "",
-      intro: `<p></p>`,
+      twitter: "neilyoungphot0s",
+      facebook: "Neilyoungphotos-428555393823680",
+      youtube: "UC5YSvj0CO9YYQUxa4EueyTA",
+      intro: `<p>
+      I am currently the environmental coordinator for a housing association in the east end of Glasgow, the role is to achieve net-zero carbon emissions through various projects from composting, growing vegetables and forming more wild flowering areas. This should reduce emissions by reducing the amount of grass cutting in the area, attract more wildlife,  and make the area more attractive looking by adding some colour.  
+      </p>
+      <p>
+      Since moving back to Glasgow in the early 90's I have been photographing this amazing city captivated by the architecture it's grid layout, open spaces, stunning parks and diverse and caricaturistic population. 
+      </p>
+      <p>
+      The series of pictures I have included were, taken during a very uncertain time for me as I was going through chemotherapy for Leukemia which was just recently diagnosed, Not knowing what laid ahead for me I used this time to firstly, get some exercise and secondly to get out with my camera to capture the autumn colours of Glasgow parks.
+      </p>
+      <p>
+      I think the prospect of Glasgow being a National City park is an excellent idea that would make Glasgow a much better environment for all of Glasgow's inhabitants to live in. 
+      </p>`,
       photos: [
         {
           file: "IMG_0198.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4657.JPG",
+          plaque: "Taking the scenic way home - Glasgow Green",
           orientation: 1,
           wToHRatio: 0.6666666666666666,
           hToWRatio: 1.5,
         },
         {
           file: "IMG_4249.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4253.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4319.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4687.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4761.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4261.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4301.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4568.JPG",
-          orientation: 1,
-          wToHRatio: 0.6666666666666666,
-          hToWRatio: 1.5,
-        },
-        {
-          file: "IMG_4325.JPG",
+          plaque: "Strolling and Strumming - The Botanics",
           orientation: 1,
           wToHRatio: 0.6666666666666666,
           hToWRatio: 1.5,
         },
         {
           file: "IMG_4252.JPG",
+          plaque:
+            "You don't have to travel far for full autumnal colours - The Botanics",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4253.JPG",
+          plaque: "Emesred in technology and nature - The Botanics",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4261.JPG",
+          plaque: "Stroll under the canopy - The Botanics",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4301.JPG",
+          plaque: "Swans hogging the pond - Victoria park",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4319.JPG",
+          plaque: "Afternoon stroll - Victoria Park ",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4325.JPG",
+          plaque: "Autumn Explosion -  Victoria Park",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4568.JPG",
+          plaque: "The hectic city!!!! - River Kelvin",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4657.JPG",
+          plaque: "Sun filtering through the trees - Kelvingrove",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4687.JPG",
+          plaque: "Slacklining in the park - Kelvingrove",
+          orientation: 1,
+          wToHRatio: 0.6666666666666666,
+          hToWRatio: 1.5,
+        },
+        {
+          file: "IMG_4761.JPG",
+          plaque: "Bridge over the White cart",
           orientation: 1,
           wToHRatio: 0.6666666666666666,
           hToWRatio: 1.5,
@@ -801,6 +819,7 @@ EXAMPLE PHOTOGRAPHER DATE
       directory: "",
       twitter: "",
       facebook: "",
+      youtube: "",
       instagram: "",
       website: "",
       intro: `<p></p>`,

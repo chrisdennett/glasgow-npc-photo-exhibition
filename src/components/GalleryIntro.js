@@ -9,6 +9,7 @@ export const GalleryIntro = ({ currGalleryData, onEnterGallery }) => {
     twitter,
     instagram,
     facebook,
+    youtube,
     website,
     intro,
     directory,
@@ -29,6 +30,7 @@ export const GalleryIntro = ({ currGalleryData, onEnterGallery }) => {
           {twitter && <SocialLink link={twitter} type={"twitter"} />}
           {instagram && <SocialLink link={instagram} type={"instagram"} />}
           {facebook && <SocialLink link={facebook} type={"facebook"} />}
+          {youtube && <SocialLink link={youtube} type={"youtube"} />}
           {website && <SocialLink link={website} type={"website"} />}
         </LinkBar>
         <PhotoBand>

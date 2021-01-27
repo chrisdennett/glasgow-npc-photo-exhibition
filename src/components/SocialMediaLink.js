@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaFacebook, FaLink, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaLink, FaTwitter, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 
 export const SocialLink = ({ type, link }) => {
@@ -41,6 +41,21 @@ export const SocialLink = ({ type, link }) => {
       </Anchor>
     );
   }
+
+  if (type === "youtube") {
+    return (
+      <Anchor
+        href={youtubeUrlStart + link}
+        target={"_blank"}
+        rel="noreferrer noopener"
+      >
+        <FaYoutube />
+        <span>{`YouTube Channel`}</span>
+        {/* <span>{`${link}`}</span> */}
+      </Anchor>
+    );
+  }
+
   if (type === "website") {
     return (
       <Anchor href={link} target={"_blank"} rel="noreferrer noopener">
@@ -53,6 +68,7 @@ export const SocialLink = ({ type, link }) => {
   return null;
 };
 
+export const youtubeUrlStart = "https://www.youtube.com/channel/";
 export const instagramUrlStart = "https://www.instagram.com/";
 export const facebookUrlStart = "https://www.facebook.com/";
 export const twitterUrlStart = "https://twitter.com/";

@@ -1,4 +1,5 @@
 import React from "react";
+// import { motion } from "framer-motion";
 import { FaInfo } from "react-icons/fa";
 import styled from "styled-components";
 import { GalleryIntroCard } from "../GalleryIntroCard";
@@ -65,16 +66,6 @@ const Cards = styled.div`
 //       when: "afterChildren",
 //     },
 //   },
-// };
-
-// const item = {
-//   visible: { opacity: 1, x: 0 },
-//   hidden: { opacity: 0, x: -10 },
-// };
-
-// const itemRight = {
-//   visible: { opacity: 1, x: 0 },
-//   hidden: { opacity: 0, x: 10 },
 // };
 
 /*
