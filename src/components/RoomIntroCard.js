@@ -27,7 +27,10 @@ export const RoomIntroCard = ({
         onClick={() => onOpen()}
         pictureOnLeft={pictureOnLeft}
       >
-        <TextSide pictureOnLeft={pictureOnLeft}>
+        <TextSide
+          pictureOnLeft={pictureOnLeft}
+          style={{ userSelect: "none", pointerEvents: "none" }}
+        >
           <div>
             <p>{roomType}</p>
             <h3>{roomName}</h3>
@@ -35,7 +38,9 @@ export const RoomIntroCard = ({
           <Butt>{icon}</Butt>
         </TextSide>
 
-        <figure>INFO</figure>
+        <figure style={{ userSelect: "none", pointerEvents: "none" }}>
+          INFO
+        </figure>
       </Card>
     </div>
   );

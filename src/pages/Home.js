@@ -19,8 +19,12 @@ export const Home = ({ windowSize }) => {
   const onOpen = (galleryId) => navigate(`/${galleryId}/0`);
   const onOpenInfoRoom = () => navigate(`/information`);
   const onRoomSelect = (roomId) => {
-    const gallery = allGalleries.find((g) => g.galleryLetter === roomId);
-    navigate(`/${gallery.galleryId}/0`);
+    if (roomId === "info") {
+      navigate(`/information`);
+    } else {
+      const gallery = allGalleries.find((g) => g.galleryLetter === roomId);
+      navigate(`/${gallery.galleryId}/0`);
+    }
   };
 
   const showTwoCols = windowSize && windowSize.width > 830;
