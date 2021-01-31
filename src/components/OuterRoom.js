@@ -14,10 +14,7 @@ export const OuterRoom = ({ children }) => {
         />
       </TopLink>
 
-      <HomeHeader>
-        <h1>Glasgow National Park City</h1>
-        <h2>Photo Exhibition</h2>
-      </HomeHeader>
+      <HomeHeader />
 
       {children}
 

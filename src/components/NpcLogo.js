@@ -2,9 +2,11 @@ import React from "react";
 
 //xmlns="http://www.w3.org/2000/svg"
 
-export const NpcLogo = ({ width = 100, className }) => {
+export const NpcLogo = ({ width = 90, className }) => {
+  const style = { width, maxWidth: "28vw" };
+
   return (
-    <svg viewBox="0 0 17.766 17.986" width={width} className={className}>
+    <svg viewBox="0 0 17.766 17.986" style={style} className={className}>
       <path
         fill="#124868"
         d="M8.457 4.228a4.228 4.228 0 01-2.614 3.909 4.228 4.228 0 01-4.61-.924A4.228 4.228 0 01.326 2.6 4.228 4.228 0 014.244 0l-.016 4.228z"
