@@ -7,12 +7,14 @@ import { getGalleryLetter } from "../helpers/helpers";
 import MuseumMap from "../components/museumMap/MuseumMap";
 import { navigate } from "@reach/router";
 import { GalleryCards } from "../components/galleryCards/GalleryCards";
+// import GalleryPeopleToggle from "../components/galleryPeopleToggle/GalleryPeopleToggle";
 
 // generate all the gallery data from the static info
 const [allGalleries, oddGalleries, evenGalleries] = getGalleryLists(
   exhibitionData
 );
 
+// export const Home = ({ windowSize, toggleAllowPeople, allowPeople }) => {
 export const Home = ({ windowSize }) => {
   const [focusedRoom, setFocusedRoom] = useState(null);
 
@@ -31,6 +33,13 @@ export const Home = ({ windowSize }) => {
 
   return (
     <OuterRoom>
+      {/* <GalleryPeopleToggleHolder>
+        <GalleryPeopleToggle
+          toggleAllowPeople={toggleAllowPeople}
+          allowPeople={allowPeople}
+        />
+      </GalleryPeopleToggleHolder> */}
+
       <AnimatePresence>
         <Content
           initial={{ opacity: 0 }}
@@ -118,3 +127,7 @@ const Content = styled(motion.div)`
   align-items: flex-start;
   justify-content: center;
 `;
+
+// const GalleryPeopleToggleHolder = styled.div`
+//   margin-bottom: 30px;
+// `;

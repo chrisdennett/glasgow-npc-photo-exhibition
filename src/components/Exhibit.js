@@ -11,6 +11,7 @@ export const Exhibit = ({
   onNext,
   onPrev,
   windowSize,
+  allowPeople,
 }) => {
   const [pictureWidth, setPictureWidth] = useState(700);
 
@@ -61,7 +62,12 @@ export const Exhibit = ({
               onNext={onNext}
               onPrev={onPrev}
             />
-            <PeopleAndProps windowSize={windowSize} currArtwork={currArtwork} />
+            {allowPeople && (
+              <PeopleAndProps
+                windowSize={windowSize}
+                currArtwork={currArtwork}
+              />
+            )}
           </ArtworkHolder>
         </AnimatePresence>
       </>

@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { useKeyboardBindings } from "../../hooks/useKeyboardBindings";
+import GalleryPeopleToggle from "../galleryPeopleToggle/GalleryPeopleToggle";
 import styles from "./footerNav.module.css";
 
 export const FooterNav = ({
@@ -10,6 +11,8 @@ export const FooterNav = ({
   copyright,
   totalArtworks,
   currArtworkIndex,
+  toggleAllowPeople,
+  allowPeople,
 }) => {
   useKeyboardBindings({
     ArrowRight: () => onNext(),
@@ -18,6 +21,14 @@ export const FooterNav = ({
 
   return (
     <div className={styles.footer}>
+      <div className={styles.allowPeopleToggleHolder}>
+        <GalleryPeopleToggle
+          textStyle={{ color: "rgba(255,255,255,0.7)" }}
+          toggleAllowPeople={toggleAllowPeople}
+          allowPeople={allowPeople}
+        />
+      </div>
+
       {plaque && (
         <div className={styles.plaqueText}>
           <div>{plaque}</div>

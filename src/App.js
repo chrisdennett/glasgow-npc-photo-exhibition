@@ -4,16 +4,30 @@ import { Home } from "./pages/Home";
 import { Information } from "./pages/Information";
 import { Gallery } from "./pages/Gallery";
 import { useWindowSize } from "./hooks/useWindowSize";
+import { useState } from "react";
 
 function App() {
+  const [allowPeople, setAllowPeople] = useState(false);
+
   const windowSize = useWindowSize();
+  const toggleAllowPeople = () => setAllowPeople((prev) => !prev);
 
   return (
     <Container>
       <Router style={{ flex: 1 }}>
-        <Home path="/" windowSize={windowSize} />
+        <Home
+          path="/"
+          windowSize={windowSize}
+          allowPeople={allowPeople}
+          toggleAllowPeople={toggleAllowPeople}
+        />
         <Information path="/information" />
-        <Gallery path="/:galleryId/:artworkId" windowSize={windowSize} />
+        <Gallery
+          path="/:galleryId/:artworkId"
+          windowSize={windowSize}
+          allowPeople={allowPeople}
+          toggleAllowPeople={toggleAllowPeople}
+        />
         <Gallery path="/:galleryId" windowSize={windowSize} />
       </Router>
     </Container>

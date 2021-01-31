@@ -10,7 +10,13 @@ import { GalleryHeader } from "../components/GalleryHeader";
 import { FooterNav } from "../components/footerNav/FooterNav";
 import { ExitRoomButt } from "../components/ExitRoomButt";
 
-export const Gallery = ({ galleryId, artworkId, windowSize }) => {
+export const Gallery = ({
+  galleryId,
+  artworkId,
+  windowSize,
+  allowPeople,
+  toggleAllowPeople,
+}) => {
   const [showIntro, setShowIntro] = useState(true);
 
   const prevArtworkId = usePrevious(parseInt(artworkId, 0));
@@ -98,11 +104,14 @@ export const Gallery = ({ galleryId, artworkId, windowSize }) => {
               onNext={onNextClick}
               onPrev={onPrevClick}
               windowSize={windowSize}
+              allowPeople={allowPeople}
             />
 
             <FooterNav
               onPrev={onPrevClick}
               onNext={onNextClick}
+              allowPeople={allowPeople}
+              toggleAllowPeople={toggleAllowPeople}
               copyright={currArtwork.copyright}
               plaque={currArtwork.plaque}
               totalArtworks={totalArtworks}

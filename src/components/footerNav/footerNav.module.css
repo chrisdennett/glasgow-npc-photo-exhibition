@@ -7,10 +7,17 @@
   z-index: 9999;
 }
 
+.allowPeopleToggleHolder {
+  position: fixed;
+  right: 10px;
+  bottom: 7px;
+}
+
 .footerNav {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 20px;
 }
 
 .butt {
