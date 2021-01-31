@@ -1,11 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { ExternalLink } from "./ExternalLink";
+import GalleryDoor from "./GalleryDoor";
 
 export const HomeFooter = () => {
   return (
-    <div>
+    <FooterOuter>
       <SkirtingBoard />
+
+      <RightDoor>
+        <GalleryDoor />
+      </RightDoor>
+      <LeftDoor>
+        <GalleryDoor />
+      </LeftDoor>
 
       <Footer>
         <div>
@@ -24,9 +32,33 @@ export const HomeFooter = () => {
           />
         </div>
       </Footer>
-    </div>
+    </FooterOuter>
   );
 };
+
+const FooterOuter = styled.div`
+  position: relative;
+`;
+
+const RightDoor = styled.div`
+  position: absolute;
+  bottom: 97px;
+  right: -150px;
+
+  @media (max-width: 1295px) {
+    display: none;
+  }
+`;
+
+const LeftDoor = styled.div`
+  position: absolute;
+  bottom: 97px;
+  left: -150px;
+
+  @media (max-width: 1295px) {
+    display: none;
+  }
+`;
 
 const StyledExternalLink = styled(ExternalLink)`
   color: white;
