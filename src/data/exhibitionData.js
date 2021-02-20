@@ -806,6 +806,121 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
         },
       ],
     },
+    {
+      photographer: "Punk Wildlife",
+      galleryId: "punk-wildlife",
+      directory: "punk-wildlife",
+      twitter: "PunkWildlife",
+      instagram: "punkwildlife",
+      intro: `<p>I started taking photos of wildlife two years ago as an occasional hobby and got more invested as the first lockdown was coming in. I had just moved to Glasgow so I took the opportunity to get my exercise in each day by heading out at sunrise to have a look at my local spots for wildlife. 
+      </p>
+      <p>
+      With no people around, I found some great opportunities to take photographs, some of which have since been shared in media outlets across the world from the BBC to national newspapers. For someone who is still learning how to use his camera, I find myself lost for words to explain how happy this makes me! 
+      </p>
+      <p>
+      All of these photos were taken close to home in the east end of Glasgow with the majority being snapped at the wonderful Hogganfield Loch. 
+      </p>
+      <p>
+      I feel incredibly lucky to have so many green spaces on my doorstep. This city is bursting with nature. Get out there and appreciate it! </p>`,
+      photos: [
+        {
+          file: "alexandrapark3.png",
+          orientation: -2,
+          wToHRatio: 0.9686333084391336,
+          hToWRatio: 1.0323824209714727,
+        },
+        {
+          file: "hog8.png",
+          orientation: -2,
+          wToHRatio: 0.663168415792104,
+          hToWRatio: 1.507912584777694,
+        },
+        {
+          file: "hog9.png",
+          orientation: -2,
+          wToHRatio: 1.1028537455410226,
+          hToWRatio: 0.9067385444743935,
+        },
+        {
+          file: "cardowanmoss.png",
+          orientation: -2,
+          wToHRatio: 0.6655145929339478,
+          hToWRatio: 1.502596653202539,
+        },
+        {
+          file: "hog0.png",
+          orientation: -2,
+          wToHRatio: 0.8760484622553588,
+          hToWRatio: 1.1414893617021276,
+        },
+        {
+          file: "Hogganfield7.png",
+          orientation: -2,
+          wToHRatio: 0.6665468918433345,
+          hToWRatio: 1.5002695417789758,
+        },
+        {
+          file: "AlexandraPark2.png",
+          orientation: -2,
+          wToHRatio: 0.6674876847290641,
+          hToWRatio: 1.4981549815498154,
+        },
+        {
+          file: "hogganfield3.png",
+          orientation: -2,
+          wToHRatio: 0.6570306923625981,
+          hToWRatio: 1.5219989136338947,
+        },
+        {
+          file: "RiverKelvin1.png",
+          orientation: -2,
+          wToHRatio: 0.6401662049861496,
+          hToWRatio: 1.5620943314582432,
+        },
+        {
+          file: "hog7.png",
+          orientation: -2,
+          wToHRatio: 0.6944877795111805,
+          hToWRatio: 1.4399101460127293,
+        },
+        {
+          file: "Hogganfield6.png",
+          orientation: -2,
+          wToHRatio: 0.6958238105131934,
+          hToWRatio: 1.4371454165422515,
+        },
+        {
+          file: "Hogganfield2.png",
+          orientation: -2,
+          wToHRatio: 0.6586442923382645,
+          hToWRatio: 1.5182701977874622,
+        },
+        {
+          file: "Hogganfield4.png",
+          orientation: -2,
+          wToHRatio: 0.8181818181818182,
+          hToWRatio: 1.2222222222222223,
+        },
+        {
+          file: "mugdock1.png",
+          orientation: -2,
+          wToHRatio: 0.89694254085398,
+          hToWRatio: 1.1148986188657066,
+        },
+        {
+          file: "hogaanfield000.png",
+          orientation: -2,
+          wToHRatio: 0.6668054977092878,
+          hToWRatio: 1.499687695190506,
+        },
+        {
+          file: "alexandrapark1.png",
+          orientation: -2,
+          wToHRatio: 0.6658918005071851,
+          hToWRatio: 1.5017454776261505,
+        },
+      ],
+    },
   ],
 };
 

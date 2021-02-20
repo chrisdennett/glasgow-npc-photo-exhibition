@@ -21,7 +21,7 @@ const Hotspot = ({
 
 export default function MuseumMap(props) {
   return (
-    <svg viewBox="0 0 55 190" width={140} className={styles.museumMap}>
+    <svg viewBox="0 0 55 250" width={140} className={styles.museumMap}>
       <g
         id="hotspots"
         transform="translate(17 0)"
@@ -54,15 +54,35 @@ export default function MuseumMap(props) {
         <Hotspot id="H" {...props}>
           <path d="M-16.07 153.348h53.882v19.686H-16.07z" />
         </Hotspot>
+        <Hotspot id="I" {...props}>
+          <g transform={`translate(0 20)`}>
+            <path d="M-16.07 153.348h53.882v19.686H-16.07z" />
+          </g>
+        </Hotspot>
 
         <Hotspot id="info" {...props}>
-          <g transform={`translate(-16 173)`}>
+          <g transform={`translate(-16 193)`}>
             <rect x={0} y={0} width={53} height={16} fill="rgb(18,72,104)" />
           </g>
         </Hotspot>
 
         {/* Moved the info bit up here for convenience with the hotspot */}
-        <g transform={`translate(-16 173)`} className={styles.drawnBits}>
+        {/* INFO OUTLINE */}
+        <g transform={`translate(-37 1)`}>
+          <path
+            id="path83"
+            fill="none"
+            fillOpacity="1"
+            stroke="#7c7c7c"
+            strokeOpacity="0.5"
+            strokeWidth="1.058"
+            d="M74.33 191.51v15.932H20.82V191.51"
+            overflow="visible"
+            stopColor="#000"
+          />
+        </g>
+
+        <g transform={`translate(-16 193)`} className={styles.drawnBits}>
           <rect
             x={0}
             y={0}
@@ -632,18 +652,6 @@ export default function MuseumMap(props) {
             </tspan>
           </text>
 
-          <path
-            id="path83"
-            fill="none"
-            fillOpacity="1"
-            stroke="#7c7c7c"
-            strokeOpacity="1"
-            strokeWidth="1.058"
-            d="M74.33 191.51v15.932H20.82V191.51"
-            overflow="visible"
-            stopColor="#000"
-          />
-
           <g id="g99" transform="translate(-.06 .326)">
             <g id="g95" fillOpacity="1" transform="translate(-66.645 -2.119)">
               <circle
@@ -713,79 +721,84 @@ export default function MuseumMap(props) {
               stopColor="#000"
             />
           </g>
+
+          {/* 
+           //
+           // H - Room
+           //
+           */}
           <g id="g948" transform="matrix(-1 0 0 1 95.29 20.326)">
-            <g
-              id="g944"
-              fillOpacity="1"
-              transform="matrix(-1 0 0 1 160.693 -2.119)"
-            >
-              <circle
-                id="circle938"
-                cx="111.669"
-                cy="163.155"
-                r="5.717"
-                fill="#7c7c7c"
-                stroke="none"
-                strokeOpacity="1"
-                strokeWidth="0.529"
-                overflow="visible"
-                stopColor="#000"
-              />
-              <text
-                x="109.571"
-                y="165.441"
-                fill="#fff"
-                stroke="#000"
-                strokeOpacity="0.469"
-                strokeWidth="1.058"
-                fontFamily="'Alegreya Sans SC'"
-                fontSize="14.085"
-                fontWeight="700"
-                overflow="visible"
-                stopColor="#000"
-                textAnchor="end"
-                transform="scale(1.00012 .99988)"
-                writingMode="lr-tb"
-                xmlSpace="preserve"
-                style={{
-                  lineHeight: "125%",
-                  WebkitTextAlign: "end",
-                  textAlign: "end",
-                }}
-                id="text942"
-              >
+            <g id="g944" transform="matrix(-1 0 0 1 160.693 -2.119)">
+              <circle cx="111.669" cy="163.155" r="5.717" fill="#7c7c7c" />
+              <text>
                 <tspan
-                  x="109.571"
+                  x="109.4"
                   y="165.441"
                   fill="#fff"
+                  fontFamily="'Alegreya Sans SC'"
                   fillOpacity="1"
                   stroke="none"
-                  strokeWidth="1.058"
-                  fontFamily="'Alegreya Sans SC'"
-                  fontSize="7.042"
-                  fontStretch="normal"
-                  fontStyle="normal"
-                  fontVariant="normal"
                   fontWeight="700"
+                  fontSize="7.042"
                   textAnchor="start"
-                  style={{ WebkitTextAlign: "start", textAlign: "start" }}
-                  id="tspan940"
                 >
                   H
                 </tspan>
               </text>
             </g>
             <path
-              id="path946"
               fill="none"
               stroke="#7c7c7c"
               strokeOpacity="1"
               strokeWidth="1.058"
               d="M30.46 171.29h-9.54v-20.368m53.51 0v20.369H39.182"
-              overflow="visible"
-              stopColor="#000"
             />
           </g>
+          {/* 
+          //
+          // END H
+          //
+          */}
+
+          {/* 
+           //
+           // I - Room
+           //
+           */}
+          <g transform={`translate(0, 20)`}>
+            <g transform="matrix(-1 0 0 1 95.29 20.326)">
+              <g transform="matrix(-1 0 0 1 160.693 -2.119)">
+                <circle cx="111.669" cy="163.155" r="5.717" fill="#7c7c7c" />
+                <text>
+                  <tspan
+                    x="110.5"
+                    y="165.441"
+                    fill="#fff"
+                    fontFamily="'Alegreya Sans SC'"
+                    fillOpacity="1"
+                    stroke="none"
+                    fontWeight="700"
+                    fontSize="7.042"
+                    textAnchor="start"
+                  >
+                    I
+                  </tspan>
+                </text>
+              </g>
+              <path
+                fill="none"
+                stroke="#7c7c7c"
+                strokeOpacity="1"
+                strokeWidth="1.058"
+                d="M30.46 171.29h-9.54v-20.368m53.51 0v20.369H39.182"
+              />
+            </g>
+          </g>
+          {/* 
+          //
+          // END I
+          //
+          */}
         </g>
         <use
           id="use103"
