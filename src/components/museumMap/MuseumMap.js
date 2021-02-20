@@ -21,7 +21,7 @@ const Hotspot = ({
 
 export default function MuseumMap(props) {
   return (
-    <svg viewBox="0 0 55 250" width={140} className={styles.museumMap}>
+    <svg viewBox="0 0 55 210" width={140} className={styles.museumMap}>
       <g
         id="hotspots"
         transform="translate(17 0)"
