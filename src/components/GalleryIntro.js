@@ -148,7 +148,6 @@ const Intro = styled.div`
   align-items: center;
   justify-content: center;
   background: hsl(0, 0%, 95%);
-  /* max-height: 96vh; */
   max-height: 85vh;
   max-width: 800px;
   margin: 0 20px;

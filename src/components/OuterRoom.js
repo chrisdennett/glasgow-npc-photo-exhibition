@@ -10,7 +10,7 @@ export const OuterRoom = ({ children }) => {
         <ExternalLink
           url="https://www.glasgownationalparkcity.org/"
           label="
-        Glasgow National Park City Main Site"
+        Glasgow National Park City"
         />
       </TopLink>
 
