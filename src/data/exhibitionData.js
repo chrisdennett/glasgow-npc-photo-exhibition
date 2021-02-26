@@ -626,6 +626,36 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
       </p>`,
       photos: [
         {
+          file: "JamesHamiltonHeritagePark-1.JPG",
+          orientation: -1,
+          wToHRatio: 1.4979724249797242,
+          hToWRatio: 0.6675690308608554,
+        },
+        {
+          file: "JamesHamiltonHeritagePark-2.JPG",
+          orientation: -1,
+          wToHRatio: 0.6675531914893617,
+          hToWRatio: 1.49800796812749,
+        },
+        {
+          file: "JamesHamiltonHeritagePark-3.JPG",
+          orientation: -1,
+          wToHRatio: 0.6681830345196682,
+          hToWRatio: 1.4965959150981178,
+        },
+        {
+          file: "JamesHamiltonHeritagePark-4.JPG",
+          orientation: -1,
+          wToHRatio: 0.6676241973639743,
+          hToWRatio: 1.4978486459124272,
+        },
+        {
+          file: "JamesHamiltonHeritagePark-5.JPG",
+          orientation: 1,
+          wToHRatio: 0.6676136363636364,
+          hToWRatio: 1.4978723404255319,
+        },
+        {
           file: "Glasgow-Botanics-2017_MC.JPG",
           orientation: 1,
           wToHRatio: 0.6648989061982101,
@@ -921,6 +951,87 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
         },
       ],
     },
+    {
+      photographer: "Morag Perkins",
+      galleryId: "morag-perkins",
+      directory: "morag-perkins",
+      twitter: "moragperkins",
+      facebook: "moragperkinsphoto",
+      website: "http://www.moragperkinsphoto.com/index.html",
+      intro: `<p>Glasgow’s parks and green spaces are hugely important to me - and have become even more so in the past year! When the coronavirus pandemic hit, my world shrunk dramatically, and since March 2020 I haven’t been able to go anywhere outside walking range of my home in the West End.
+      </p>
+      <p>
+      I’m a photographer, and during the pandemic I have been increasingly using photography as a sort of mindfulness. When I need to clear my head, I will load a roll of film into an old camera and head out for a walk. I’m all about the tiny details and changing seasons; I’ve got to know almost every little corner of my local area. I can tell you exactly when the light will hit a particular tree in a particular way, which spot in the park the frost lingers the longest, and where the flowers will appear in spring. I can even tell you where the friendly Highland cows live! (Get yourselves to Dawsholm Park, cow fans!)
+      </p>
+      <p>
+      I’ve chosen this particular set of photographs as my homage to the Dear Green Place. They cover the range of my little pandemic world, from the manicured exotic trees of the Botanic Gardens to the gloriously haphazard banks of the Forth & Clyde canal and the Kelvin. Creating these photographs brings me a moment of peace in a chaotic world, and I hope that they can do the same for you in some small way.
+      </p>
+      <footer>
+      All images copyright Morag Perkins
+      </footer>`,
+      photos: [
+        {
+          file: "Morag_Perkins_01.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_02.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_03.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_04.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_05.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_06.jpg",
+          orientation: -1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+        },
+        {
+          file: "Morag_Perkins_07.jpg",
+          orientation: -1,
+          wToHRatio: 0.6664285714285715,
+          hToWRatio: 1.5005359056806002,
+        },
+        {
+          file: "Morag_Perkins_08.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_09.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+        {
+          file: "Morag_Perkins_10.jpg",
+          orientation: -1,
+          wToHRatio: 0.6692857142857143,
+          hToWRatio: 1.4941302027748133,
+        },
+      ],
+    },
   ],
 };
 
@@ -928,25 +1039,26 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
 
 EXAMPLE PHOTOGRAPHER DATE
 ©Images: Becky Duncan, for Open Aye
+
 {
-      photographer: "",
-      galleryId: "",
-      directory: "",
-      twitter: "",
-      facebook: "",
-      youtube: "",
-      instagram: "",
-      website: "",
-      intro: `<p></p>`,
-      photos: [
-        {
-          file: "01_January.jpg",
-          plaque: "January",
-          orientation: 1,
-          wToHRatio: 0.9737354085603113,
-          hToWRatio: 1.026973026973027,
-        },
-      ]
-    }
+  photographer: "",
+  galleryId: "",
+  directory: "",
+  twitter: "",
+  facebook: "",
+  youtube: "",
+  instagram: "",
+  website: "",
+  intro: `<p></p>`,
+  photos: [
+    {
+      file: "01_January.jpg",
+      plaque: "January",
+      orientation: 1,
+      wToHRatio: 0.9737354085603113,
+      hToWRatio: 1.026973026973027,
+    },
+  ]
+}
 
  */

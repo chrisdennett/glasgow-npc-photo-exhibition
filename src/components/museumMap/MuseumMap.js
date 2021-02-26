@@ -21,7 +21,7 @@ const Hotspot = ({
 
 export default function MuseumMap(props) {
   return (
-    <svg viewBox="0 0 55 210" width={140} className={styles.museumMap}>
+    <svg viewBox="0 0 55 224" width={140} className={styles.museumMap}>
       <g
         id="hotspots"
         transform="translate(17 0)"
@@ -42,69 +42,77 @@ export default function MuseumMap(props) {
         <Hotspot id="D" {...props}>
           <path d="M-16.07 79.983h53.882v19.686H-16.07z" />
         </Hotspot>
+
         <Hotspot id="E" {...props}>
           <path d="M-16.127 99.84h26.84v33.141h-26.84z" />
         </Hotspot>
         <Hotspot id="F" {...props}>
           <path d="M10.713 99.84h26.84v33.141h-26.84z" />
         </Hotspot>
+
         <Hotspot id="G" {...props}>
           <path d="M-16.07 133.348h53.882v19.686H-16.07z" />
         </Hotspot>
         <Hotspot id="H" {...props}>
           <path d="M-16.07 153.348h53.882v19.686H-16.07z" />
         </Hotspot>
-        <Hotspot id="I" {...props}>
-          <g transform={`translate(0 20)`}>
-            <path d="M-16.07 153.348h53.882v19.686H-16.07z" />
-          </g>
-        </Hotspot>
+
+        <g transform={`translate(0, 73)`}>
+          <Hotspot id="I" {...props}>
+            <path d="M-16.127 99.84h26.84v33.141h-26.84z" />
+          </Hotspot>
+          <Hotspot id="J" {...props}>
+            <path d="M10.713 99.84h26.84v33.141h-26.84z" />
+          </Hotspot>
+        </g>
 
         <Hotspot id="info" {...props}>
-          <g transform={`translate(-16 193)`}>
+          <g transform={`translate(-16 206)`}>
             <rect x={0} y={0} width={53} height={16} fill="rgb(18,72,104)" />
           </g>
         </Hotspot>
 
         {/* Moved the info bit up here for convenience with the hotspot */}
         {/* INFO OUTLINE */}
-        <g transform={`translate(-37 1)`}>
-          <path
-            id="path83"
-            fill="none"
-            fillOpacity="1"
-            stroke="#7c7c7c"
-            strokeOpacity="0.5"
-            strokeWidth="1.058"
-            d="M74.33 191.51v15.932H20.82V191.51"
-            overflow="visible"
-            stopColor="#000"
-          />
-        </g>
+        <g id="INFORMATION">
+          <g transform={`translate(-37 15)`}>
+            <path
+              id="path83"
+              fill="none"
+              fillOpacity="1"
+              stroke="#7c7c7c"
+              strokeOpacity="0.5"
+              strokeWidth="1.058"
+              d="M74.33 191.51v15.932H20.82V191.51"
+              overflow="visible"
+              stopColor="#000"
+            />
+          </g>
 
-        <g transform={`translate(-16 193)`} className={styles.drawnBits}>
-          <rect
-            x={0}
-            y={0}
-            width={53}
-            height={16}
-            fill={props.focusedRoom === "info" ? "none" : "#7c7c7c"}
-            fillOpacity="0.4"
-          />
+          <g transform={`translate(-16 206)`} className={styles.drawnBits}>
+            <rect
+              x={0}
+              y={0}
+              width={53}
+              height={16}
+              fill={props.focusedRoom === "info" ? "none" : "#7c7c7c"}
+              fillOpacity="0.4"
+            />
 
-          <text>
-            <tspan
-              x="7"
-              y="10"
-              fill="#fff"
-              opacity="0.9"
-              fontFamily="'Alegreya Sans SC'"
-              fontSize="7.042"
-              fontWeight="700"
-            >
-              Information
-            </tspan>
-          </text>
+            <text>
+              <tspan
+                x="7"
+                y="10"
+                fill="#fff"
+                opacity="0.9"
+                fontFamily="'Alegreya Sans SC'"
+                fontSize="7.042"
+                fontWeight="700"
+              >
+                Information
+              </tspan>
+            </text>
+          </g>
         </g>
       </g>
 
@@ -475,140 +483,276 @@ export default function MuseumMap(props) {
             overflow="visible"
             stopColor="#000"
           />
-          <path
-            id="path57"
-            fill="none"
-            stroke="#7c7c7c"
-            strokeOpacity="1"
-            strokeWidth="1.058"
-            d="M47.682 145.146v6.267H20.86v-32.828m26.822 0v18.824"
-            overflow="visible"
-            stopColor="#000"
-          />
-          <path
-            id="path59"
-            fill="none"
-            stroke="#7c7c7c"
-            strokeOpacity="1"
-            strokeWidth="1.058"
-            d="M47.66 151.413h9.968m6.917 0h9.826v-32.828"
-            overflow="visible"
-            stopColor="#000"
-          />
-          <g id="g67" fillOpacity="1" transform="translate(-69.82 -59.798)">
-            <circle
-              id="circle61"
-              cx="103.726"
-              cy="195.461"
-              r="5.717"
-              fill="#7c7c7c"
-              stroke="none"
+
+          {/*
+           *
+           * ROOMS E & F
+           *
+           */}
+          <g id="sideBySide-EF">
+            <path
+              id="ROOM-E"
+              fill="none"
+              stroke="#7c7c7c"
               strokeOpacity="1"
-              strokeWidth="0.529"
+              strokeWidth="1.058"
+              d="M47.682 145.146v6.267H20.86v-32.828m26.822 0v18.824"
               overflow="visible"
               stopColor="#000"
             />
-            <text
-              id="text65"
-              style={{
-                lineHeight: "125%",
-                WebkitTextAlign: "end",
-                textAlign: "end",
-              }}
-              x="101.63"
-              y="197.751"
-              fill="#fff"
-              stroke="#000"
-              strokeOpacity="0.469"
-              strokeWidth="1.058"
-              fontFamily="'Alegreya Sans SC'"
-              fontSize="14.085"
-              fontWeight="700"
-              overflow="visible"
-              stopColor="#000"
-              textAnchor="end"
-              transform="scale(1.00012 .99988)"
-              writingMode="lr-tb"
-              xmlSpace="preserve"
-            >
-              <tspan
-                id="tspan63"
-                style={{ WebkitTextAlign: "start", textAlign: "start" }}
-                x="101.63"
-                y="197.751"
-                fill="#fff"
-                fillOpacity="1"
-                stroke="none"
-                strokeWidth="1.058"
-                fontFamily="'Alegreya Sans SC'"
-                fontSize="7.042"
-                fontStretch="normal"
-                fontStyle="normal"
-                fontVariant="normal"
-                fontWeight="700"
-                textAnchor="start"
-              >
-                E
-              </tspan>
-            </text>
-          </g>
-          <g id="g75" fillOpacity="1" transform="translate(-69.82 -59.798)">
-            <circle
-              id="circle69"
-              cx="131.507"
-              cy="194.988"
-              r="5.717"
-              fill="#7c7c7c"
-              stroke="none"
+            <path
+              id="ROOM-F"
+              fill="none"
+              stroke="#7c7c7c"
               strokeOpacity="1"
-              strokeWidth="0.529"
+              strokeWidth="1.058"
+              d="M47.66 151.413h9.968m6.917 0h9.826v-32.828"
               overflow="visible"
               stopColor="#000"
             />
-            <text
-              id="text73"
-              style={{
-                lineHeight: "125%",
-                WebkitTextAlign: "end",
-                textAlign: "end",
-              }}
-              x="129.408"
-              y="197.279"
-              fill="#fff"
-              stroke="#000"
-              strokeOpacity="0.469"
+
+            <g id="E-F-Circles">
+              <g
+                id="E-cirlce"
+                fillOpacity="1"
+                transform="translate(-69.82 -59.798)"
+              >
+                <circle cx="103.726" cy="195.461" r="5.717" fill="#7c7c7c" />
+                <text
+                  x="101.63"
+                  y="197.751"
+                  fill="#fff"
+                  stroke="#000"
+                  strokeOpacity="0.469"
+                  strokeWidth="1.058"
+                  fontFamily="'Alegreya Sans SC'"
+                  fontSize="14.085"
+                  fontWeight="700"
+                  overflow="visible"
+                  stopColor="#000"
+                  textAnchor="end"
+                  writingMode="lr-tb"
+                  xmlSpace="preserve"
+                >
+                  <tspan
+                    id="tspan63"
+                    style={{ WebkitTextAlign: "start", textAlign: "start" }}
+                    x="101.63"
+                    y="197.751"
+                    fill="#fff"
+                    fillOpacity="1"
+                    stroke="none"
+                    strokeWidth="1.058"
+                    fontFamily="'Alegreya Sans SC'"
+                    fontSize="7.042"
+                    fontStretch="normal"
+                    fontStyle="normal"
+                    fontVariant="normal"
+                    fontWeight="700"
+                    textAnchor="start"
+                  >
+                    E
+                  </tspan>
+                </text>
+              </g>
+
+              <g
+                id="F-circle"
+                fillOpacity="1"
+                transform="translate(-69.82 -59.798)"
+              >
+                <circle
+                  id="circle69"
+                  cx="131.507"
+                  cy="194.988"
+                  r="5.717"
+                  fill="#7c7c7c"
+                  stroke="none"
+                  strokeOpacity="1"
+                  strokeWidth="0.529"
+                  overflow="visible"
+                  stopColor="#000"
+                />
+                <text
+                  id="text73"
+                  style={{
+                    lineHeight: "125%",
+                    WebkitTextAlign: "end",
+                    textAlign: "end",
+                  }}
+                  x="129.408"
+                  y="197.279"
+                  fill="#fff"
+                  stroke="#000"
+                  strokeOpacity="0.469"
+                  strokeWidth="1.058"
+                  fontFamily="'Alegreya Sans SC'"
+                  fontSize="14.085"
+                  fontWeight="700"
+                  overflow="visible"
+                  stopColor="#000"
+                  textAnchor="end"
+                  transform="scale(1.00012 .99988)"
+                  writingMode="lr-tb"
+                  xmlSpace="preserve"
+                >
+                  <tspan
+                    id="tspan71"
+                    style={{ WebkitTextAlign: "start", textAlign: "start" }}
+                    x="129.408"
+                    y="197.279"
+                    fill="#fff"
+                    fillOpacity="1"
+                    stroke="none"
+                    strokeWidth="1.058"
+                    fontFamily="'Alegreya Sans SC'"
+                    fontSize="7.042"
+                    fontStretch="normal"
+                    fontStyle="normal"
+                    fontVariant="normal"
+                    fontWeight="700"
+                    textAnchor="start"
+                  >
+                    F
+                  </tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+
+          {/*
+           *
+           * ROOMS I & J
+           *
+           */}
+          <g id="sideBySide-IJ" transform={`translate(0, 73)`}>
+            <path
+              id="ROOM-I"
+              fill="none"
+              stroke="#7c7c7c"
+              strokeOpacity="1"
               strokeWidth="1.058"
-              fontFamily="'Alegreya Sans SC'"
-              fontSize="14.085"
-              fontWeight="700"
+              d="M47.682 145.146v6.267H20.86v-32.828m26.822 0v18.824"
               overflow="visible"
               stopColor="#000"
-              textAnchor="end"
-              transform="scale(1.00012 .99988)"
-              writingMode="lr-tb"
-              xmlSpace="preserve"
-            >
-              <tspan
-                id="tspan71"
-                style={{ WebkitTextAlign: "start", textAlign: "start" }}
-                x="129.408"
-                y="197.279"
-                fill="#fff"
+            />
+            <path
+              id="ROOM-F"
+              fill="none"
+              stroke="#7c7c7c"
+              strokeOpacity="1"
+              strokeWidth="1.058"
+              d="M47.66 151.413h9.968m6.917 0h9.826v-32.828"
+              overflow="visible"
+              stopColor="#000"
+            />
+
+            <g id="E-F-Circles">
+              <g
+                id="E-cirlce"
                 fillOpacity="1"
-                stroke="none"
-                strokeWidth="1.058"
-                fontFamily="'Alegreya Sans SC'"
-                fontSize="7.042"
-                fontStretch="normal"
-                fontStyle="normal"
-                fontVariant="normal"
-                fontWeight="700"
-                textAnchor="start"
+                transform="translate(-69.82 -59.798)"
               >
-                F
-              </tspan>
-            </text>
+                <circle cx="103.726" cy="195.461" r="5.717" fill="#7c7c7c" />
+                <text
+                  fill="#fff"
+                  stroke="#000"
+                  strokeOpacity="0.469"
+                  strokeWidth="1.058"
+                  fontFamily="'Alegreya Sans SC'"
+                  fontSize="14.085"
+                  fontWeight="700"
+                  overflow="visible"
+                  stopColor="#000"
+                  textAnchor="end"
+                  writingMode="lr-tb"
+                  xmlSpace="preserve"
+                >
+                  <tspan
+                    id="tspan63"
+                    style={{ WebkitTextAlign: "start", textAlign: "start" }}
+                    x="102.7"
+                    y="197.751"
+                    fill="#fff"
+                    fillOpacity="1"
+                    stroke="none"
+                    strokeWidth="1.058"
+                    fontFamily="'Alegreya Sans SC'"
+                    fontSize="7.042"
+                    fontStretch="normal"
+                    fontStyle="normal"
+                    fontVariant="normal"
+                    fontWeight="700"
+                    textAnchor="start"
+                  >
+                    I
+                  </tspan>
+                </text>
+              </g>
+
+              <g
+                id="F-circle"
+                fillOpacity="1"
+                transform="translate(-69.82 -59.798)"
+              >
+                <circle
+                  id="circle69"
+                  cx="131.507"
+                  cy="194.988"
+                  r="5.717"
+                  fill="#7c7c7c"
+                  stroke="none"
+                  strokeOpacity="1"
+                  strokeWidth="0.529"
+                  overflow="visible"
+                  stopColor="#000"
+                />
+                <text
+                  style={{
+                    lineHeight: "125%",
+                    WebkitTextAlign: "end",
+                    textAlign: "end",
+                  }}
+                  x="129.408"
+                  y="197.279"
+                  fill="#fff"
+                  stroke="#000"
+                  strokeOpacity="0.469"
+                  strokeWidth="1.058"
+                  fontFamily="'Alegreya Sans SC'"
+                  fontSize="14.085"
+                  fontWeight="700"
+                  overflow="visible"
+                  stopColor="#000"
+                  textAnchor="end"
+                  transform="scale(1.00012 .99988)"
+                  writingMode="lr-tb"
+                  xmlSpace="preserve"
+                >
+                  <tspan
+                    style={{ WebkitTextAlign: "start", textAlign: "start" }}
+                    x="130.5"
+                    y="197.279"
+                    fill="#fff"
+                    fillOpacity="1"
+                    stroke="none"
+                    strokeWidth="1.058"
+                    fontFamily="'Alegreya Sans SC'"
+                    fontSize="7.042"
+                    fontStretch="normal"
+                    fontStyle="normal"
+                    fontVariant="normal"
+                    fontWeight="700"
+                    textAnchor="start"
+                  >
+                    J
+                  </tspan>
+                </text>
+              </g>
+            </g>
           </g>
+
+          {/* ENTRANCE */}
           <text
             id="text79"
             style={{
@@ -762,9 +906,9 @@ export default function MuseumMap(props) {
 
           {/* 
            //
-           // I - Room
+           // K - Room
            //
-           */}
+      
           <g transform={`translate(0, 20)`}>
             <g transform="matrix(-1 0 0 1 95.29 20.326)">
               <g transform="matrix(-1 0 0 1 160.693 -2.119)">
@@ -794,7 +938,7 @@ export default function MuseumMap(props) {
               />
             </g>
           </g>
-          {/* 
+          
           //
           // END I
           //
