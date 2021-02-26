@@ -957,7 +957,7 @@ Taking photographs every day makes me feel better – calmer, more hopeful and i
       directory: "morag-perkins",
       twitter: "moragperkins",
       facebook: "moragperkinsphoto",
-      website: "http://www.moragperkinsphoto.com/index.html",
+      website: "https://www.moragperkinsphoto.com/index.html",
       intro: `<p>Glasgow’s parks and green spaces are hugely important to me - and have become even more so in the past year! When the coronavirus pandemic hit, my world shrunk dramatically, and since March 2020 I haven’t been able to go anywhere outside walking range of my home in the West End.
       </p>
       <p>
